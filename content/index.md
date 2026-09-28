@@ -1,16 +1,17 @@
 ---
 publish: "true"
+title: Home
 created: 2026-07-20
-modified: 2026-09-28T09:49:43.239Z
-published: 2026-09-28T09:49:43.239Z
+modified: 2026-09-28T09:56:20.180Z
+published: 2026-09-28T09:56:20.180Z
 up:
 related:
 collections:
 mapState:
 rank: 5
 tags:
-dg-home: true
-dg-publish: true
+dg-home: false
+dg-publish: false
 banner: "[[Banner-2-Dark.png]]"
 ---
 
