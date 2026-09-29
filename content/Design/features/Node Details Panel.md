@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T11:18:02.239Z
-published: 2026-09-29T11:18:02.239Z
+modified: 2026-09-29T16:14:54.645Z
+published: 2026-09-29T16:14:54.645Z
 up:
   - "[[Design]]"
 related:
@@ -11,9 +11,9 @@ collections:
 
 # Node Details Panel
 
-**Built on:** [[See the Evidence]]
+**Built on:** [[See the Evidence]], [[Present Without Bias]], [[Traceable to Quanta]]
 
-The Node Details Panel is where Morgan opens a single point in the [[Governance Landscape]] graph and finds out what it actually holds. It comes before any analysis, because Morgan has to trust the pieces of evidence before he builds anything on top of them.
+The Node Details Panel is where Morgan opens a single point in the [[Governance Brain]] graph and finds out what it actually holds. It comes before any analysis, because Morgan has to trust the pieces of evidence before he builds anything on top of them.
 
 ![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png]]
 
@@ -25,8 +25,8 @@ From this panel Morgan can select an insight card, which opens [[Insight Cards]]
 
 ## Conditions to use it
 
-- A node has to exist in the Governance Landscape first, with at least one insight drawn from it. A node with no insights yet isn't specified.
-- Confidence scores and related nodes depend on the vault build having read the source and mapped its connections.
+- A node has to exist in the Governance Brain first, with at least one insight drawn from it. A node with no insights yet isn't specified.
+- Confidence scores and related nodes depend on Connect the dots having read the source and mapped its connections.
 - Opening the source document or an insight both return to this panel, so it stays the anchor for evidence gathered around one node.
 
 ## Still open

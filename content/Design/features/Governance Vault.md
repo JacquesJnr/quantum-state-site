@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T11:17:43.909Z
-published: 2026-09-29T11:17:43.909Z
+modified: 2026-09-29T16:14:54.644Z
+published: 2026-09-29T16:14:54.644Z
 up:
   - "[[Design]]"
 related:
@@ -11,9 +11,9 @@ collections:
 
 # Governance Vault
 
-**Built on:** [[Data Sovereignty]], [[Human Authority]]
+**Built on:** [[Data Sovereignty]], [[Human Authority]], [[Access Before Analysis]], [[Keep the Director Moving]]
 
-The Governance Vault is where Morgan's governance material stops being scattered across files, folders and tools and becomes one AI-readable body of evidence. It is the first thing he builds, because nothing later in the journey — the graph, the insights, an Investigation — can be trusted if it isn't clear where the material came from or who is allowed to see it.
+The Governance Vault is where Morgan's governance material stops being scattered across files, folders and tools and becomes one AI-readable body of evidence. It is the first thing he builds, because nothing later in the journey — the graph, the insights, a Query — can be trusted if it isn't clear where the material came from or who is allowed to see it.
 
 ![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S1 Bring in material.png]]
 
@@ -23,14 +23,14 @@ Morgan brings material in on [Add sources](https://www.figma.com/board/WITVErwq2
 
 ![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S2 Make usable.png]]
 
-Once he builds the vault, AI reads every source and sorts it into categories, mapping how the material connects. [Vault build](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4292) shows each source as queued, reading, done, or needing attention, and Morgan doesn't have to wait for it to finish — he can carry on into [[Governance Landscape]] while the rest completes in the background.
+Once he builds the vault, AI reads every source and sorts it into categories, mapping how the material connects. [Connect the dots](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4292) shows each source as queued, reading, done, or needing attention, and Morgan doesn't have to wait for it to finish — he can carry on into [[Governance Brain]] while the rest completes in the background.
 
 ## Conditions to use it
 
 - Nothing has to exist first. This is where the journey starts.
 - A file that isn't a supported format fails in place, on `Add sources`, rather than blocking the rest of the setup.
-- Every source needs an owner and permitted users recorded before the vault build begins.
-- The vault keeps building after Morgan moves on; the Governance Landscape can show a build still in progress.
+- Every source needs an owner and permitted users recorded before Connect the dots begins.
+- The vault keeps building after Morgan moves on; the Governance Brain can show a build still in progress.
 
 ## Still open
 

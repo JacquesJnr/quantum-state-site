@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-29T11:25:47.401Z
-published: 2026-09-29T11:25:47.401Z
+modified: 2026-09-29T18:29:29.300Z
+published: 2026-09-29T18:29:29.300Z
 up:
   - "[[mission-vision]]"
 related:
@@ -13,117 +13,161 @@ collections:
 
 **Built on:** [[Data Sovereignty]]
 
-Quantum State turns a board's governance material into an interactive graph, then into evidence-backed briefs, using AI. What that AI is, where it runs, and where the data sits are all still options, judged first against one principle: the customer's governance data stays under the customer's control.
+Let's start this by asking two simple questions:
 
-## The legal question is a data-flow question
+### 1. Can enterprise AI be deployed on-premise or in a sovereign environment?
 
-"This data can never leave the building" sounds like a fixed rule. It isn't, by default. DIFC law allows personal data to leave when an adequacy finding or a proper safeguard applies, so strict localization is a customer or sector choice layered on the law, not the law itself. A CBUAE-covered bank adds its own outsourcing and supervisory-access duties on top. And "hosted in the UAE" is not the same claim as "processed in the UAE" — availability varies by provider and feature. The practical task is tracing what happens to a file, an extract, a prompt, a log and a backup, not one blanket answer.
+Yes. Modern enterprise AI platforms support public cloud, private cloud, hybrid, sovereign, and air-gapped deployment. Sovereign and on-premise options are increasingly required for regulated industries and governments under the EU AI Act, UAE PDPL, and Saudi PDPL. Vendor platforms that run only on third-party APIs cannot satisfy these rules in full.
 
-Whichever database Quantum State picks, evidence lineage — who said what, from which source, whether a human validated it — has to be built on purpose. No off-the-shelf database gives that for free.
+### 2. How much do enterprise AI platforms cost?
+
+Total cost of ownership includes platform licences, implementation, integration, change management, and operations over a typical five-year horizon. Gartner forecasts global AI software spend of $452 billion in 2026, up from $283 billion in 2025 ([Gartner, January 2026](https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026)). Enterprise engagements are typically priced as platform plus implementation rather than per-seat.
+
+Quantum State uses AI to turn a board's governance material into an interactive graph and evidence-backed briefs. Every technical option is judged first by one test: the customer's data stays under the customer's control.
+
+Any enterprise AI stack has to answer four questions, as framed by [Net0](https://net0.com/blog/enterprise-ai-solutions):
+
+1. **Which workflows and systems do the models touch?** See [What the app map asks of the technology](#what-the-app-map-asks-of-the-technology).
+2. **Which models are used, and who owns the weights?** See [Model options](#model-options-where-the-ai-runs).
+3. **Where does the data live, and under whose jurisdiction?** See [the sovereignty spectrum](#where-quantum-state-could-sit-on-the-sovereignty-spectrum).
+4. **How are the system's outputs explained, audited and overridden?** See the models layer below, and [[Human Authority]].
+
+## Built while the field moves
+
+Quantum State is being built while AI changes month to month. Frontier models are released constantly, open-weight models keep closing the gap, and serving software such as [vLLM](https://github.com/vllm-project/vllm) improves with every release. New kinds of tool keep appearing: [Jev](https://docs.typesafe.ai/introduction), released by TypeSafe in September 2026, returns bounded choices and scores instead of prose.
+
+No single expert covers ground moving this fast. A specialist in one model family, serving layer or deployment method knows one part of a stack whose parts all keep changing. The question is not only which architecture, but which tools fill each part of it.
+
+So Quantum State looks for the best tool for each job, not a fixed industry-standard stack. That takes ongoing research, testing candidates against the work the app map describes and switching when something better appears, and it is part of what being AI-native means here. The options below are the current state of that research.
+
+Each candidate is judged on seven points, adapted from Net0's framework:
+
+- **Data sovereignty:** where the data sits, where the model runs, and who owns the weights
+- **Deployment flexibility:** cloud, on site, air-gapped
+- **Domain depth:** how well it handles governance material, in English and Arabic
+- **Integration breadth:** connections to the systems customers already use
+- **Governance and compliance:** fit with NIST AI RMF and ISO/IEC 42001
+- **Vendor independence:** whether it can be swapped out later with the data intact; in a field this fast, as important as how good it is today
+- **Total cost:** five years of licences, integration and running, not the first invoice
+
+## What the app map asks of the technology
+
+Each stage of the app map creates or reads data, asks something of AI, and needs an interface to show it:
+
+| Stage                                                 | Data it creates or reads                                                 | What AI has to do                                                                     | Interface it needs                                                        |
+| ----------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| 1. Bring in material ([[Governance Vault]])           | Sources, with an owner and permitted users each                          | Nothing yet: AI reads no source before access is set                                  | File upload, connectors to live tools and local folders, an access editor |
+| 2. Connect the dots                                   | The Vault: documents, the claims inside them, and the links between them | Read every source, classify it, extract claims and map how they relate                | Progress per source, while the build carries on in the background         |
+| 3. Find the territory ([[Governance Brain]])          | A filtered view of the whole graph                                       | Summarize what's new and suggest issues worth attention                               | An interactive graph with filters and search                              |
+| 4. Understand the evidence                            | Source passages, highlights, insights                                    | Summarize a node, score each insight's confidence, answer questions about it          | A node panel, and a document viewer that highlights the passage           |
+| 5. Gather around a question ([[Query]])               | A Query: its focus, its insights and its own graph                       | Suggest focuses and related insights, then write the Analysis                         | A Query workspace, with suggestions to accept or reject                   |
+| 6. Test what could change ([[Board Simulation Room]]) | Scenario settings and versioned results                                  | Run several agents on one Query in parallel, and record where they agree and disagree | A live multi-agent view with run status and saved versions                |
+| 7. Prepare the board discussion ([[Export Query]])    | An export built from the Query                                           | Draft board material with sources and uncertainty kept beside each claim              | A draft preview, a detail level, export to a portal, PDF or Word          |
+| [[AI Chat]], throughout                               | Chats, their context, suggested changes                                  | Answer in the context of the current screen, propose sourced edits                    | A streaming chat, model choice, accept or reject                          |
+
+Read across the stages, the demands fall into Net0's four layers of an enterprise AI stack:
+
+![[x/Images/Wiki/QS Diagram - Four layers.png]]
+
+- **Infrastructure.** Where compute and storage sit: a sovereignty choice more than a performance one (see [the sovereignty spectrum](#where-quantum-state-could-sit-on-the-sovereignty-spectrum)).
+- **Data platform.** Ingestion, with permissions recorded before anything is read ([[Access Before Analysis]]); then storage of documents, claims, their relationships and the lineage of every insight (source passage, confidence, model, review state), with versioned Analyses. No database supplies lineage; it has to be designed. The options are a relational database with pgvector (one store for records, permissions and semantic search), a graph database (deep multi-hop relationships), a vector store beside a system of record, or a hybrid; benchmarks decide whether the graph needs a graph database.
+- **Models.** Background work (reading, classifying, mapping, scoring) runs in bulk and can queue; interactive work (chat, the Analysis, the Room's parallel agents) streams to someone waiting. A routing layer picks the model for each task, checks the data boundary before anything leaves, and records which model wrote what, so every output can be explained, audited and overridden. The director sees the choice in Scenario Setup and AI Chat.
+- **Applications.** A graph usable at the size of a real Vault, a document viewer that lands on the exact passage, streamed answers, and visible background progress.
+
+Financial data is one source among many, but how much of it a customer connects changes what Quantum State can show. That is covered in [[Business#How much financial data a customer connects|Business]].
 
 ## Model options: where the AI runs
 
-| Route | Trade-off | Running cost shape |
-| --- | --- | --- |
-| Closed model API | Fast, broad choice. Provider controls the weights and model changes | A few dollars to low hundreds a month at a small reference workload, rising with use |
-| Open-weight, self-hosted (UAE or customer) | More control; the team runs, scales, secures and tests it | Roughly $360–$505/month per non-UAE reference GPU, before redundancy |
-| Open weights plus fine-tuning | May help narrow tasks if a measured failure justifies it | Self-hosting cost plus a separately quoted training run |
-| Train from scratch | Maximum control, but becomes a separate program | Not priceable as an MVP line item |
-| Hybrid routing | Different models for different tasks | Sum of the above plus routing and evaluation work — no automatic saving |
+| Route                                      | Trade-off                                                           | Running cost shape                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Closed model API                           | Fast, broad choice. Provider controls the weights and model changes | A few dollars to low hundreds a month at a small reference workload, rising with use |
+| Open-weight, self-hosted (UAE or customer) | More control; the team runs, scales, secures and tests it           | Roughly $360–$505/month per non-UAE reference GPU, before redundancy                 |
+| Open weights plus fine-tuning              | May help narrow tasks if a measured failure justifies it            | Self-hosting cost plus a separately quoted model training runs                       |
+| Train from scratch                         | Maximum control, but becomes a separate program                     | Not priceable as an MVP line item                                                    |
+| Hybrid routing                             | Different models for different tasks                                | Sum of the above plus routing and evaluation; no automatic saving                    |
 
-These are modeled planning numbers, not quotes.
-
-Open weights don't tie a customer to one machine — they run on common hardware through common serving software (vLLM, llama.cpp, Ollama). What creates lock-in is the hardware bought, capacity commitments, per-site installation, and each model's own license. Training isn't necessarily a second large cost: retrieval lets a model read a customer's own documents at answer time with no training step; a fine-tune is justified only by a measured failure retrieval doesn't fix; training from scratch is its own separate program. Several open-weight model families, including an Arabic-English baseline, are candidates to test, none chosen — a model card's language support is a reason to test, not proof it performs.
-
-### Where a local model runs
-
-| Where it runs | Data stays... | Cost shape |
-| --- | --- | --- |
-| Appliance on-site | In the building | AED 10,499 hardware floor per unit; one unit isn't a resilient service |
-| Customer's private cloud | In their cloud account | Rented GPUs; a UAE price needs a quote |
-| UAE sovereign or in-country host | In the country | Provider buys the hardware; vendor quote needed |
-| Shared cluster run by Quantum State | In the country, shared between customers | Illustrative floor of about $1,440–$2,020/month for four GPUs |
-| Hybrid | Depends on routing | Two environments plus routing work — no automatic saving |
+These are modeled planning numbers, not quotes. Open weights run on common hardware and serving software; lock-in comes from hardware, capacity commitments and licenses. Retrieval lets a model read a customer's documents at answer time, so fine-tuning is only justified by a measured failure retrieval doesn't fix.
 
 ### Local model does the work, a frontier model makes the hard calls
 
-One candidate split: a local model handles most of the reasoning, and a frontier model is called in only for the hardest cases. The test is literal — anything sent off-site has left the building, including a summary or a short prompt.
+Anything sent off-site has left the building, even a summary.
 
-| Split | What crosses the boundary | Keeps data in the building? |
-| --- | --- | --- |
-| A. Local first, hands off hard cases | The prompt, local draft and attached passages | No, for any job handed off |
-| B. Local redaction, then hand off | The remaining story and structure | No — context can still identify people, and over-redacting weakens the reasoning |
-| C. Send only an abstract question | A generic question, no customer facts | Possibly — but the frontier model never sees the evidence it's reasoning about |
-| D. Frontier model hosted in the UAE | The full prompt and selected evidence | In the country, not the building |
-| E. A stronger model on-site | Nothing | Yes, but the capacity cost moves back on-site |
+| Split                                                   | What crosses the boundary                     | Keeps data in the building?                                                      |
+| ------------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
+| A. Local first, hands off hard cases to frontier models | The prompt, local draft and attached passages | No, for any job handed off                                                       |
+| D. Frontier model hosted in the UAE                     | The full prompt and selected evidence         | In the country, not the building                                                 |
+| E. A stronger model on-site                             | Nothing                                       | Yes, but the capacity cost moves back on-site                                    |
 
-A handoff is a data release, not just a model choice — it needs a record of what was sent, why, and what came back. Whether a split saves money is unproven.
-
-## Data layer options
-
-- **Relational database with pgvector** — fewest moving parts, transactions, permissions, versioned records and semantic search in one store
-- **Graph database** — suits deep, multi-hop relationships across entities, controls, risks and decisions
-- **Vector store beside a system of record** — for large-scale semantic search, at the cost of a sync problem
-- **A hybrid** of the above
-
-Quantum State describes itself as a relational database reflected in an interactive node graph. Whether that needs a true graph database or just relational links is a question for benchmarking against actual queries, not a settled choice. This connects to [[Governance Landscape]] and [[Node Details Panel]] — every insight surfaced there needs a source and a confidence level, which is a schema decision, not a database feature.
-
-## Financial data: what each level of access would let Quantum State show
-
-A board's "time and money" questions need financial context, and how much of it Quantum State can honestly show depends on how far a customer will connect. This sits directly behind [[Governance Vault]]'s source setup — what a customer chooses at `Add sources` and `Source access` decides which level applies.
-
-| Level | Board view Quantum State could honestly offer | What it costs to build | Where the data lives |
-| --- | --- | --- | --- |
-| 1. No financial data | Governance and strategy evidence only; affordability and runway explicitly unknown | Lowest — still needs a clear "unknown" state and disciplined AI abstention | No financial copy in Quantum State |
-| 2. Historical approved records | Last approved revenue, spend, balance sheet and cash-flow trend; budget variance only if a comparable budget is also supplied | File upload, extraction, versioning, human check, access control | Can stay on-site or in an approved UAE location, customer's choice |
-| 3. Regular finance-approved exports | Recurring budget-versus-actual, cash movement and anomalies since the last board pack | Import mapping, schedule, validation, failed-import handling | Moved by a controlled transfer; any cloud route needs explicit approval |
-| 4. Live read-only accounting/ERP | More current ledger actuals, budget variance, receivables/payables, drill-back to source | Vendor API integration, token renewal, sync, multi-entity handling, monitoring | Crosses from the ERP into Quantum State's data plane — a SaaS ERP already sits outside the building |
-| 5. Live bank-information APIs | Balance and transaction movement for consented accounts; short-horizon cash context | Licensed-provider route, enterprise consent, security and legal review, reconciliation | The bank, the UAE open-finance hub and the aggregator all handle the data — this is outside Quantum State's boundary even if the model runs on-site |
-
-Keeping the model on-site doesn't keep bank data in the building: at level 5, the bank, the open-finance hub and the aggregator all touch it regardless. A read-only ERP connection is still a continuous copy of ledger data arriving in Quantum State. UAE open finance runs through licensed providers with explicit consent and withdrawal — Lean and Tarabut cover the UAE; Stripe Financial Connections is US-only, and read-only is a permission limit, not an exemption. The five levels aren't a ladder where higher is always better: a fresher live feed can be less board-ready than an approved pack if the period is still open.
+Each handoff is a data release to be recorded. Whether a split saves money is unproven.
 
 ## Where Quantum State could sit on the sovereignty spectrum
 
-Deployment spans a spectrum from strict, single-building control to shared, provider-hosted infrastructure.
+"This data can never leave the building" is not the law by default. DIFC law lets personal data leave under an adequacy finding or a proper safeguard, so strict localization is a customer or sector choice; banks add outsourcing and supervisory duties. Outside the DIFC and other financial free zones, the UAE's federal PDPL applies. "Hosted in" and "processed in" the UAE are separate claims. For AI itself, the [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) and [ISO/IEC 42001](https://www.iso.org/standard/81230.html) set expectations, and the EU AI Act reaches anyone serving EU customers. The task is tracing each file, prompt, log and backup through the layers above.
 
-|  | High end: regulated entity | Middle: UAE-regulated or mid-size group | Low end: unregulated SME |
-| --- | --- | --- | --- |
-| Data boundary | In the building | In the country | In the region, or per provider terms |
-| Where it runs | On-site appliance, or the customer's own private cloud | A UAE sovereign host | A shared cluster run by Quantum State, or hosted APIs |
-| Hard calls | A stronger model on site (split E) | A frontier model hosted in the UAE (split D) | A frontier API with local work first (split A) |
-| What they give up | Model capability, plus on-site cost per customer | The literal "in the building" promise | Control over where data is processed |
-| What Quantum State gives up | Installing and supporting every site | Vendor dependency and commitments | A weaker story for regulated buyers |
+![Four AI deployment settings: cloud, hybrid, on-premises and air-gapped](https://enpraxis.ai/_astro/10_deployment_options.mZsGRcZT_Z1NVGay.webp)
+\*Four deployment settings, from cloud to air-gapped. Source: [EnPraxis AI](https://enpraxis.ai/solutions/healthcare/), © 2026 EnPraxis AI
 
-The same spectrum breaks into six deployment options a buyer could choose — regional SaaS, a dedicated tenant, the customer's own cloud, on-site, disconnected, or air-gapped — trading how much Quantum State can reach in against how much the customer installs and supports. "Never leaves the building" only starts at on-site, and a frontier handoff at any level drops that boundary back down for the call.
+|                             | High end: regulated entity                             | Middle: UAE-regulated or mid-size group      | Low end: unregulated SME                              |
+| --------------------------- | ------------------------------------------------------ | -------------------------------------------- | ----------------------------------------------------- |
+| Data boundary               | In the building                                        | In the country                               | In the region, or per provider terms                  |
+| Where it runs               | On-site appliance, or the customer's own private cloud | A UAE sovereign host                         | A shared cluster run by Quantum State, or hosted APIs |
+| Hard calls                  | A stronger model on site (split E)                     | A frontier model hosted in the UAE (split D) | A frontier API with local work first (split A)        |
+| What they give up           | Model capability, plus on-site cost per customer       | The literal "in the building" promise        | Control over where data is processed                  |
+| What Quantum State gives up | Installing and supporting every site                   | Vendor dependency and commitments            | A weaker story for regulated buyers                   |
 
-The tension underneath: Quantum State is designed around the independent board auditor, pointing toward the regulated end. A separate go-to-market idea for Ignyte (see [[Business]]) points toward the SME end. Serving both means two cost bases, not one.
+In practice: regional SaaS, a dedicated tenant, the customer's own cloud, on-site, disconnected, air-gapped. "Never leaves the building" starts at on-site.
+
+![Five enterprise AI deployment models, from public cloud to air-gapped](https://framerusercontent.com/images/nUNF0Nvr5FXgLChWRs0XMC503I.png)
+_Enterprise AI deployment models, from public cloud through dedicated, hybrid and sovereign to air-gapped. Source: [Net0, "Enterprise AI Solutions"](https://net0.com/blog/enterprise-ai-solutions), 23 April 2026._
+
+The design points to the regulated end; serving the SME end too means a second cost base (see [[Business]]).
+
+## The client: an open decision
+
+What the director opens is still undecided (see [[Product#Form factor: an open decision|Product]]). The client is part of the data boundary: whatever it keeps on a device, such as a cached Vault or an offline [[Query]], leaves the building with the device.
+
+| Client                             | Pairs with                                               | Adds to build and support                                                        | Effect on the data boundary                                                   |
+| ---------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Web app**                        | Every level; on site it is a page on the company network | One codebase, updated once per install                                           | Nothing has to stay on the device; browser access to local folders is limited |
+| **Desktop app**                    | Every level, including disconnected and air-gapped       | Builds per operating system, signed installers, updates per machine, IT approval | Material can live on a machine that travels                                   |
+| **Web app with a local connector** | Every level                                              | A background service that reads files, with its own security review              | The connector's path to the Vault must meet the same boundary                 |
+| **Appliance with a web interface** | On-site, disconnected, air-gapped                        | Appliance hardware and support, on top of the web app                            | Everything stays in the building, if clients store no copies                  |
+| **Tablet companion**               | Any level; offline reading needs a local copy            | A second client and device management                                            | Offline copies leave with the tablet                                          |
+| **Inside existing tools**          | Whatever the host's plugin platform allows               | Plugin rules set by the host vendor                                              | Content falls under the host vendor's cloud and terms                         |
 
 ## Known and unknown
 
 **Known:**
 
-- The legal barrier to moving data is conditional (adequacy, safeguards, sector rules), not an absolute ban
-- "Hosted in" and "processed in" the UAE are separate claims, checked per model and feature
-- Evidence lineage has to be designed explicitly; no database supplies it by default
-- Open-weight models run on common hardware and serving software; the lock-in risk is elsewhere
-- A read-only connection still means continuous data copying, financial or otherwise
+- Moving data out of the UAE is conditional, not banned; "hosted in" and "processed in" are separate claims
+- Every stage of the app map, and what it asks of data, AI and the interface
 
 **Unknown:**
 
-- Where on the sovereignty spectrum Quantum State positions itself, and what that gives up
-- Which model families meet citation, contradiction and abstention tests on actual board material, in English and Arabic
-- Whether relational storage is enough, or Morgan's actual queries need a graph database
-- Whether a local-model-plus-frontier split saves money, or costs more once both models read the same evidence
-- Which financial-data levels Quantum State offers, and whether live banking access triggers UAE open-finance obligations for it
+- Where on the sovereignty spectrum Quantum State sits, and what that gives up
+- Which models pass citation, contradiction and abstention tests on board material, in English and Arabic
+- Which financial-data levels to offer, and whether live banking triggers UAE open-finance obligations
 
 ## Still open
 
-- Is UAE-only processing a promise, a first customer's requirement, or a priced option — does it cover support access and derived data?
+- Is UAE-only processing a promise, a first customer's requirement or a priced option, and does it cover support access and derived data?
 - What minimum ontology and provenance model is needed before relational-versus-graph can be benchmarked?
-- What counts as a "hard call" that justifies a frontier handoff — long synthesis, contradicting evidence, a failed citation check, or a human simply asking?
+- What counts as a "hard call" worth a frontier handoff: long synthesis, contradicting evidence, a failed citation check, or a person asking?
+- Which client pairs with which deployment level, and can anything stay on a director's device without breaking the data boundary?
+- Who owns the research that keeps tool choice current, how often is each part re-tested, and what makes a switch worth its cost?
 
 ## Sources
 
+- [Net0: Enterprise AI Solutions, 2026 guide (Sofia Fominova, 23 April 2026)](https://net0.com/blog/enterprise-ai-solutions)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+- [ISO/IEC 42001, AI management systems](https://www.iso.org/standard/81230.html)
+- [EnPraxis AI: four AI deployment settings (cloud, hybrid, on-premises, air-gapped)](https://enpraxis.ai/solutions/healthcare/)
+- [BCG: three basic GenAI platforms for the public sector](https://www.bcg.com/publications/2024/gen-ai-journey-to-scale-in-government)
+- [Microsoft: data residency versus inference location in global deployments](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/not-available-in-your-region-isnt-a-dead-end-a-security-assessment-of-global-dep/4509804)
+- [AWS: Bedrock cross-Region inference in Canada](https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-innovation-in-canada-with-amazon-bedrock-cross-region-inference/)
+- [AWS: private network paths for data movement in generative AI](https://aws.amazon.com/blogs/networking-and-content-delivery/private-network-for-data-movement-in-generative-ai/)
+- [Infralovers: routing between local and cloud models](https://www.infralovers.com/blog/2026-01-26-ai-trends/)
+- [TypeSafe Jev introduction](https://docs.typesafe.ai/introduction)
 - [DIFC Data Protection Law No. 5 of 2020](https://assets.difc.com/v1/media/edge/images/dubaiintern0078-difcexperie96c5-production-3253/media/project/difcexperiences/difc/difcwebsite/documents/laws--regulations/data-protection-law.pdf)
 - [DIFC data export and sharing guidance](https://www.difc.com/business/registrars-and-commissioners/commissioner-of-data-protection/data-export-and-sharing)
 - [CBUAE Outsourcing Regulation for Banks](https://www.centralbank.ae/media/vvcmsuph/2021-05-31-outsourcing-reg-final_1.pdf)
