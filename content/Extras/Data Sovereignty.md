@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T11:17:16.151Z
-published: 2026-09-29T11:17:16.151Z
+modified: 2026-09-29T16:14:54.645Z
+published: 2026-09-29T16:14:54.645Z
 up:
   - "[[Tech]]"
 related:
@@ -18,5 +18,7 @@ In the [[Governance Vault]], source access and setup decide where a document liv
 This rules out treating "hosted in the region" as the same as "processed in the region," since a model can sit in the right country and still send data through a provider outside it. It also rules out a handoff to an outside model that isn't recorded: what was sent, why, and who approved it. A customer with no appetite for that exposure gets a route that keeps everything local, even if it costs more to run.
 
 Where a specific customer sits on the spectrum between full on-site control and a shared regional service is a choice made against this principle, not around it.
+
+**Design principles under it:** [[Access Before Analysis]], [[Say Which AI Said It]].
 
 **Used by:** [[Tech]]. Features: [[Governance Vault]].
