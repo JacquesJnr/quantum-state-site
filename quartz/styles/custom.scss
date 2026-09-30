@@ -81,10 +81,10 @@ body:not([data-slug='index']) #quartz-body .page-header { margin-top: 40px; }
 body:not([data-slug='index']) #quartz-body .center { padding: 0 40px; }
 body:not([data-slug='index']) #quartz-body .page-title { margin: 0 0 0; font: 400 19px/34px var(--headerFont); letter-spacing: -.01em; }
 body:not([data-slug='index']) #quartz-body .page-title a { display: inline-flex; align-items: center; gap: 6px; color: var(--dark); text-decoration: none; font: 400 19px/1 var(--headerFont) !important; white-space: nowrap; }
-body:not([data-slug='index']) #quartz-body .page-title a::before { content: ''; width: 34px; height: 34px; background: url('/static/brand/mark-black.svg') center/contain no-repeat; margin-right: 18px; }
+body:not([data-slug='index']) #quartz-body .page-title a::before { content: ''; width: 34px; height: 34px; background: url('static/brand/mark-black.svg') center/contain no-repeat; margin-right: 18px; }
 body:not([data-slug='index']) #quartz-body .page-title a::after { content: none; }
-body:not([data-slug='index']) #quartz-body .page-title a { background: url('/static/brand/slash.svg') 39px center/12px 20px no-repeat; }
-:root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a::before { background-image: url('/static/brand/mark-white.svg'); }
+body:not([data-slug='index']) #quartz-body .page-title a { background: url('static/brand/slash.svg') 39px center/12px 20px no-repeat; }
+:root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a::before { background-image: url('static/brand/mark-white.svg'); }
 :root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a { filter: none; }
 
 body:not([data-slug='index']) .search { flex: 1; }
@@ -107,9 +107,9 @@ body:not([data-slug='index']) .breadcrumb-element p { margin: 0 10px; color: tra
 body:not([data-slug='index']) .article-title { display: flex; align-items: center; gap: 20px; margin: 0; color: var(--dark); font: 500 48px/1.05 var(--headerFont); letter-spacing: -.02em; }
 body:not([data-slug='index']) .article-title::before {
   content: ''; display: block; flex: 0 0 64px; width: 64px; height: 64px;
-  background: url('/static/brand/mark-black.svg') center/contain no-repeat;
+  background: url('static/brand/mark-black.svg') center/contain no-repeat;
 }
-:root[saved-theme='dark'] body:not([data-slug='index']):not([data-slug='not-written-yet']) .article-title::before { background-image: url('/static/brand/mark-white.svg'); }
+:root[saved-theme='dark'] body:not([data-slug='index']):not([data-slug='not-written-yet']) .article-title::before { background-image: url('static/brand/mark-white.svg'); }
 body[data-slug='not-written-yet'] .article-title::before { border-radius: 50%; box-shadow: inset 0 0 0 1px var(--gray), inset 0 0 0 5px var(--light); background: radial-gradient(circle at 57% 54%, var(--qs-glass) 0 13px, transparent 14px), radial-gradient(circle at 40% 45%, var(--qs-glass) 0 13px, transparent 14px); filter: blur(2px); }
 body:not([data-slug='index']) .content-meta { margin: 14px 0 0; color: var(--tertiary); font: 500 15px/1.3 var(--headerFont); font-variation-settings: 'wdth' 80; }
 body:not([data-slug='index']) .content-meta[show-comma=true] > *:not(:last-child)::after { content: ''; }
