@@ -1,3 +1,3 @@
 # Visit the site here:
 
-[![qs-wiki.png](https://i.postimg.cc/CMztkzvn/qs-wiki.png)](https://postimg.cc/K4hJyvhm)
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/CMztkzvn/qs-wiki.png' border='0' alt='qs-wiki'></a>
