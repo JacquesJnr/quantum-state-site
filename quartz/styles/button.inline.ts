@@ -28,19 +28,22 @@ function renderObsidianButtons() {
   }
 }
 
-// The reader-mode toggle becomes a link home (Material Symbols "home"), keeping its toolbar slot and styling.
+// Toolbar home link (Material Symbols "home") beside the theme toggle. The reader-mode plugin is disabled:
+// its script binds a toggle to anything with class "readermode", which this link reuses for styling.
 function readerModeToHome() {
   const home = document.querySelector<HTMLAnchorElement>('.page-title a')?.getAttribute('href')
-  if (!home) return
-  for (const button of document.querySelectorAll('button.readermode')) {
-    const link = document.createElement('a')
-    link.className = 'readermode qs-home-link'
-    link.href = home
-    link.setAttribute('aria-label', 'Home')
-    link.innerHTML =
-      '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>'
-    button.replaceWith(link)
-  }
+  const slot = document.querySelector('.sidebar .darkmode')?.parentElement
+  if (!home || !slot || document.querySelector('.qs-home-link')) return
+  const link = document.createElement('a')
+  link.className = 'readermode qs-home-link'
+  link.href = home
+  link.setAttribute('aria-label', 'Home')
+  link.innerHTML =
+    '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>'
+  const wrap = document.createElement('div')
+  wrap.setAttribute('style', slot.getAttribute('style') ?? '')
+  wrap.append(link)
+  slot.after(wrap)
 }
 
 // Image zoom: tap/click an article image to view it full screen; tap outside it or Esc to close.
