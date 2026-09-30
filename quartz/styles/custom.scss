@@ -201,10 +201,17 @@ body:not([data-slug='index']) .readermode {
 body:not([data-slug='index']) .qs-home-link svg { stroke: none !important; }
 
 /* Phone graph banner (button.inline.ts moves .graph under the title header) */
-.qs-graph-banner { margin: 24px 0 8px; }
-.qs-graph-banner > h3 { display: none; }
-body:not([data-slug='index']) .qs-graph-banner .graph-outer { height: 180px !important; cursor: pointer; }
-.qs-graph-banner .graph-container { pointer-events: none; }
+.qs-graph-banner { position: relative; width: 100%; margin: 24px 0 8px; cursor: pointer; }
+.qs-graph-banner > h3 {
+  position: absolute; top: 10px; left: 12px; z-index: 1; margin: 0; pointer-events: none;
+  font: 500 12px/1 var(--headerFont); font-variation-settings: 'wdth' 80; letter-spacing: .02em; color: var(--gray);
+}
+/* 250px = the graph's own minimum canvas height, so the canvas isn't stretched vertically. */
+body:not([data-slug='index']) .qs-graph-banner .graph-outer {
+  width: 100%; height: 250px !important; margin: 0; border: 1.5px solid var(--dark) !important; border-radius: 8px; overflow: hidden;
+}
+.qs-graph-banner .graph-container { pointer-events: none; width: 100%; height: 100%; }
+.qs-graph-banner .graph-container canvas { width: 100% !important; height: 100% !important; }
 .qs-graph-banner .global-graph-icon { display: none; }
 
 /* Image zoom viewer (button.inline.ts) */

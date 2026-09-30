@@ -117,11 +117,13 @@ function graphBanner() {
   if (!phone.matches || !graph || !header) return
   graph.classList.add('qs-graph-banner')
   header.after(graph)
+  // Stop the tap here: on document it would reach Quartz's "click outside closes the graph" handler.
+  graph.onclick = (e) => {
+    if ((e.target as HTMLElement).closest('.global-graph-outer')) return // taps inside the open global graph
+    e.stopPropagation()
+    graph.querySelector<HTMLButtonElement>('.global-graph-icon')?.click()
+  }
 }
-document.addEventListener('click', (e) => {
-  const outer = (e.target as HTMLElement).closest('.qs-graph-banner .graph-outer')
-  outer?.querySelector<HTMLButtonElement>('.global-graph-icon')?.click()
-})
 
 document.addEventListener('nav', () => {
   renderObsidianButtons()
