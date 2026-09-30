@@ -92,7 +92,16 @@ const QSHome: QuartzComponent = (props: QuartzComponentProps) => {
       <div class="qs-home-wrap">
         <header class="qs-masthead">
           <Lockup root={root} />
-          <div class="qs-home-mode"><Toggle {...props} /><span aria-hidden="true">Dark mode</span></div>
+          {/* The label names the theme you'd switch to; Quartz's own toggle sits invisibly on top. */}
+          <div class="qs-home-mode">
+            <Toggle {...props} />
+            <span class="qs-mode-to-dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>Dark mode
+            </span>
+            <span class="qs-mode-to-light" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>Light mode
+            </span>
+          </div>
         </header>
         <section class="qs-hero" aria-labelledby="qs-home-title">
           <h1 id="qs-home-title">Quantum State</h1>

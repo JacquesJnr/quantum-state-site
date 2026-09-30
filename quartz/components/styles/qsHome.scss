@@ -34,11 +34,12 @@ body[data-slug="index"] {
   .qs-lockup-words { display: grid; line-height: 1; }
   .qs-lockup-title { font-size: 22px; font-weight: 400 !important; letter-spacing: -.01em; }
   .qs-lockup-caption { margin-top: 3px; font-size: 11px; line-height: 1.4; color: var(--tertiary); }
-  .qs-home-mode { flex: none; position: relative; width: 124px; height: 38px; display: flex; align-items: center; padding-left: 34px; border: 1px solid var(--gray); border-radius: 999px; }
-  .qs-home-mode::before { content: ""; position: absolute; left: 12px; top: 11px; width: 14px; height: 14px; border: 1px solid var(--tertiary); border-radius: 50%; }
+  .qs-home-mode { flex: none; position: relative; height: 38px; display: flex; align-items: center; padding: 0 16px 0 12px; border: 1px solid var(--gray); border-radius: 999px; }
   .qs-home-mode:focus-within { outline: 2px solid var(--dark); outline-offset: 3px; }
-  .qs-home-mode .darkmode { position: absolute !important; inset: 0; width: 100% !important; height: 100% !important; opacity: 0 !important; cursor: pointer; }
-  .qs-home-mode > span { color: var(--tertiary); font: 500 15px/1 var(--headerFont); white-space: nowrap; pointer-events: none; }
+  .qs-home-mode .darkmode { position: absolute !important; inset: 0; width: 100% !important; height: 100% !important; opacity: 0 !important; cursor: pointer; z-index: 1; }
+  .qs-home-mode > span { display: inline-flex; align-items: center; gap: 8px; color: var(--tertiary); font: 500 15px/1 var(--headerFont); white-space: nowrap; pointer-events: none; }
+  .qs-home-mode svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+  .qs-home-mode > .qs-mode-to-light { display: none; }
 
   .qs-hero { padding: 72px 0 90px; }
   .qs-hero h1 { margin: 0 0 16px !important; color: var(--dark); font-size: clamp(64px, 8.9vw, 128px) !important; font-weight: 400 !important; line-height: 1 !important; letter-spacing: -.035em; white-space: nowrap; }
@@ -92,6 +93,8 @@ body[data-slug="index"] {
   .qs-mark-dark { display: block; }
   .qs-slash { filter: invert(1); }
   .qs-card-icon { fill: var(--light); }
+  .qs-home-mode > .qs-mode-to-dark { display: none; }
+  .qs-home-mode > .qs-mode-to-light { display: inline-flex; }
 }
 
 @keyframes qs-marquee-slide { to { transform: translateX(-50%); } }
