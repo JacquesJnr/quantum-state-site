@@ -41,7 +41,7 @@ body[data-slug="index"] {
   .qs-home-mode > span { color: var(--tertiary); font: 500 15px/1 var(--headerFont); white-space: nowrap; pointer-events: none; }
 
   .qs-hero { padding: 72px 0 90px; }
-  .qs-hero h1 { margin: 0 0 -12px !important; color: var(--dark); font-size: clamp(64px, 8.9vw, 128px) !important; font-weight: 400 !important; line-height: 1 !important; letter-spacing: -.035em; white-space: nowrap; }
+  .qs-hero h1 { margin: 0 0 16px !important; color: var(--dark); font-size: clamp(64px, 8.9vw, 128px) !important; font-weight: 400 !important; line-height: 1 !important; letter-spacing: -.035em; white-space: nowrap; }
   .qs-hero p { margin: 0 0 0 12px; color: var(--tertiary); font: 400 40px/1.25 Afacad, sans-serif; }
 
   .qs-links-heading { border-bottom: 1px solid var(--lightgray); padding-bottom: 24px; }
