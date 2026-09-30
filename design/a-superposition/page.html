@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Geist+Mono:wght@400;500&display=swap">
+<script>
+  try {
+    const saved = new URLSearchParams(location.search).get("theme") || localStorage.getItem("theme");
+    const dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("saved-theme", dark ? "dark" : "light");
+  } catch (e) { document.documentElement.setAttribute("saved-theme", "light"); }
+</script>
+<style>
+  /* ---- Tokens (identical to home.html) ---- */
+  :root {
+    --light: #e4e4e4;
+    --lightgray: #cbcbcb;
+    --gray: #5a5a5a;
+    --darkgray: #262626;
+    --dark: #000000;
+    --secondary: #000000;
+    --tertiary: #868686;
+    --highlight: rgba(134, 134, 134, 0.16);
+    --textHighlight: rgba(0, 0, 0, 0.14);
+
+    --state: #868686;
+    --lens: #000000;
+    --plane: rgba(255, 255, 255, 0.72);
+    --plane-edge: rgba(0, 0, 0, 0.09);
+
+    --headerFont: "Instrument Sans", system-ui, sans-serif;
+    --bodyFont: "Instrument Sans", system-ui, sans-serif;
+    --codeFont: "Geist Mono", ui-monospace, monospace;
+    color-scheme: light;
+  }
+  :root[saved-theme="dark"] {
+    --light: #000000;
+    --lightgray: #2e2e2e;
+    --gray: #9c9c9c;
+    --darkgray: #d4d4d4;
+    --dark: #ffffff;
+    --secondary: #ffffff;
+    --tertiary: #868686;
+    --highlight: rgba(255, 255, 255, 0.07);
+    --textHighlight: rgba(255, 255, 255, 0.2);
+
+    --state: #ffffff;
+    --lens: #ffffff;
+    --plane: rgba(255, 255, 255, 0.06);
+    --plane-edge: rgba(255, 255, 255, 0.13);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--light); color: var(--darkgray); font: 400 17px/1.65 var(--bodyFont); }
+  a { color: var(--secondary); }
+  :focus-visible { outline: 2px solid var(--dark); outline-offset: 3px; }
+  ::selection { background: var(--textHighlight); }
+  button { font: inherit; color: inherit; }
+  code { font-family: var(--codeFont); font-size: 0.9em; }
+
+  /* ---- Quartz frame ---- */
+  #quartz-body {
+    display: grid;
+    grid-template-columns: 272px minmax(0, 1fr) 280px;
+    grid-template-areas: "left center right" "left footer right";
+    gap: 0 56px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .sidebar { position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto; padding: 32px 0; display: flex; flex-direction: column; gap: 28px; }
+  .left { grid-area: left; }
+  .center { grid-area: center; min-width: 0; padding-top: 32px; }
+  .right { grid-area: right; }
+  footer { grid-area: footer; }
+
+  /* Page title = the lockup */
+  .page-title { margin: 0; font-size: inherit; }
+  .page-title a { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--dark); }
+  .page-title .mark { width: 34px; height: 34px; }
+  .page-title .slash { width: 10px; height: 22px; }
+  .page-title .word { font-weight: 400; font-size: 19px; letter-spacing: -0.01em; }
+  :root[saved-theme="dark"] .slash { filter: invert(1); }
+  .mark-dark { display: none; }
+  :root[saved-theme="dark"] .mark-light { display: none; }
+  :root[saved-theme="dark"] .mark-dark { display: block; }
+
+  .flex-component { display: flex; gap: 8px; }
+  .search { flex: 1; }
+  .search-button, .darkmode, .readermode {
+    height: 40px; background: var(--plane); border: 1px solid var(--plane-edge);
+    display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--gray);
+  }
+  .search-button { width: 100%; padding: 0 12px; font-size: 15px; }
+  .search-button p { margin: 0; }
+  .darkmode, .readermode { width: 40px; justify-content: center; padding: 0; color: var(--dark); }
+  .search-button:hover, .darkmode:hover, .readermode:hover { background: var(--highlight); }
+  .flex-component svg { width: 18px; height: 18px; }
+
+  /* Explorer */
+  .explorer h2, .sidebar h3 { margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--dark); letter-spacing: 0; }
+  .title-button { background: none; border: 0; padding: 0; }
+  .explorer-ul, .explorer-ul ul { list-style: none; margin: 0; padding: 0; }
+  .explorer-ul ul { padding-left: 14px; border-left: 1px solid var(--lightgray); margin-left: 5px; }
+  .explorer-ul a, .folder-title { display: block; padding: 3px 0; font-size: 15px; text-decoration: none; color: var(--darkgray); }
+  .folder-title { color: var(--dark); font-weight: 500; }
+  .explorer-ul a:hover { color: var(--dark); text-decoration: underline; text-decoration-color: var(--tertiary); text-underline-offset: 0.2em; }
+  .explorer-ul a.active { color: var(--dark); position: relative; }
+  .explorer-ul a.active::before { content: ""; position: absolute; left: -20px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: var(--lens); }
+  .explorer-ul .unpublished { color: var(--gray); }
+
+  /* ---- Page header: the branch's lens state follows you onto its page ---- */
+  .page-header { position: relative; padding: 12px 0 40px; margin-bottom: 8px; border-bottom: 1px solid var(--lightgray); }
+  body[data-slug^="Quantum-State/Product"] .page-header::after {
+    content: ""; position: absolute; z-index: -1; right: -24px; top: -24px; width: 300px; height: 300px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3CclipPath id='c'%3E%3Ccircle cx='89.15' cy='83.23' r='80'/%3E%3C/clipPath%3E%3Ccircle cx='89.15' cy='83.23' r='80' fill='%23868686' opacity='.28'/%3E%3Ccircle cx='150.85' cy='156.77' r='80' fill='%23868686' opacity='.45'/%3E%3Ccircle cx='150.85' cy='156.77' r='80' clip-path='url(%23c)'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+  :root[saved-theme="dark"] body[data-slug^="Quantum-State/Product"] .page-header::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3CclipPath id='c'%3E%3Ccircle cx='89.15' cy='83.23' r='80'/%3E%3C/clipPath%3E%3Ccircle cx='89.15' cy='83.23' r='80' fill='%23fff' opacity='.28'/%3E%3Ccircle cx='150.85' cy='156.77' r='80' fill='%23fff' opacity='.45'/%3E%3Ccircle cx='150.85' cy='156.77' r='80' fill='%23fff' clip-path='url(%23c)'/%3E%3C/svg%3E");
+  }
+  .page-header, .center { isolation: isolate; }
+
+  .breadcrumb-container { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 96px; font-size: 15px; }
+  .breadcrumb-element { display: flex; align-items: center; }
+  .breadcrumb-element a { color: var(--gray); text-decoration: none; }
+  .breadcrumb-element a:hover { color: var(--dark); }
+  .breadcrumb-element p { margin: 0 0 0 6px; color: var(--tertiary); }
+  .breadcrumb-element:last-child a { color: var(--dark); }
+
+  .article-title { font: 400 clamp(52px, 6vw, 88px)/0.95 var(--headerFont); letter-spacing: -0.035em; color: var(--dark); margin: 0; }
+  .content-meta { margin: 20px 0 0; font-size: 15px; color: var(--gray); display: flex; gap: 0; }
+  .content-meta span::before { content: ", "; }
+
+  /* ---- Article ---- */
+  article { max-width: 680px; }
+  article h2 { font: 400 30px/1.15 var(--headerFont); letter-spacing: -0.02em; color: var(--dark); margin: 64px 0 16px; }
+  article h2 + h2 { margin-top: 24px; }
+  article p { margin: 0 0 18px; }
+  article ul { margin: 0 0 24px; padding: 0; list-style: none; }
+  article li { position: relative; padding-left: 26px; margin-bottom: 10px; }
+  article li::before { content: ""; position: absolute; left: 2px; top: 0.55em; width: 11px; height: 11px; border-radius: 50%; background: var(--state); opacity: 0.45; }
+  article strong { font-weight: 600; color: var(--dark); }
+  a.internal { color: var(--dark); text-decoration: none; background: var(--highlight); box-shadow: inset 0 -1px 0 var(--tertiary); padding: 0 2px; }
+  a.internal:hover { background: var(--textHighlight); }
+
+  /* A paragraph that is only a bold line reads as a state sequence (the operating loop). */
+  article p:has(> strong:only-child) {
+    font-size: 21px; line-height: 1.45; letter-spacing: -0.01em;
+    padding: 22px 24px; margin: 24px 0 8px;
+    background: var(--plane); border: 1px solid var(--plane-edge);
+  }
+  article p:has(> strong:only-child) strong { font-weight: 400; }
+
+  /* Callouts: same planes as home */
+  .callout { margin: 24px 0; padding: 20px 24px; border: 0; background: rgba(134, 134, 134, 0.2); }
+  .callout[data-callout="example"] { background: rgba(134, 134, 134, 0.32); }
+  :root[saved-theme="dark"] .callout { background: rgba(255, 255, 255, 0.08); }
+
+  /* ---- Right sidebar ---- */
+  .graph-outer { position: relative; aspect-ratio: 1; background: var(--plane); border: 1px solid var(--plane-edge); }
+  .graph-outer svg { width: 100%; height: 100%; display: block; }
+  .graph-outer .edge { stroke: var(--tertiary); stroke-width: 0.8; opacity: 0.6; }
+  .graph-outer .node { fill: var(--state); opacity: 0.45; }
+  .graph-outer .node.current { fill: var(--lens); opacity: 1; }
+  .graph-outer text { fill: var(--gray); font: 9px var(--bodyFont); }
+  .global-graph-icon { position: absolute; top: 6px; right: 6px; width: 28px; height: 28px; border: 0; background: none; color: var(--gray); cursor: pointer; }
+  .toc-header { background: none; border: 0; padding: 0; width: 100%; text-align: left; }
+  .toc-content, .backlinks ul { list-style: none; margin: 0; padding: 0; }
+  .toc-content a, .backlinks a { display: block; padding: 3px 0 3px 12px; font-size: 15px; text-decoration: none; color: var(--gray); border-left: 1px solid var(--lightgray); }
+  .toc-content a:hover, .backlinks a:hover { color: var(--dark); border-left-color: var(--dark); }
+  .toc-content a.in-view { color: var(--dark); border-left: 2px solid var(--lens); padding-left: 11px; }
+
+  footer { margin-top: 96px; border-top: 1px solid var(--lightgray); padding: 20px 0 40px; font-size: 14px; color: var(--gray); }
+  footer p { margin: 0; }
+  footer a { color: var(--gray); }
+
+  /* ---- Responsive, following Quartz's breakpoints ---- */
+  @media (max-width: 1200px) {
+    #quartz-body { grid-template-columns: 240px minmax(0, 1fr); grid-template-areas: "left center" "left right" "left footer"; gap: 0 40px; }
+    .right { position: static; max-height: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 800px) {
+    #quartz-body { grid-template-columns: minmax(0, 1fr); grid-template-areas: "left" "center" "right" "footer"; padding: 0 16px; }
+    .left { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 16px 0 0; gap: 12px; }
+    .left .flex-component { flex: none; }
+    .search-button { width: 40px; justify-content: center; padding: 0; }
+    .search-button p, .explorer { display: none; }
+    .center { padding-top: 8px; }
+    .breadcrumb-container { margin-bottom: 64px; }
+    body[data-slug^="Quantum-State/Product"] .page-header::after { width: 200px; height: 200px; right: -40px; top: -8px; }
+    .right { grid-template-columns: 1fr; }
+    .graph { display: none; }
+  }
+</style>
+</head>
+<body data-slug="Quantum-State/Product/Product">
+<div id="quartz-root" class="page">
+<div id="quartz-body">
+
+  <div class="left sidebar">
+    <h2 class="page-title"><a href="home.html">
+      <img class="mark mark-light" src="../../quartz/static/brand/mark-black.svg" alt="">
+      <img class="mark mark-dark" src="../../quartz/static/brand/mark-white.svg" alt="">
+      <img class="slash" src="../../quartz/static/brand/slash.svg" alt="">
+      <span class="word">Quantum State</span>
+    </a></h2>
+    <div class="flex-component">
+      <div class="search"><button class="search-button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><p>Search</p>
+      </button></div>
+      <button class="darkmode" aria-label="Dark mode"><svg viewBox="0 0 24 24"><circle cx="9.5" cy="12" r="6.5" fill="currentColor" opacity=".35"/><circle cx="14.5" cy="12" r="6.5" fill="currentColor" opacity=".6"/></svg></button>
+      <button class="readermode" aria-label="Reader mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg></button>
+    </div>
+    <div class="explorer">
+      <button type="button" class="title-button explorer-toggle desktop-explorer" aria-expanded="true"><h2>Explorer</h2></button>
+      <div class="explorer-content">
+        <ul class="explorer-ul">
+          <li>
+            <div class="folder-container"><span class="folder-title">Quantum State</span></div>
+            <div class="folder-outer open"><ul class="content">
+              <li><a href="page.html" class="active" aria-current="page">Product</a></li>
+              <li><span class="unpublished folder-title" style="font-weight:400">Design</span></li>
+              <li><span class="unpublished folder-title" style="font-weight:400">Tech</span></li>
+              <li><span class="unpublished folder-title" style="font-weight:400">Business</span></li>
+              <li><span class="unpublished folder-title" style="font-weight:400">Roadmap</span></li>
+            </ul></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="page-header">
+      <nav class="breadcrumb-container" aria-label="breadcrumbs">
+        <div class="breadcrumb-element"><a href="home.html">Home</a><p>/</p></div>
+        <div class="breadcrumb-element"><a href="home.html#explore">Quantum State</a><p>/</p></div>
+        <div class="breadcrumb-element"><a href="page.html" aria-current="page">Product</a></div>
+      </nav>
+      <div class="popover-hint">
+        <h1 class="article-title">Product</h1>
+        <p class="content-meta"><time datetime="2026-09-28">Sep 28, 2026</time><span>3 min read</span></p>
+      </div>
+    </div>
+
+    <article class="popover-hint"><div class="markdown-preview-view markdown-rendered">
+      <h2 id="fast-scan">Fast scan</h2>
+      <p>Quantum State is a secure governance-intelligence product intended to sit between fragmented enterprise evidence and accountable leadership judgment. It is not a board portal, GRC replacement, task system, dashboard wall, or autonomous decision-maker.</p>
+      <p>The current product promise is to help boards, executives, and governance teams:</p>
+      <ul>
+        <li>reduce the waste involved in preparing governance intelligence;</li>
+        <li>direct limited leadership attention toward material matters;</li>
+        <li>inspect the evidence, uncertainty, and reasoning beneath an interpretation;</li>
+        <li>challenge AI-supported findings in context;</li>
+        <li>preserve human authority, review state, and decision history;</li>
+        <li>reassess an interpretation when its evidence changes.</li>
+      </ul>
+      <p>The operating loop is:</p>
+      <p><strong>Recognize → Investigate → Synthesize → Review → Act or monitor → Reassess</strong></p>
+
+      <h2 id="product-concept-registry">Product concept registry</h2>
+      <h2 id="product-foundation">Product foundation</h2>
+      <ul>
+        <li><a class="internal" href="#">Governance Ontology</a> — the governance-aware interpretation layer that maps fragmented sources into usable organizational context.</li>
+        <li><a class="internal" href="#">Evidence Confidence System</a> — the trust layer that keeps source authority, lineage, freshness, contradiction, uncertainty, and review conditions visible.</li>
+        <li><a class="internal" href="#">Human Authority Framework</a> — the boundary that separates what AI may surface or propose from what accountable people must validate, authorize, or decide.</li>
+        <li><a class="internal" href="#">AI Native</a> — the architectural ambition: shared AI foundations and evidence-aware data without autonomous governance authority.</li>
+      </ul>
+
+      <h2 id="governance-intelligence">Governance intelligence</h2>
+      <ul>
+        <li><a class="internal" href="#">Governance Insights</a> — evidence-grounded findings that reveal what the available material is saying and remain traceable to their sources.</li>
+        <li><a class="internal" href="#">Strategic Insights</a> — higher-altitude interpretations that explain why combined context matters, what may happen next, and which response paths deserve leadership attention.</li>
+        <li><a class="internal" href="#">Governance Insight Engine</a> — the investigative interaction layer connecting cards, sources, evidence, context, challenge, and review. Its local thinking currently lives through <a class="internal" href="#">Governance Insights</a> and <a class="internal" href="#">Contextual AI Chat</a>.</li>
+      </ul>
+
+      <h2 id="product-experience">Product experience</h2>
+      <ul>
+        <li><a class="internal" href="#">Board Governance Radar</a> — the leadership-attention surface for recognizing which strategic matters deserve attention now and why.</li>
+        <li><a class="internal" href="#">Contextual AI Chat</a> — the bounded interrogation layer for explaining, comparing, and challenging selected governed context.</li>
+        <li><strong><a class="internal" href="#">Document Surface</a></strong> — the evidence-inspection layer that opens the exact source excerpt beneath a finding.</li>
+        <li><strong>Investigation context</strong> — the temporary working set of findings, excerpts, questions, challenge outputs, and review events used to test an interpretation.</li>
+        <li><strong>Human review</strong> — the accountable event that qualifies, validates, rejects, or requests revision within a defined mandate.</li>
+        <li><strong>Monitoring and reassessment</strong> — the mechanism that keeps an interpretation connected to changing evidence and preserves what changed.</li>
+      </ul>
+
+      <h2 id="who-quantum-state-is-for">Who Quantum State is for</h2>
+      <p>The frozen July Notion model described three client personas and one thin support persona:</p>
+      <ul>
+        <li><strong>Leader</strong> — board-facing oversight, challenge, authorization, and monitoring.</li>
+        <li><strong>Executive</strong> — management response, trade-offs, ownership, resources, and escalation.</li>
+        <li><strong>Validator</strong> — hands-on evidence review and accountable validation within a mandate.</li>
+        <li><strong>QS Engineer / Intelligence Steward</strong> — early source, mapping, ontology, and AI-output stewardship without governance authority.</li>
+      </ul>
+      <p>These are design hypotheses, not validated population segments. The immediate research question is not whether the documents are internally coherent; it is whether representative people recognize these problems, roles, language, workflows, and authority boundaries in practice.</p>
+    </div></article>
+  </div>
+
+  <div class="right sidebar">
+    <div class="graph">
+      <h3>Graph</h3>
+      <div class="graph-outer">
+        <svg viewBox="0 0 200 200" aria-label="Pages linked to Product">
+          <g class="edges">
+            <line class="edge" x1="100" y1="100" x2="100" y2="34"/><line class="edge" x1="100" y1="100" x2="40" y2="72"/>
+            <line class="edge" x1="100" y1="100" x2="160" y2="64"/><line class="edge" x1="100" y1="100" x2="44" y2="140"/>
+            <line class="edge" x1="100" y1="100" x2="156" y2="138"/><line class="edge" x1="100" y1="100" x2="100" y2="170"/>
+            <line class="edge" x1="160" y1="64" x2="156" y2="138"/>
+          </g>
+          <circle class="node" cx="100" cy="34" r="7"/><text x="100" y="22" text-anchor="middle">Home</text>
+          <circle class="node" cx="40" cy="72" r="5"/><text x="40" y="62" text-anchor="middle">AI Native</text>
+          <circle class="node" cx="160" cy="64" r="6"/><text x="196" y="52" text-anchor="end">Governance Insights</text>
+          <circle class="node" cx="44" cy="140" r="5"/><text x="4" y="158" text-anchor="start">Governance Ontology</text>
+          <circle class="node" cx="156" cy="138" r="5"/><text x="156" y="156" text-anchor="middle">Contextual AI Chat</text>
+          <circle class="node" cx="100" cy="170" r="5"/><text x="100" y="188" text-anchor="middle">Document Surface</text>
+          <circle class="node current" cx="100" cy="100" r="9"/>
+        </svg>
+        <button class="global-graph-icon" aria-label="Global graph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="9" r="2.5"/><circle cx="10" cy="17" r="2.5"/><path d="M9 8l6 1M8 9l1.5 5.5M15.5 11l-4 4"/></svg></button>
+      </div>
+    </div>
+    <div class="toc desktop-only">
+      <button class="toc-header" aria-expanded="true"><h3>On this page</h3></button>
+      <ul class="toc-content">
+        <li><a href="#fast-scan" class="in-view">Fast scan</a></li>
+        <li><a href="#product-concept-registry">Product concept registry</a></li>
+        <li><a href="#product-foundation">Product foundation</a></li>
+        <li><a href="#governance-intelligence">Governance intelligence</a></li>
+        <li><a href="#product-experience">Product experience</a></li>
+        <li><a href="#who-quantum-state-is-for">Who Quantum State is for</a></li>
+      </ul>
+    </div>
+    <div class="backlinks">
+      <h3>Backlinks</h3>
+      <ul><li><a href="home.html" class="internal-backlink">Home</a></li></ul>
+    </div>
+  </div>
+
+  <footer><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz</a></p></footer>
+</div>
+</div>
+<script>
+  document.querySelector(".darkmode").addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("saved-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("saved-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
+</body>
+</html>

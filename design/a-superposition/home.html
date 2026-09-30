@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum State</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap">
+<script>
+  // Same attribute Quartz uses, so the toggle ports as-is.
+  try {
+    const saved = new URLSearchParams(location.search).get("theme") || localStorage.getItem("theme");
+    const dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("saved-theme", dark ? "dark" : "light");
+  } catch (e) { document.documentElement.setAttribute("saved-theme", "light"); }
+</script>
+<style>
+  /* ---- Tokens: Quartz names first, Superposition names after ---- */
+  :root {
+    --light: #e4e4e4;        /* ground */
+    --lightgray: #cbcbcb;
+    --gray: #5a5a5a;
+    --darkgray: #262626;     /* body text */
+    --dark: #000000;         /* headings, lens */
+    --secondary: #000000;    /* links */
+    --tertiary: #868686;     /* hover: the state gray */
+    --highlight: rgba(134, 134, 134, 0.16);
+    --textHighlight: rgba(0, 0, 0, 0.14);
+
+    --state: #868686;
+    --state-a: 0.28;
+    --state-b: 0.45;
+    --lens: #000000;
+    --plane: rgba(255, 255, 255, 0.72);
+    --plane-edge: rgba(0, 0, 0, 0.09);
+    --marquee-bg: #000000;
+    --marquee-fg: #ffffff;
+
+    --headerFont: "Instrument Sans", system-ui, sans-serif;
+    --bodyFont: "Instrument Sans", system-ui, sans-serif;
+    --ease: cubic-bezier(.2, .7, .1, 1);
+    color-scheme: light;
+  }
+  :root[saved-theme="dark"] {
+    --light: #000000;
+    --lightgray: #2e2e2e;
+    --gray: #9c9c9c;
+    --darkgray: #d4d4d4;
+    --dark: #ffffff;
+    --secondary: #ffffff;
+    --tertiary: #868686;
+    --highlight: rgba(255, 255, 255, 0.07);
+    --textHighlight: rgba(255, 255, 255, 0.2);
+
+    --state: #ffffff;
+    --lens: #ffffff;
+    --plane: rgba(255, 255, 255, 0.06);
+    --plane-edge: rgba(255, 255, 255, 0.13);
+    --marquee-bg: #ffffff;
+    --marquee-fg: #000000;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--light);
+    color: var(--darkgray);
+    font: 400 17px/1.6 var(--bodyFont);
+    font-variation-settings: "wdth" 100;
+  }
+  a { color: var(--secondary); text-decoration-color: var(--tertiary); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-color: currentColor; }
+  :focus-visible { outline: 2px solid var(--dark); outline-offset: 4px; }
+  ::selection { background: var(--textHighlight); }
+
+  .wrap { max-width: 1216px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---- Marquee ---- */
+  .marquee {
+    background: var(--marquee-bg);
+    color: var(--marquee-fg);
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .marquee-track { display: flex; flex: none; animation: drift 42s linear infinite; }
+  .marquee-track span { display: inline-flex; align-items: center; }
+  .marquee-track svg { width: 22px; height: 12px; margin: 0 18px; flex: none; }
+  @keyframes drift { to { transform: translateX(-50%); } }
+
+  /* ---- Top bar ---- */
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; }
+  .lockup { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--dark); }
+  .lockup .mark { width: 44px; height: 44px; }
+  .lockup .slash { width: 14px; height: 30px; }
+  .lockup .word { display: grid; line-height: 1; }
+  .lockup .word b { font-weight: 400; font-size: 22px; letter-spacing: -0.01em; }
+  .lockup .word small { font-size: 10.5px; margin-top: 4px; color: var(--gray); }
+  :root[saved-theme="dark"] .slash { filter: invert(1); }
+  .mark-dark { display: none; }
+  :root[saved-theme="dark"] .mark-light { display: none; }
+  :root[saved-theme="dark"] .mark-dark { display: block; }
+
+  .tools { display: flex; gap: 8px; }
+  .tools button {
+    font: inherit; font-size: 15px; color: var(--dark);
+    background: var(--plane); border: 1px solid var(--plane-edge);
+    height: 40px; padding: 0 16px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .tools button:hover { background: var(--highlight); }
+  .tools .darkmode { width: 40px; padding: 0; justify-content: center; }
+  .tools svg { width: 18px; height: 18px; }
+
+  /* ---- Welcome ---- */
+  .welcome { padding: 88px 0 40px; }
+  .welcome h1 {
+    font: 400 clamp(46px, 7.4vw, 104px)/0.98 var(--headerFont);
+    letter-spacing: -0.035em;
+    color: var(--dark);
+    margin: 0;
+    max-width: 11ch;
+  }
+  .subhead { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; font-size: 17px; }
+  .subhead li { display: inline-flex; align-items: center; }
+  .subhead li:not(:last-child)::after {
+    content: ""; width: 9px; height: 16px; margin: 0 14px;
+    background: linear-gradient(to bottom right, transparent calc(50% - 0.6px), var(--tertiary) 50%, transparent calc(50% + 0.6px));
+  }
+
+  /* ---- Callouts (Quartz .callout DOM) ---- */
+  .statements { display: grid; grid-template-columns: 1fr 1fr; margin: 24px 0 0; }
+  .callout {
+    margin: 0;
+    padding: 28px 32px 32px;
+    border: 0;
+    color: var(--darkgray);
+    position: relative;
+  }
+  .callout[data-callout="success"] { background: rgba(134, 134, 134, 0.2); padding-right: 64px; }
+  .callout[data-callout="example"] { background: rgba(134, 134, 134, 0.32); margin-left: -32px; padding-left: 64px; }
+  :root[saved-theme="dark"] .callout[data-callout="success"] { background: rgba(255, 255, 255, 0.08); }
+  :root[saved-theme="dark"] .callout[data-callout="example"] { background: rgba(255, 255, 255, 0.13); }
+  .callout-title { display: flex; align-items: center; gap: 10px; color: var(--dark); }
+  .callout-title-inner p { margin: 0; font-size: 15px; font-weight: 600; }
+  .callout-icon { width: 14px; height: 14px; border-radius: 50%; background: var(--state); opacity: var(--state-a); }
+  .callout[data-callout="example"] .callout-icon { opacity: var(--state-b); }
+  .callout-content p { margin: 14px 0 0; font-size: 21px; line-height: 1.45; letter-spacing: -0.005em; color: var(--dark); max-width: 36ch; }
+
+  /* ---- Branch cards ---- */
+  .explore { padding: 96px 0 0; }
+  h2 { font: 400 clamp(28px, 3vw, 40px)/1.1 var(--headerFont); letter-spacing: -0.02em; color: var(--dark); margin: 0; }
+  .branches { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); gap: 20px; }
+  .branch {
+    --lift: 0px;
+    container-type: inline-size;
+    position: relative;
+    display: flex; flex-direction: column;
+    aspect-ratio: 8.5 / 11;
+    padding: 20px 20px 16px;
+    text-decoration: none;
+    color: var(--dark);
+    background: var(--plane);
+    border: 1px solid var(--plane-edge);
+    transform: translateY(var(--lift));
+    transition: transform .5s var(--ease);
+  }
+  /* The sheet leaves a translucent copy of itself behind when it lifts: layered planes, no blurred shadow. */
+  a.branch { box-shadow: 0 0 0 rgba(134, 134, 134, 0.3); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+  a.branch:hover, a.branch:focus-visible { box-shadow: 10px 18px 0 rgba(134, 134, 134, 0.3); }
+  a.branch:hover, a.branch:focus-visible { --lift: -8px; }
+  .branch h3 { font: 400 15cqi/1 var(--headerFont); letter-spacing: -0.025em; margin: 0; }
+  .branch .status { margin-top: 8px; font-size: 14px; color: var(--gray); }
+  .branch svg { margin: auto -12px -12px; width: calc(100% + 24px); height: auto; overflow: visible; }
+  .branch .text { position: relative; z-index: 1; }
+  .branch { overflow: hidden; }
+
+  /* The lens illustration: two states, their intersection drawn black. */
+  .states { transform-origin: 120px 120px; transition: transform .8s var(--ease); }
+  .state { fill: var(--state); }
+  .a, .b { transition: transform .8s var(--ease); }
+  .state.a { opacity: var(--state-a); }
+  .state.b { opacity: var(--state-b); }
+  .lens { fill: var(--lens); }
+  .branch {
+    --d: 96px;               /* distance between the two states */
+    --dx: calc(cos(var(--phase)) * var(--d) / 2);
+    --dy: calc(sin(var(--phase)) * var(--d) / 2);
+  }
+  .a { transform: translate(calc(var(--dx) * -1), calc(var(--dy) * -1)); }
+  .b { transform: translate(var(--dx), var(--dy)); }
+  a.branch:hover, a.branch:focus-visible { --d: 74px; }
+  a.branch:hover .states, a.branch:focus-visible .states { transform: rotate(-22deg); }
+
+  /* Coming soon: the two states have not met yet, so there is no lens. */
+  .branch.soon { background: transparent; border: 1px dashed var(--tertiary); color: var(--gray); --d: 141px; }
+  .branch.soon .state.a { opacity: 0.16; }
+  .branch.soon .state.b { opacity: 0.26; }
+  .branch.soon:hover { --d: 131px; }
+  .branch.soon:hover .states { transform: rotate(-8deg); }
+
+  /* Each branch owns an angle. The angle is its identity, where Socratica used a color. */
+  [data-branch="product"]  { --phase: 50deg; }
+  [data-branch="design"]   { --phase: 0deg; }
+  [data-branch="tech"]     { --phase: 90deg; }
+  [data-branch="business"] { --phase: 140deg; }
+  [data-branch="roadmap"]  { --phase: -28deg; }
+
+  /* ---- Product in one paragraph ---- */
+  .paragraph { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; padding: 112px 0 120px; }
+  .paragraph p { margin: 0; font-size: 20px; line-height: 1.6; max-width: 62ch; color: var(--darkgray); }
+
+  footer { border-top: 1px solid var(--lightgray); padding: 24px 0 40px; font-size: 14px; color: var(--gray); }
+  footer p { margin: 0; }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .statements { grid-template-columns: 1fr; }
+    .callout[data-callout="success"] { padding: 24px 24px 48px; }
+    .callout[data-callout="example"] { margin: -24px 0 0; padding: 48px 24px 28px; }
+    .paragraph { grid-template-columns: 1fr; gap: 20px; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    .topbar { padding-top: 20px; }
+    .tools .search-button p { display: none; }
+    .tools .search-button { width: 40px; padding: 0; justify-content: center; }
+    .welcome { padding: 56px 0 24px; }
+    .callout-content p { font-size: 19px; }
+    .explore { padding-top: 64px; }
+    .branches { grid-template-columns: 1fr; gap: 12px; }
+    .branch { aspect-ratio: auto; height: 104px; flex-direction: row; align-items: center; padding: 0 0 0 20px; overflow: hidden; }
+    .branch h3 { font-size: 30px; }
+    .branch .text { flex: 1; }
+    .branch svg { margin: 0; width: 132px; height: 132px; flex: none; }
+    .paragraph { padding: 72px 0 80px; }
+    .paragraph p { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .branch, a.branch, .states, .a, .b { transition: none; }
+  }
+</style>
+</head>
+<body data-slug="index">
+
+<div class="marquee" aria-label="see what matters, why it matters, what evidence supports it, what uncertainty remains, what human judgment is required">
+  <div class="marquee-track" aria-hidden="true">
+    <!-- Filled by the script below: one lens between each phrase, repeated to loop. -->
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="topbar">
+    <a class="lockup" href="home.html" aria-label="Quantum State home">
+      <img class="mark mark-light" src="../../quartz/static/brand/mark-black.svg" alt="">
+      <img class="mark mark-dark" src="../../quartz/static/brand/mark-white.svg" alt="">
+      <img class="slash" src="../../quartz/static/brand/slash.svg" alt="">
+      <span class="word"><b>Quantum State</b><small>Governance Intelligence</small></span>
+    </a>
+    <div class="tools">
+      <button class="search-button" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        <p style="margin:0">Search</p>
+      </button>
+      <button class="darkmode" aria-label="Dark mode">
+        <svg viewBox="0 0 24 24"><circle cx="9.5" cy="12" r="6.5" fill="currentColor" opacity=".35"/><circle cx="14.5" cy="12" r="6.5" fill="currentColor" opacity=".6"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="welcome">
+    <h1>What is Quantum State</h1>
+    <ul class="subhead">
+      <li><a href="#explore">Explore the branches</a></li>
+      <li><a href="#paragraph">Read the product paragraph</a></li>
+      <li><a href="page.html">Open the Product page</a></li>
+    </ul>
+
+    <div class="statements">
+      <blockquote class="callout success" data-callout="success">
+        <div class="callout-title"><div class="callout-icon"></div><div class="callout-title-inner"><p>Vision Statement</p></div></div>
+        <div class="callout-content"><p>A continuous, evidence-grounded governance intelligence system built on AI-native technology for faster board-level attention, challenge, and judgment.</p></div>
+      </blockquote>
+      <blockquote class="callout example" data-callout="example">
+        <div class="callout-title"><div class="callout-icon"></div><div class="callout-title-inner"><p>Mission Statement</p></div></div>
+        <div class="callout-content"><p>To transform executive decision making for corporate governance by turning fragmented corporate evidence into trusted, reviewable insights so boards and executives can see what matters, understand why it matters, and make better-informed decisions.</p></div>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="explore" id="explore">
+    <h2>Explore Quantum State</h2>
+    <ul class="branches">
+      <li><a class="branch" data-branch="product" href="page.html">
+        <span class="text"><h3>Product</h3></span>
+        <svg viewBox="0 0 240 240" aria-hidden="true"><defs><clipPath id="c-product"><circle class="a" cx="120" cy="120" r="64"/></clipPath></defs><g class="states"><circle class="state a" cx="120" cy="120" r="64"/><circle class="state b" cx="120" cy="120" r="64"/><g clip-path="url(#c-product)"><circle class="lens b" cx="120" cy="120" r="64"/></g></g></svg>
+      </a></li>
+      <li><div class="branch soon" data-branch="design" aria-disabled="true">
+        <span class="text"><h3>Design</h3><p class="status">Coming soon</p></span>
+        <svg viewBox="0 0 240 240" aria-hidden="true"><defs><clipPath id="c-design"><circle class="a" cx="120" cy="120" r="64"/></clipPath></defs><g class="states"><circle class="state a" cx="120" cy="120" r="64"/><circle class="state b" cx="120" cy="120" r="64"/><g clip-path="url(#c-design)"><circle class="lens b" cx="120" cy="120" r="64"/></g></g></svg>
+      </div></li>
+      <li><div class="branch soon" data-branch="tech" aria-disabled="true">
+        <span class="text"><h3>Tech</h3><p class="status">Coming soon</p></span>
+        <svg viewBox="0 0 240 240" aria-hidden="true"><defs><clipPath id="c-tech"><circle class="a" cx="120" cy="120" r="64"/></clipPath></defs><g class="states"><circle class="state a" cx="120" cy="120" r="64"/><circle class="state b" cx="120" cy="120" r="64"/><g clip-path="url(#c-tech)"><circle class="lens b" cx="120" cy="120" r="64"/></g></g></svg>
+      </div></li>
+      <li><div class="branch soon" data-branch="business" aria-disabled="true">
+        <span class="text"><h3>Business</h3><p class="status">Coming soon</p></span>
+        <svg viewBox="0 0 240 240" aria-hidden="true"><defs><clipPath id="c-business"><circle class="a" cx="120" cy="120" r="64"/></clipPath></defs><g class="states"><circle class="state a" cx="120" cy="120" r="64"/><circle class="state b" cx="120" cy="120" r="64"/><g clip-path="url(#c-business)"><circle class="lens b" cx="120" cy="120" r="64"/></g></g></svg>
+      </div></li>
+      <li><div class="branch soon" data-branch="roadmap" aria-disabled="true">
+        <span class="text"><h3>Roadmap</h3><p class="status">Coming soon</p></span>
+        <svg viewBox="0 0 240 240" aria-hidden="true"><defs><clipPath id="c-roadmap"><circle class="a" cx="120" cy="120" r="64"/></clipPath></defs><g class="states"><circle class="state a" cx="120" cy="120" r="64"/><circle class="state b" cx="120" cy="120" r="64"/><g clip-path="url(#c-roadmap)"><circle class="lens b" cx="120" cy="120" r="64"/></g></g></svg>
+      </div></li>
+    </ul>
+  </section>
+
+  <section class="paragraph" id="paragraph">
+    <h2>Product in One Paragraph</h2>
+    <p>Quantum State is a secure governance intelligence platform that helps boards, executives, and governance teams see what matters, why it matters, what evidence supports it, what uncertainty remains, and what human judgment is required. It brings in fragmented finance, audit, risk, compliance, strategy, performance, policy, and governance material and builds it into a Governance Vault. From there, a user finds the territory that matters, gathers it into an Investigation around one question, has AI analyze it, tests what could change in the Board Simulation Room, and exports board-ready material. It does not replace governance authority. AI may surface, classify, summarize, compare, infer, and propose. Humans validate, escalate, approve, accept risk, change rules, and make formal decisions.</p>
+  </section>
+
+  <footer><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz</a></p></footer>
+</div>
+
+<script>
+  const phrases = ["see what matters", "why it matters", "what evidence supports it", "what uncertainty remains", "what human judgment is required"];
+  const lens = '<svg viewBox="0 0 22 12"><path d="M1 6C5-1 17-1 21 6C17 13 5 13 1 6Z" fill="currentColor"/></svg>';
+  const run = phrases.map(p => `<span>${p}</span>${lens}`).join("");
+  document.querySelector(".marquee-track").innerHTML = run.repeat(6);
+
+  document.querySelector(".darkmode").addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("saved-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("saved-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
+</body>
+</html>

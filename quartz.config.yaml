@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Instrument Sans
+      body: Nunito
+      code: JetBrains Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#F1F2F2"
+        lightgray: "#D6D7D7"
+        gray: "#C1C2C2"
+        darkgray: "#2A2B2C"
+        dark: "#000000"
+        secondary: "#000000"
+        tertiary: "#585A5B"
+        highlight: rgba(134, 134, 134, 0.14)
+        textHighlight: rgba(134, 134, 134, 0.45)
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#1C1D1E"
+        lightgray: "#3A3B3C"
+        gray: "#505152"
+        darkgray: "#D9DADA"
+        dark: "#FFFFFF"
+        secondary: "#FFFFFF"
+        tertiary: "#A6A8A9"
+        highlight: rgba(134, 134, 134, 0.20)
+        textHighlight: rgba(134, 134, 134, 0.45)
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -92,7 +92,7 @@ plugins:
     enabled: true
     order: 70
   - source: "@quartz-community/latex"
-    enabled: true
+    enabled: false # "$452 billion ... $283 billion" rendered as math; the wiki has no equations
     options:
       renderEngine: katex
     order: 80
@@ -280,6 +280,15 @@ layout:
       direction: row
       gap: 0.5rem
   byPageType:
+    home:
+      template: minimal
+      positions:
+        header: []
+        beforeBody: []
+        afterBody: []
+        left: []
+        right: []
+        footer: []
     "404":
       positions:
         beforeBody: []

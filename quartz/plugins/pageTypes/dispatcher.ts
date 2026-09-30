@@ -10,9 +10,18 @@ import { StaticResources } from "../../util/resources"
 import { render } from "preact-render-to-string"
 import { fromHtml } from "hast-util-from-html"
 import { Root as HtmlRoot } from "hast"
+import QSHome from "../../components/QSHome"
+
+const homePageType: QuartzPageTypePluginInstance = {
+  name: "QSHome",
+  priority: 100,
+  match: ({ slug }) => slug === "index",
+  layout: "home",
+  body: QSHome,
+}
 
 function getPageTypes(ctx: BuildCtx): QuartzPageTypePluginInstance[] {
-  return (ctx.cfg.plugins.pageTypes ?? []) as unknown as QuartzPageTypePluginInstance[]
+  return [homePageType, ...((ctx.cfg.plugins.pageTypes ?? []) as unknown as QuartzPageTypePluginInstance[])]
 }
 
 /** @internal Exported for testing only. */

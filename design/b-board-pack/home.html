@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum State</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<script>
+  // Same attribute Quartz uses, so the port is a straight copy.
+  (function () {
+    var t = new URLSearchParams(location.search).get("theme");
+    if (!t) try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("saved-theme", t);
+  })();
+</script>
+<style>
+:root {
+  --light: #E8E9EB; --lightgray: #CFD2D6; --gray: #686A6E; --darkgray: #303236; --dark: #000000;
+  --secondary: #B3261E; --tertiary: #7E1A14; --highlight: rgba(179,38,30,.07); --textHighlight: #FFE24DBF;
+  --sheet: #FFFFFF; --pen: var(--secondary);
+  --tab-a: #DDDFE2; --tab-b: #C6C9CD; --tab-c: #A9ADB2; --tab-d: #5F6368; --tab-e: #2C2E32;
+  --shadow: 0 1px 0 rgba(0,0,0,.06), 0 10px 24px -14px rgba(20,24,30,.35);
+  --sans: "Instrument Sans", system-ui, sans-serif;
+  --serif: "Spectral", Georgia, serif;
+  color-scheme: light;
+}
+:root[saved-theme="dark"] {
+  --light: #1C1D20; --lightgray: #3D4046; --gray: #8F9297; --darkgray: #DADBDD; --dark: #FFFFFF;
+  --secondary: #FF8F84; --tertiary: #FFC2BB; --highlight: rgba(255,143,132,.10); --textHighlight: #E6C30061;
+  --sheet: #27292D;
+  --tab-a: #B9BCC0; --tab-b: #A3A7AC; --tab-c: #8A8E94; --tab-d: #54585D; --tab-e: #34363B;
+  --shadow: 0 1px 0 rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.8);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light); color: var(--darkgray); font: 400 18px/1.65 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: var(--secondary); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--tertiary); }
+:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-radius: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Marquee: the binder's spine label, running */
+.marquee { background: #000; color: #fff; height: 40px; overflow: hidden; display: flex; align-items: center; }
+.marquee__track { display: flex; flex: none; animation: run 48s linear infinite; }
+.marquee__track span { font: 500 15px/1 var(--sans); letter-spacing: .01em; white-space: nowrap; display: inline-flex; align-items: center; }
+.marquee__track span::after { content: ""; width: 9px; height: 15px; margin: 0 20px; background: #7a7a7a; -webkit-mask: url(../../quartz/static/brand/slash.svg) center/contain no-repeat; mask: url(../../quartz/static/brand/slash.svg) center/contain no-repeat; }
+@keyframes run { to { transform: translateX(-50%); } }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+/* Cover */
+.cover-bar { display: flex; justify-content: space-between; align-items: center; padding: 28px 0 0; }
+.lockup { display: flex; align-items: center; gap: 10px; color: var(--dark); text-decoration: none; }
+.lockup img { width: 40px; height: 40px; }
+.lockup .slash { width: 14px; height: 24px; background: var(--dark); -webkit-mask: url(../../quartz/static/brand/slash.svg) center/contain no-repeat; mask: url(../../quartz/static/brand/slash.svg) center/contain no-repeat; }
+.lockup b { font: 400 21px/1 var(--sans); }
+.lockup small { display: block; font: 400 12px/1.2 var(--sans); color: var(--gray); margin-top: 4px; }
+.mark-dark { display: none; }
+:root[saved-theme="dark"] .mark-light { display: none; }
+:root[saved-theme="dark"] .mark-dark { display: block; }
+
+.tools { display: flex; gap: 8px; }
+.tool { font: 500 14px/1 var(--sans); color: var(--darkgray); background: var(--sheet); border: 1px solid var(--lightgray); border-radius: 4px; height: 36px; padding: 0 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.tool:hover { border-color: var(--gray); }
+.tool svg { width: 16px; height: 16px; }
+
+.welcome { padding: 72px 0 40px; }
+h1 { font: 300 60px/1.05 var(--serif); color: var(--dark); margin: 0; letter-spacing: -.015em; }
+.subhead { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 20px 0 0; padding: 0; list-style: none; font: 500 16px/1.4 var(--sans); }
+
+/* Callouts, as Quartz renders them */
+.statements { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.callout { background: var(--sheet); border: 1px solid var(--lightgray); border-left: 4px solid var(--dark); border-radius: 0 3px 3px 0; padding: 20px 26px 22px; margin: 0; box-shadow: var(--shadow); }
+.callout-title { display: flex; align-items: center; gap: 10px; font: 600 16px/1.3 var(--sans); color: var(--dark); }
+.callout-title p { margin: 0; }
+.callout-icon { width: 22px; height: 22px; flex: none; color: var(--pen); }
+.callout-content p { margin: 10px 0 0; font-size: 18px; }
+
+h2 { font: 600 24px/1.25 var(--sans); color: var(--dark); margin: 88px 0 28px; }
+
+/* The binder: pressboard dividers with staggered index tabs */
+.binder { list-style: none; margin: 0; padding: 30px 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.divider { --tone: var(--tab-a); --on-tone: #000; --tabw: 44px; position: relative; aspect-ratio: 1 / 1.414; background: var(--tone); border-radius: 0 3px 3px 3px; box-shadow: var(--shadow); transition: transform .3s cubic-bezier(.2,.7,.3,1); }
+.divider:nth-child(1) { --i: 0; }
+.divider:nth-child(2) { --i: 1; --tone: var(--tab-b); }
+.divider:nth-child(3) { --i: 2; --tone: var(--tab-c); }
+.divider:nth-child(4) { --i: 3; --tone: var(--tab-d); --on-tone: #fff; }
+.divider:nth-child(5) { --i: 4; --tone: var(--tab-e); --on-tone: #fff; }
+.tab { position: absolute; bottom: 100%; left: calc(var(--i) * (100% - var(--tabw)) / 4); width: var(--tabw); height: 30px; background: var(--tone); color: var(--on-tone); border-radius: 6px 6px 0 0; font: 600 16px/30px var(--sans); font-variation-settings: "wdth" 85; text-align: center; }
+.divider > a, .divider > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; color: inherit; text-decoration: none; border-radius: inherit; }
+.label { background: var(--sheet); border-radius: 2px; padding: 16px 16px 14px; height: 74%; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+.label h3 { margin: 0; font: 600 26px/1.05 var(--sans); font-variation-settings: "wdth" 85; color: var(--dark); letter-spacing: -.01em; }
+.label .state { font: 400 14px/1.3 var(--sans); color: var(--gray); margin-top: 4px; }
+.divider a .state { color: var(--secondary); }
+.stamp, .seal { width: 100%; max-width: 128px; align-self: center; transform: rotate(-9deg); transition: transform .35s cubic-bezier(.2,.7,.3,1.4); }
+.seal { width: 64px; transform: rotate(-18deg); align-self: flex-start; }
+.stamp text { font: 700 19px var(--sans); font-variation-settings: "wdth" 80; letter-spacing: .02em; }
+.stamp { color: var(--pen); }
+.divider:hover, .divider:focus-within { transform: translateY(-14px); }
+.divider:hover .stamp, .divider:focus-within .stamp { transform: rotate(3deg) scale(1.06); }
+.divider:hover .seal, .divider:focus-within .seal { transform: rotate(12deg) scale(1.08); }
+.divider a:focus-visible { outline-offset: 4px; }
+
+/* The annotated paper */
+.paper { position: relative; background: var(--sheet); box-shadow: var(--shadow); padding: 44px 56px 48px 72px; max-width: 860px; border-radius: 2px; }
+.paper p { margin: 0; font-size: 21px; line-height: 1.7; max-width: 64ch; color: var(--darkgray); }
+.sideline { position: absolute; left: 26px; top: 40px; bottom: 44px; width: 18px; height: calc(100% - 84px); color: var(--pen); overflow: visible; }
+.hl { background: linear-gradient(var(--textHighlight), var(--textHighlight)) no-repeat 0 62% / 0% 72%; -webkit-box-decoration-break: clone; box-decoration-break: clone; animation: hl .45s cubic-bezier(.5,0,.3,1) forwards; animation-delay: calc(.5s + var(--d) * .32s); }
+@keyframes hl { to { background-size: 100% 72%; } }
+.ring { position: relative; white-space: nowrap; }
+.ring svg { position: absolute; left: -9px; top: -5px; width: calc(100% + 18px); height: calc(100% + 10px); overflow: visible; color: var(--pen); pointer-events: none; }
+.pen { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw .6s cubic-bezier(.5,0,.3,1) forwards; animation-delay: calc(2.4s + var(--d, 0) * .35s); vector-effect: non-scaling-stroke; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.redline { background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 2px; color: inherit; text-decoration: none; -webkit-box-decoration-break: clone; box-decoration-break: clone; animation: ul .9s cubic-bezier(.5,0,.3,1) 3.6s forwards; }
+.redline { background-image: linear-gradient(var(--pen), var(--pen)); padding-bottom: 1px; }
+@keyframes ul { to { background-size: 100% 2px; } }
+
+footer { margin: 96px 0 0; padding: 24px 0 40px; border-top: 1px solid var(--lightgray); font: 400 14px/1.5 var(--sans); color: var(--gray); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .binder { grid-template-columns: repeat(3, 1fr); row-gap: 56px; }
+}
+/* Mobile: the binder seen side-on */
+@media (max-width: 720px) {
+  .wrap { padding: 0 16px; }
+  h1 { font-size: 48px; }
+  .welcome { padding: 48px 0 32px; }
+  .statements { grid-template-columns: 1fr; gap: 16px; }
+  .callout { padding: 18px 20px; }
+  .tools .tool span { display: none; }
+  .tool { padding: 0 10px; }
+  h2 { margin-top: 64px; }
+  .binder { grid-template-columns: 1fr; gap: 12px; padding: 0 44px 0 0; }
+  .divider { aspect-ratio: auto; height: 112px; border-radius: 3px 0 3px 3px; }
+  .tab { bottom: auto; left: 100%; top: calc(8px + var(--i) * 12px); width: 36px; height: 44px; line-height: 44px; border-radius: 0 6px 6px 0; }
+  .divider > a, .divider > div { padding: 10px; }
+  .label { height: 100%; flex-direction: row-reverse; align-items: center; padding: 12px 14px; }
+  .label h3 { font-size: 24px; }
+  .stamp { width: 112px; flex: none; }
+  .seal { width: 52px; align-self: center; }
+  .divider:hover, .divider:focus-within { transform: translateX(-8px); }
+  .paper { padding: 28px 20px 30px 40px; }
+  .paper p { font-size: 18px; }
+  .sideline { left: 14px; top: 26px; height: calc(100% - 56px); }
+  .ring { white-space: normal; }
+  .ring svg { display: none; }
+  .ring { background: linear-gradient(var(--pen), var(--pen)) no-repeat 0 100% / 100% 1.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { height: auto; min-height: 40px; }
+  .marquee__track { animation: none; flex-wrap: wrap; padding: 10px 16px; row-gap: 8px; }
+  .marquee__track span:nth-child(n+6) { display: none; }
+  .hl { animation: none; background-size: 100% 72%; }
+  .pen { animation: none; stroke-dashoffset: 0; }
+  .redline { animation: none; background-size: 100% 2px; }
+  .divider, .stamp, .seal { transition: none; }
+  .divider:hover, .divider:focus-within { transform: none; }
+}
+</style>
+</head>
+<body data-slug="index">
+
+<div class="marquee" role="note" aria-label="see what matters, why it matters, what evidence supports it, what uncertainty remains, what human judgment is required">
+  <div class="marquee__track" aria-hidden="true">
+    <span>see what matters</span><span>why it matters</span><span>what evidence supports it</span><span>what uncertainty remains</span><span>what human judgment is required</span>
+    <span>see what matters</span><span>why it matters</span><span>what evidence supports it</span><span>what uncertainty remains</span><span>what human judgment is required</span>
+    <span>see what matters</span><span>why it matters</span><span>what evidence supports it</span><span>what uncertainty remains</span><span>what human judgment is required</span>
+    <span>see what matters</span><span>why it matters</span><span>what evidence supports it</span><span>what uncertainty remains</span><span>what human judgment is required</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="cover-bar">
+    <a class="lockup" href="home.html" aria-label="Quantum State, home">
+      <img class="mark-light" src="../../quartz/static/brand/mark-black.svg" alt="">
+      <img class="mark-dark" src="../../quartz/static/brand/mark-white.svg" alt="">
+      <span class="slash" aria-hidden="true"></span>
+      <span><b>Quantum State</b><small>Governance Intelligence</small></span>
+    </a>
+    <div class="tools">
+      <button class="tool" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Search</span></button>
+      <button class="tool" type="button" id="theme" aria-label="Dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg><span>Dark mode</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h1>What is Quantum State</h1>
+      <ul class="subhead">
+        <li><a href="#explore">Explore the branches</a></li>
+        <li><a href="#paragraph">Read the product paragraph</a></li>
+        <li><a href="page.html">Open a sample page</a></li>
+      </ul>
+    </section>
+
+    <div class="statements">
+      <blockquote class="callout success" data-callout="success">
+        <div class="callout-title">
+          <svg class="callout-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.2c2 1.3 3.6 3 4.9 5.3 3-6 7-10.6 12.2-13.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="callout-title-inner"><p>Vision Statement</p></div>
+        </div>
+        <div class="callout-content"><p>A continuous, evidence-grounded governance intelligence system built on AI-native technology for faster board-level attention, challenge, and judgment.</p></div>
+      </blockquote>
+      <blockquote class="callout example" data-callout="example">
+        <div class="callout-title">
+          <svg class="callout-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5C6.3 4 5.6 5 5.7 7.5c.1 2.3.3 3.6-1.9 4.5 2.2.9 2 2.2 1.9 4.5-.1 2.5.6 3.5 3.3 4M14 8h6M14 12h5M14 16h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="callout-title-inner"><p>Mission Statement</p></div>
+        </div>
+        <div class="callout-content"><p>To transform executive decision making for corporate governance by turning fragmented corporate evidence into trusted, reviewable insights so boards and executives can see what matters, understand why it matters, and make better-informed decisions.</p></div>
+      </blockquote>
+    </div>
+
+    <h2 id="explore">Explore Quantum State</h2>
+    <ol class="binder">
+      <li class="divider">
+        <span class="tab" aria-hidden="true">A</span>
+        <a href="page.html">
+          <div class="label">
+            <img class="seal mark-light" src="../../quartz/static/brand/mark-black.svg" alt="">
+            <img class="seal mark-dark" src="../../quartz/static/brand/mark-white.svg" alt="">
+            <div><h3>Product</h3><p class="state">Open tab A</p></div>
+          </div>
+        </a>
+      </li>
+      <li class="divider">
+        <span class="tab" aria-hidden="true">B</span>
+        <div>
+          <div class="label">
+          <svg class="stamp" viewBox="0 0 160 56" role="img" aria-label="Coming soon"><use href="#stamp"/></svg>
+          <div><h3>Design</h3><p class="state">Nothing filed yet</p></div>
+        </div>
+        </div>
+      </li>
+      <li class="divider">
+        <span class="tab" aria-hidden="true">C</span>
+        <div>
+          <div class="label">
+          <svg class="stamp" viewBox="0 0 160 56" role="img" aria-label="Coming soon"><use href="#stamp"/></svg>
+          <div><h3>Tech</h3><p class="state">Nothing filed yet</p></div>
+        </div>
+        </div>
+      </li>
+      <li class="divider">
+        <span class="tab" aria-hidden="true">D</span>
+        <div>
+          <div class="label">
+          <svg class="stamp" viewBox="0 0 160 56" role="img" aria-label="Coming soon"><use href="#stamp"/></svg>
+          <div><h3>Business</h3><p class="state">Nothing filed yet</p></div>
+        </div>
+        </div>
+      </li>
+      <li class="divider">
+        <span class="tab" aria-hidden="true">E</span>
+        <div>
+          <div class="label">
+          <svg class="stamp" viewBox="0 0 160 56" role="img" aria-label="Coming soon"><use href="#stamp"/></svg>
+          <div><h3>Roadmap</h3><p class="state">Nothing filed yet</p></div>
+        </div>
+        </div>
+      </li>
+    </ol>
+
+    <h2 id="paragraph">Product in One Paragraph</h2>
+    <article class="paper">
+      <svg class="sideline" viewBox="0 0 18 100" preserveAspectRatio="none" aria-hidden="true"><path class="pen" style="--d:3" d="M14 1 C6 2 7 4 7 10 L7.6 90 C7.4 96 8 98 15 99"/></svg>
+      <p>Quantum State is a secure governance intelligence platform that helps boards, executives, and governance teams <span class="hl" style="--d:0">see what matters</span>, <span class="hl" style="--d:1">why it matters</span>, <span class="hl" style="--d:2">what evidence supports it</span>, <span class="hl" style="--d:3">what uncertainty remains</span>, and <span class="hl" style="--d:4">what human judgment is required</span>. It brings in fragmented finance, audit, risk, compliance, strategy, performance, policy, and governance material and builds it into a <span class="ring">Governance Vault<svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="pen" style="--d:0" d="M8 6C30 0 80 0 95 8c8 7-4 18-40 20C18 30-2 24 3 13 6 7 20 3 34 2"/></svg></span>. From there, a user finds the territory that matters, gathers it into an <span class="ring">Investigation<svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="pen" style="--d:1" d="M10 5C35-1 82 1 96 10c6 8-8 17-42 18C16 29-1 22 3 12 5 6 18 3 30 2"/></svg></span> around one question, has AI analyze it, tests what could change in the <span class="ring">Board Simulation Room<svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="pen" style="--d:2" d="M7 7C30 0 82 0 96 9c6 8-6 18-42 19C17 29-2 23 3 12 6 6 22 2 36 2"/></svg></span>, and exports board-ready material. It does not replace governance authority. AI may surface, classify, summarize, compare, infer, and propose. <span class="redline">Humans validate, escalate, approve, accept risk, change rules, and make formal decisions.</span></p>
+    </article>
+  </main>
+
+  <footer>
+    <span>Quantum State wiki</span>
+    <span>Built with <a href="https://quartz.jzhao.xyz/">Quartz</a></span>
+  </footer>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.5"/><feComposite in="SourceGraphic" operator="in"/></filter>
+    <g id="stamp" filter="url(#ink)" fill="none" stroke="currentColor">
+      <rect x="3" y="3" width="154" height="50" rx="5" stroke-width="3"/>
+      <rect x="9" y="9" width="142" height="38" rx="2" stroke-width="1.2"/>
+      <text x="80" y="35" text-anchor="middle" fill="currentColor" stroke="none">Coming soon</text>
+    </g>
+  </defs>
+</svg>
+
+<script>
+  document.getElementById("theme").addEventListener("click", function () {
+    var root = document.documentElement;
+    var next = root.getAttribute("saved-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("saved-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
