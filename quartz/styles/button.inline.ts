@@ -55,6 +55,46 @@ function zoomDialog() {
   document.body.append(dialog)
   const d = dialog
   d.addEventListener('click', (e) => { if (e.target === d) d.close() })
+
+  // Pinch-zoom and pan the image only; the page itself never zooms (touch-action: none in CSS).
+  const pointers = new Map<number, { x: number; y: number }>()
+  let scale = 1, tx = 0, ty = 0
+  let pinch: { dist: number; scale: number } | null = null
+  const apply = () => { img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})` }
+  const spread = () => {
+    const [a, b] = [...pointers.values()]
+    return Math.hypot(a.x - b.x, a.y - b.y)
+  }
+  img.addEventListener('pointerdown', (e) => {
+    img.setPointerCapture(e.pointerId)
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    if (pointers.size === 2) pinch = { dist: spread(), scale }
+  })
+  img.addEventListener('pointermove', (e) => {
+    const last = pointers.get(e.pointerId)
+    if (!last) return
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+    if (pointers.size === 2 && pinch) {
+      scale = Math.min(5, Math.max(1, (pinch.scale * spread()) / pinch.dist))
+    } else if (pointers.size === 1 && scale > 1) {
+      tx += e.clientX - last.x
+      ty += e.clientY - last.y
+    }
+    apply()
+  })
+  const release = (e: PointerEvent) => {
+    pointers.delete(e.pointerId)
+    if (pointers.size < 2) pinch = null
+    if (scale === 1) { tx = 0; ty = 0; apply() }
+  }
+  img.addEventListener('pointerup', release)
+  img.addEventListener('pointercancel', release)
+  // iOS Safari zooms the page through its own gesture events, which touch-action doesn't always stop.
+  for (const type of ['gesturestart', 'gesturechange']) d.addEventListener(type, (e) => e.preventDefault())
+  d.addEventListener('close', () => {
+    pointers.clear(); pinch = null; scale = 1; tx = 0; ty = 0
+    img.style.transform = ''
+  })
   return d
 }
 
