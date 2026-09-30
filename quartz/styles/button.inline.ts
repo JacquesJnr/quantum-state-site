@@ -109,9 +109,25 @@ document.addEventListener('click', (e) => {
   if (!dialog.open) dialog.showModal()
 })
 
+// Phones: the local graph becomes a static banner under the title header; a tap opens the global graph.
+const phone = window.matchMedia('(max-width: 800px)')
+function graphBanner() {
+  const graph = document.querySelector<HTMLElement>('.sidebar.right .graph')
+  const header = document.querySelector('.center .page-header')
+  if (!phone.matches || !graph || !header) return
+  graph.classList.add('qs-graph-banner')
+  header.after(graph)
+}
+document.addEventListener('click', (e) => {
+  const outer = (e.target as HTMLElement).closest('.qs-graph-banner .graph-outer')
+  outer?.querySelector<HTMLButtonElement>('.global-graph-icon')?.click()
+})
+
 document.addEventListener('nav', () => {
   renderObsidianButtons()
   readerModeToHome()
+  graphBanner()
 })
 renderObsidianButtons()
 readerModeToHome()
+graphBanner()

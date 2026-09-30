@@ -200,6 +200,13 @@ body:not([data-slug='index']) .readermode {
 }
 body:not([data-slug='index']) .qs-home-link svg { stroke: none !important; }
 
+/* Phone graph banner (button.inline.ts moves .graph under the title header) */
+.qs-graph-banner { margin: 24px 0 8px; }
+.qs-graph-banner > h3 { display: none; }
+body:not([data-slug='index']) .qs-graph-banner .graph-outer { height: 180px !important; cursor: pointer; }
+.qs-graph-banner .graph-container { pointer-events: none; }
+.qs-graph-banner .global-graph-icon { display: none; }
+
 /* Image zoom viewer (button.inline.ts) */
 .center article img:not(a img) { cursor: zoom-in; }
 #qs-zoom { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; }
