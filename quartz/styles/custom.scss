@@ -85,7 +85,7 @@ body:not([data-slug='index']) #quartz-body .page-title a::before { content: ''; 
 body:not([data-slug='index']) #quartz-body .page-title a::after { content: none; }
 body:not([data-slug='index']) #quartz-body .page-title a { background: url('static/brand/slash.svg') 39px center/12px 20px no-repeat; }
 :root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a::before { background-image: url('static/brand/mark-white.svg'); }
-:root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a { filter: none; }
+:root[saved-theme='dark'] body:not([data-slug='index']) #quartz-body .page-title a { filter: none; background-image: url('static/brand/slash-white.svg'); }
 
 body:not([data-slug='index']) .search { flex: 1; }
 body:not([data-slug='index']) .search-button { width: 100%; min-height: 38px; border-radius: 999px; background: var(--highlight); border: 1px solid transparent; color: var(--tertiary); font: 500 15px var(--headerFont); font-variation-settings: 'wdth' 80; }
