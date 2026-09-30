@@ -205,7 +205,7 @@ body:not([data-slug='index']) .qs-home-link svg { stroke: none !important; }
 #qs-zoom { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; }
 #qs-zoom[open] { display: grid; place-items: center; }
 #qs-zoom::backdrop { background: rgba(0, 0, 0, .88); }
-#qs-zoom img { max-width: 94vw; max-height: 90dvh; object-fit: contain; border-radius: 4px; cursor: grab; user-select: none; -webkit-user-drag: none; touch-action: pinch-zoom; transition: transform .2s ease, opacity .2s ease; }
+#qs-zoom img { max-width: 94vw; max-height: 90dvh; object-fit: contain; border-radius: 4px; user-select: none; -webkit-user-drag: none; }
 :root[saved-theme='light'] body:not([data-slug='index']) .darkmode .dayIcon { display: block !important; }
 :root[saved-theme='light'] body:not([data-slug='index']) .darkmode .nightIcon { display: none !important; }
 :root[saved-theme='dark'] body:not([data-slug='index']) .darkmode .dayIcon { display: none !important; }

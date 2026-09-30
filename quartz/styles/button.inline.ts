@@ -43,7 +43,7 @@ function readerModeToHome() {
   }
 }
 
-// Image zoom: tap/click an article image to view it full screen; drag it away, tap outside it, or Esc to close.
+// Image zoom: tap/click an article image to view it full screen; tap outside it or Esc to close.
 function zoomDialog() {
   let dialog = document.getElementById('qs-zoom') as HTMLDialogElement | null
   if (dialog) return dialog
@@ -54,32 +54,7 @@ function zoomDialog() {
   dialog.append(img)
   document.body.append(dialog)
   const d = dialog
-  const reset = () => { img.style.transform = ''; img.style.opacity = '' }
   d.addEventListener('click', (e) => { if (e.target === d) d.close() })
-  d.addEventListener('close', reset)
-  let start: { x: number; y: number; id: number } | null = null
-  img.addEventListener('pointerdown', (e) => {
-    start = { x: e.clientX, y: e.clientY, id: e.pointerId }
-    img.setPointerCapture(e.pointerId)
-    img.style.transition = 'none'
-  })
-  img.addEventListener('pointermove', (e) => {
-    if (!start || e.pointerId !== start.id) return
-    const dx = e.clientX - start.x
-    const dy = e.clientY - start.y
-    img.style.transform = `translate(${dx}px, ${dy}px)`
-    img.style.opacity = String(Math.max(0.3, 1 - Math.hypot(dx, dy) / 400))
-  })
-  const release = (e: PointerEvent) => {
-    if (!start || e.pointerId !== start.id) return
-    const moved = Math.hypot(e.clientX - start.x, e.clientY - start.y)
-    start = null
-    img.style.transition = ''
-    if (moved > 100) d.close()
-    else reset()
-  }
-  img.addEventListener('pointerup', release)
-  img.addEventListener('pointercancel', release)
   return d
 }
 
