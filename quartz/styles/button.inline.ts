@@ -29,13 +29,13 @@ function renderObsidianButtons() {
 }
 
 // Toolbar home link (Material Symbols "home") beside the theme toggle. The reader-mode plugin is disabled:
-// its script binds a toggle to anything with class "readermode", which this link reuses for styling.
+// its script binds a toggle to anything with class "readermode", so the link uses its own class.
 function readerModeToHome() {
   const home = document.querySelector<HTMLAnchorElement>('.page-title a')?.getAttribute('href')
   const slot = document.querySelector('.sidebar .darkmode')?.parentElement
   if (!home || !slot || document.querySelector('.qs-home-link')) return
   const link = document.createElement('a')
-  link.className = 'readermode qs-home-link'
+  link.className = 'qs-home-link'
   link.href = home
   link.setAttribute('aria-label', 'Home')
   link.innerHTML =
