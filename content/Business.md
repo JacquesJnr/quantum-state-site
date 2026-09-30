@@ -1,15 +1,13 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-29T17:39:53.331Z
-published: 2026-09-29T17:39:53.331Z
+modified: 2026-09-30T09:36:43.446Z
+published: 2026-09-30T09:36:43.446Z
 up:
   - "[[mission-vision]]"
 related:
 collections:
 ---
-
-# Business
 
 **Built on:** [[Choose Who We Serve]], [[Compare Against the Problem]]
 

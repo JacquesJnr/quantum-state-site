@@ -2,9 +2,15 @@
 publish: "true"
 title: Home
 created: 2026-09-29
-modified: 2026-09-30T06:31:43.544Z
-published: 2026-09-30T06:31:43.544Z
+modified: 2026-09-30T09:38:30.669Z
+published: 2026-09-30T09:38:30.669Z
 ---
+
+> [!success] Vision Statement
+> A continuous, evidence-grounded governance intelligence system built on AI-native technology for faster board-level attention, challenge, and judgment.
+
+> [!example] Mission Statement
+> To transform executive decision making for corporate governance by turning fragmented corporate evidence into trusted, reviewable insights so boards and executives can see what matters, understand why it matters, and make better-informed decisions.
 
 ## Product in One Paragraph
 

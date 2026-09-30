@@ -1,15 +1,13 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T05:56:00.835Z
-published: 2026-09-30T05:56:00.835Z
+modified: 2026-09-30T09:37:43.735Z
+published: 2026-09-30T09:37:43.735Z
 up:
   - "[[mission-vision]]"
 related:
 collections:
 ---
-
-# Tech
 
 **Built on:** [[Data Sovereignty]]
 

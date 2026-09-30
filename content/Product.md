@@ -1,15 +1,13 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-29T18:29:29.300Z
-published: 2026-09-29T18:29:29.300Z
+modified: 2026-09-30T09:37:30.369Z
+published: 2026-09-30T09:37:30.369Z
 up:
   - "[[mission-vision]]"
 related:
 collections:
 ---
-
-# Product
 
 **Built on:** [[Human Authority]], with [[See the Evidence]].
 
