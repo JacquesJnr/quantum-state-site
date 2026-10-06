@@ -2,8 +2,8 @@
 publish: "true"
 title: Prototype Capabilities
 created: 2026-10-06
-modified: 2026-10-06T08:15:11.615Z
-published: 2026-10-06T08:15:11.615Z
+modified: 2026-10-06T08:17:49.490Z
+published: 2026-10-06T08:17:49.490Z
 up:
   - "[[MVP]]"
 ---
@@ -93,7 +93,6 @@ The fifth group is about where and how the product runs. The [[MVP]] prototype r
 
 - [[index|Home]]: the product in one paragraph, vision and mission
 - [[Product]]: the phases, features and principles the capabilities come from
-- [[Quantum State Mega-note]]: evidence, traceability and the app map
 - [[Business]]: who the product serves and what a regulated buyer expects
 - [[Tech]]: deployment, data boundaries and sovereignty
 - [[Choose Who We Serve]]: the regulated-to-unregulated spectrum
