@@ -38,6 +38,8 @@ jobs:
         run: npx quartz plugin install --from-config
       - name: Build Quartz
         run: npx quartz build
+      - name: Write llms.txt
+        run: node scripts/llms.mjs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
