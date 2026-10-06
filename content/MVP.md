@@ -1,8 +1,8 @@
 ---
 publish: "true"
-created: 2026-10-06T07:22:10.380Z
-modified: 2026-10-06T07:23:57.676Z
-published: 2026-10-06T07:23:57.676Z
+created: 2026-10-06T07:24:12.942Z
+modified: 2026-10-06T07:24:22.709Z
+published: 2026-10-06T07:24:22.709Z
 ---
 
 ## What Prototyping Needs
