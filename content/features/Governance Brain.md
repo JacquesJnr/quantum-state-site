@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:15:03.625Z
-published: 2026-09-29T16:15:03.625Z
+modified: 2026-10-06T09:44:47.729Z
+published: 2026-10-06T09:44:47.729Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 The Governance Brain shows the whole [[Governance Vault]] as a graph. It works the way the graph view on this wiki does: every node is a policy, decision, report or risk, every line is how those things relate, and a node with many lines is one that a lot of other material depends on. Morgan looks here before reading anything in detail, because a matter's importance often shows in its connections before it shows in any single document.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S3 Find territory.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S3 Find territory.png|App map stage 3, Governance Brain: the full graph view with a governance overview card (summary, what's new, suggested issues), search bar, node lens filter for domains and timeframes, AI chat bar and build progress. Actions: view a node, or filter the graph by domain, timeframe, topic or search term]]
 
 ## What it does for Morgan
 

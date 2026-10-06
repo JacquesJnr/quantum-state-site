@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.644Z
-published: 2026-09-29T16:14:54.644Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 The Document Viewer answers one question: does the source actually say that? It is the passage an insight rests on, shown beside the insight itself, so Morgan never has to take a finding from the [[Node Details Panel]] on trust alone.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png|App map stage 4, Understand the evidence. From the Node Details Panel a director opens an insight in the Insight Modal and adds it to a Query, opens the source in the Document Viewer to see the highlighted passage, or asks AI about the node]]
 
 ## What it does for Morgan
 

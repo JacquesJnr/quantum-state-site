@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.643Z
-published: 2026-09-29T16:14:54.643Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 AI Chat sits outside the seven-stage journey as its own app, reachable from any screen that offers it, and takes that screen's context with it. It answers questions at any stage, but nothing it suggests changes an Analysis until Morgan accepts it.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 AI Chat.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 AI Chat.png|App map, AI Chat: a chat that takes the context of the view it opens from. Actions: send a message and get an answer with sources, confidence and assumptions; add context by upload or by tagging a node or insight; change or interrupt the model; accept or reject a suggested, sourced change to the Query Analysis; open chat history to reopen, rename or delete past chats]]
 
 ## What it does for Morgan
 

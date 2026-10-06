@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T09:36:43.446Z
-published: 2026-09-30T09:36:43.446Z
+modified: 2026-10-06T09:44:47.726Z
+published: 2026-10-06T09:44:47.726Z
 up:
   - "[[mission-vision]]"
 related:
@@ -19,7 +19,7 @@ Quantum State sits on a spectrum from regulated to unregulated entities, and a p
 
 The product as designed points toward the regulated end: it is built around the independent board auditor, a reader who needs traceable evidence and a defensible export. Serving both ends would mean two cost bases, since a high-assurance deployment and a shared low-cost one are different products.
 
-![[x/Images/Wiki/QS Spectrum - Who it serves.png]]
+![[x/Images/Wiki/QS Spectrum - Who it serves.png|Who Quantum State serves: a spectrum from regulated (bank or DIFC firm, data stays in the building) to unregulated (private SME or start-up, lighter needs). The product as designed, for an independent board auditor, sits near the regulated end. A place on the spectrum must be chosen]]
 
 ### What the spectrum changes
 
@@ -37,7 +37,7 @@ Where a customer sits changes more than the deployment: it shapes what data they
 
 A board's questions come down to time and money, so the question to ask each buyer is: _how willing are you to connect your company's financial data to an AI-powered tool?_ The answer is a spectrum of its own, and it sets what Quantum State can show.
 
-![[x/Images/Wiki/QS Spectrum - Financial data.png]]
+![[x/Images/Wiki/QS Spectrum - Financial data.png|How much financial data connects, five levels of access: 1 no financial data; 2 historical approved records; 3 regular finance-approved exports; 4 live read-only accounting or ERP; 5 live bank-information APIs. Moving right, both what Quantum State can show and the data moved increase. Further right is not always better]]
 
 | Level                  | What Quantum State could honestly show                                                    | Main risk                                                        |
 | ---------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
@@ -88,7 +88,7 @@ At the SME end, governance is often sold as an add-on to another job: [Carta](ht
 
 Board software shows what directors already buy, but the hardest problems here sit mostly in other markets: AI infrastructure, banking analytics, defense software. Measuring against them is a first principle: [[Compare Against the Problem]].
 
-![[x/Images/Wiki/QS Competitive Landscape.png]]
+![[x/Images/Wiki/QS Competitive Landscape.png|Competitive landscape, a two-by-two. Vertical axis: built for the board versus general-purpose enterprise AI. Horizontal axis: one board cycle at a time versus a living evidence graph. Board portals adding AI to the pack: Diligent, Board Intelligence, Nasdaq Boardvantage, Convene. Assistants over documents: Microsoft 365 Copilot, Cohere North. Graph platforms not shaped for boards: Palantir (Ontology), Quantexa. A board's evidence kept between meetings: Quantum State, a hypothesis to be tested. Cohere North, Palantir and Quantexa run AI on-site or air-gapped; the others do not state where their AI runs]]
 
 The axes are structural choices, not features: board portals are built around the meeting pack and sold to company secretaries; graph platforms have no model of how a board works. Each dot shows where that player's AI runs.
 

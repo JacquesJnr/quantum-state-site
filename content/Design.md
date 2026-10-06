@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T10:07:52.110Z
-published: 2026-09-30T10:07:52.110Z
+modified: 2026-10-06T09:44:47.725Z
+published: 2026-10-06T09:44:47.725Z
 up:
   - "[[mission-vision]]"
 related:
@@ -32,19 +32,19 @@ The first principles, [[See the Evidence]] and [[Human Authority]], break down i
 - **[[Keep the Director Moving]]:** long AI work runs in the background, and progress is always visible.
 - **[[Findings Outlive the Meeting]]:** a finding stays joined to its evidence and to the decision that followed. Not yet on the app map.
 
-![[x/Images/Wiki/QS Diagram - Principles.png]]
+![[x/Images/Wiki/QS Diagram - Principles.png|Principles tree. See the Evidence leads to Present Without Bias, Traceable to Quanta and Show What Isn't Known. Human Authority leads to The Director Decides and A Candid Assistant. Data Sovereignty leads to Say Which AI Said It. A Candid Assistant and Say Which AI Said It both lead to Access Before Analysis. Also: One Question at a Time, Keep the Director Moving, Findings Outlive the Meeting]]
 
 ## What an app map is
 
 An app map is a product model drawn as a connected flow: screens, and the actions that move a user between them. It shows what the user sees, what they can do, what they put in, what the system gives back, and how the state of the experience changes.
 
-![[x/Images/App Maps/QS-app-map-exemplar.png]]
+![[QS-app-map-exemplar.png|App map section, Understand the evidence. From the Node Details Panel (source information, governance insight card, related section), a director selects an insight card to open the Insight Modal (insight details, content and confidence score, actions toolbar), then creates an Investigation or adds the insight to an existing one through the Investigation Chooser. Opening the source document leads to the Document Viewer, where selecting a passage highlights the source the insight came from. Asking about the node starts an AI response from the node's sources]]
 
 **NOTE:** App maps are drawn using a JSON schema within an agent skill - so making ammendments to it cost only one prompt to an LLM, not entire redraw.
 
 ## Morgan, the first user
 
-![[x/Images/User Persona Design/leader-persona-card.png|372]]
+![[x/Images/User Persona Design/leader-persona-card.png|Persona card for Morgan Vale, Leader proto-persona: a 58-year-old former CFO serving as an independent board director and committee chair in complex, regulated entities. Needs a coherent, current view of what may require board attention, what supports management's position, what remains uncertain and what has changed. Priority domains: strategic direction, strategy execution, financial stewardship, risk and resilience, controls and assurance, major decisions. Authority boundary: Morgan questions, advises and votes; the board or committee decides; management owns execution. Design challenges: materiality, fragmented evidence, uncertainty, cross-domain context, changing conditions|372]]
 
 Morgan Vale is the proto-persona the app map is built around: a former CFO who now serves as an independent board director and committee chair in a complex, regulated organization. His job is to help the board judge direction, performance, risk and stewardship without taking over management's work.
 
@@ -71,7 +71,7 @@ The app map runs left to right in seven stages, with AI Chat as a separate flow 
 | 6. Test what could change                  | Sets up a scenario in the Board Simulation Room and reviews what emerged                                  | Runs several agents on the scenario and records where they agree and disagree | [[Board Simulation Room]]                                      |
 | 7. Prepare the board discussion            | Chooses scope and detail, reviews the draft, exports                                                      | Drafts the board material with its evidence and uncertainty                   | [[Export Query]]                                               |
 
-![[x/Images/Wiki/morgans-journey-infographic.png]]
+![[x/Images/Wiki/morgans-journey-infographic.png|Morgan's journey through Quantum State, from many documents to one board paper, in seven steps: 1 bring in governance material; 2 make the material usable; 3 find the important territory; 4 understand the evidence; 5 gather what matters around one question; 6 test what could change; 7 prepare the board discussion. AI Chat is available at any stage. AI surfaces, analyzes and proposes; Morgan validates and decides]]
 
 ```button
 name View the App Map
@@ -89,28 +89,28 @@ Each stage has to be trusted before the next: a source needs an owner before AI 
 Rough designs, one screen per stage, in the wiki's visual language: only the item in focus is full black. They follow one fictional case, Meridian Group asking whether its finance-system go-live is ready, and are drafts for discussion.
 
 **1. Bring in governance material.** Each source gets an owner before AI reads it. [[Governance Vault]]
-![[x/Images/Wiki/QS Mid-fi 1 Add sources.png]]
+![[x/Images/Wiki/QS Mid-fi 1 Add sources.png|Mid-fidelity screen, Add sources (step 1 of 4: add sources, source access, confirm setup, connect the dots). Left: drop zone for board packs, policies, minutes or reports, plus connectors for a document library, read-only ERP, board portal and local folder. Right: seven sources added; four ready, two need an owner, one file not supported. AI reads nothing until access is set. AI Chat panel suggests setup questions]]
 
 **2. Make the material usable.** Connect the dots flags what it can't read; the Brain opens before it finishes. [[Governance Vault]]
-![[x/Images/Wiki/QS Mid-fi 2 Connect the dots.png]]
+![[x/Images/Wiki/QS Mid-fi 2 Connect the dots.png|Mid-fidelity screen, Connect the dots: 4 of 6 sources read, about 6 minutes left. Source status lists claims and links found per source; board minutes need attention because three scanned pages could not be read. A forming graph links the transformation programme to the risk register and delegation policy, with counts of decisions, risks, policies and reports. AI Chat gives a preliminary finding while the Brain builds]]
 
 **3. Find the important territory.** The whole graph, unfiltered, with suggested issues. [[Governance Brain]]
-![[x/Images/Wiki/QS Mid-fi 3 Governance Brain.png]]
+![[x/Images/Wiki/QS Mid-fi 3 Governance Brain.png|Mid-fidelity screen, Governance Brain: 347 quanta from 6 sources, with lens filters (finance, risk, legal and policy, strategy, operations) and a timeframe. A graph clusters quanta by domain around the FY26 Transformation Programme, the most connected node. An overview card shows what's new and suggested issues, such as rollout readiness reported green while four open risks sit against the same milestone. AI Chat answers where the programme touches the risk register, citing two sources]]
 
 **4. Understand the evidence.** Insights carry confidence and source passages; a contradicting source sits alongside. [[Node Details Panel]], [[Insight Cards]], [[Document Viewer]]
-![[x/Images/Wiki/QS Mid-fi 4 Understand the evidence.png]]
+![[x/Images/Wiki/QS Mid-fi 4 Understand the evidence.png|Mid-fidelity screen, Understand the evidence. The node panel for the FY26 Transformation Programme report shows its owner, an AI summary and insight cards with confidence levels and page sources; one insight, go-live milestone M3 on track, is contradicted by risk register R-22. The document viewer highlights the passage on page 14 and notes that another source disagrees, showing both without either overriding the other]]
 
 **5. Gather what matters around one question.** Agreement, conflict, assumptions and unknowns kept apart; AI suggests, the director decides. [[Query]]
-![[x/Images/Wiki/QS Mid-fi 5 Query.png]]
+![[x/Images/Wiki/QS Mid-fi 5 Query.png|Mid-fidelity screen, Query: Is the Q1 go-live ready? The focus asks whether the ledger can go live without breaching budget or risk appetite. A Query graph marks conflicts as dashed lines. The Analysis shows where the evidence agrees, where it conflicts, assumptions and what isn't known, each with sources. AI Chat proposes a sourced change to the Analysis with accept and reject buttons]]
 
 **6. Test what could change.** Agents take positions; the result shows agreement, disagreement and gaps. [[Board Simulation Room]]
-![[x/Images/Wiki/QS Mid-fi 6 Board Simulation Room.png]]
+![[x/Images/Wiki/QS Mid-fi 6 Board Simulation Room.png|Mid-fidelity screen, Board Simulation Room: scenario 'go-live slips one quarter', four agents on a local model. Finance, Risk, Operations and Challenger lenses each give a sourced view: the delay is affordable, the delay is safer, training is the critical path, and evidence is missing on the vendor contract. What emerged lists where agents agree, disagree and what is missing, with a run status panel; nothing leaves the building]]
 
 **7. Prepare the board discussion.** Source, confidence and freshness stay beside every claim. [[Export Query]]
-![[x/Images/Wiki/QS Mid-fi 7 Export Query.png]]
+![[x/Images/Wiki/QS Mid-fi 7 Export Query.png|Mid-fidelity screen, Export Query: choose a detail level (summary, standard or full evidence) and a destination (board portal, PDF or Word). The draft board paper lists each claim with its source, confidence and freshness, and keeps open conflicts, unknowns and simulation results marked. Kept in the export: sources, confidence, open conflicts and unknowns, and which model wrote what]]
 
 **AI Chat.** Answers name their sources and model; nothing leaves for an outside model without consent. [[AI Chat]]
-![[x/Images/Wiki/QS Mid-fi 8 AI Chat.png]]
+![[x/Images/Wiki/QS Mid-fi 8 AI Chat.png|Mid-fidelity screen, AI Chat: a list of past chats by context, and a conversation about why the programme report and risk register disagree, answered with sources by the local model. A harder question about risk appetite prompts a request to send named passages once to a UAE-hosted frontier model, with options to send once, keep it local or show exactly what is sent. A suggested change to the Query's Analysis waits for accept or reject]]
 
 ## What the map doesn't show
 

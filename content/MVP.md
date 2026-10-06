@@ -2,8 +2,8 @@
 publish: "true"
 title: MVP
 created: 2026-10-06
-modified: 2026-10-06T08:08:46.585Z
-published: 2026-10-06T08:08:46.585Z
+modified: 2026-10-06T09:44:47.727Z
+published: 2026-10-06T09:44:47.727Z
 ---
 
 **Built on:** [[Product]], with [[Tech]] and [[Business]].
@@ -63,7 +63,7 @@ The prototype follows the [[Product#How it works|three phases]] of the product, 
 4. **Gather a question.** Insights collect into a [[Query]] around one focus, showing where the evidence agrees, where it conflicts, and what remains unknown.
 5. **Export.** The Query becomes board-ready material through [[Export Query]].
 
-![[x/Images/Wiki/QS Diagram - How it works.png]]
+![[x/Images/Wiki/QS Diagram - How it works.png|How it works: three phases in sequence. 1 Building the Governance State (Governance Vault, Governance Brain). 2 Navigating the Brain (Node Details Panel, Insight Cards, Document Viewer). 3 Preparing Queries and board material (Query, Board Simulation Room, Export Query). AI Chat runs alongside every stage]]
 
 The [[Board Simulation Room]] sits outside this first cut. It depends on everything above working first.
 

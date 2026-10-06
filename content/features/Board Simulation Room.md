@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.644Z
-published: 2026-09-29T16:14:54.644Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 The Board Simulation Room runs several AI agents in parallel against one [[Query]], each working from conflicting and contrasting views, to test what could change. It follows the Query because a scenario is only as good as the evidence gathered for it — the Room doesn't gather evidence, it tests the evidence already in hand.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S6 Test.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S6 Test.png|App map stage 6, Test what could change. Scenario Setup (number of agents, AI model, scope, custom context) runs a simulation in the Board Simulation Room, where agents research the Query in parallel in a multi-agent chat. Artifact Review shows what emerged, finding detail with agreement, disagreement and assumptions, and each agent's reasoning. The director saves a version or prepares for the board]]
 
 ## What it does for Morgan
 

@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T18:29:29.301Z
-published: 2026-09-29T18:29:29.301Z
+modified: 2026-10-06T09:44:47.727Z
+published: 2026-10-06T09:44:47.727Z
 up:
   - "[[Product]]"
 related:
@@ -19,7 +19,7 @@ This rules out AI that acts on its own: no auto-approval, no silent publishing, 
 
 The rule also shapes what the interface has to show: not just a conclusion, but who is meant to act on it and what accepting it commits them to.
 
-![[x/Images/Wiki/QS Diagram - AI may, people must.png]]
+![[x/Images/Wiki/QS Diagram - AI may, people must.png|Where AI stops, two columns divided by the line AI does not cross. AI may: read and classify sources; map how evidence connects; summarize, compare and flag contradictions; suggest a focus and draft an Analysis; run agents through a scenario; draft board material. People must: decide which sources come in and who sees them; judge which matters deserve attention; validate or reject a finding; decide what a Query contains; weigh the outcomes and accept the risk; approve what the board sees, and decide]]
 
 **Design principles under it:** [[The Director Decides]], [[A Candid Assistant]], [[Access Before Analysis]].
 

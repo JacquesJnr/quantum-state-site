@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T09:37:43.735Z
-published: 2026-09-30T09:37:43.735Z
+modified: 2026-10-06T09:44:47.726Z
+published: 2026-10-06T09:44:47.726Z
 up:
   - "[[mission-vision]]"
 related:
@@ -65,7 +65,7 @@ Each stage of the app map creates or reads data, asks something of AI, and needs
 
 Read across the stages, the demands fall into Net0's four layers of an enterprise AI stack:
 
-![[x/Images/Wiki/QS Diagram - Four layers.png]]
+![[x/Images/Wiki/QS Diagram - Four layers.png|Four layers of the technology, after Net0's enterprise AI stack. Applications: graph, document viewer, streamed answers. Models: background work and interactive work, with a routing layer that picks the model, checks the boundary and records who wrote what. Data platform: ingestion with permissions first; documents, claims and relationships; lineage of every insight. Infrastructure: where compute and storage sit]]
 
 - **Infrastructure.** Where compute and storage sit: a sovereignty choice more than a performance one (see [the sovereignty spectrum](#where-quantum-state-could-sit-on-the-sovereignty-spectrum)).
 - **Data platform.** Ingestion, with permissions recorded before anything is read ([[Access Before Analysis]]); then storage of documents, claims, their relationships and the lineage of every insight (source passage, confidence, model, review state), with versioned Analyses. No database supplies lineage; it has to be designed. The options are a relational database with pgvector (one store for records, permissions and semantic search), a graph database (deep multi-hop relationships), a vector store beside a system of record, or a hybrid; benchmarks decide whether the graph needs a graph database.

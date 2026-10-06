@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.645Z
-published: 2026-09-29T16:14:54.645Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 An Insight Card is a single governance finding, presented on its own: a concise statement, a confidence score and the tags that place it in a domain. It appears first as a Governance Insight Card inside the [[Node Details Panel]], and opens into full detail on the Insight Modal when Morgan selects it. The card exists to make a finding legible on its own terms, without hiding the evidence or the uncertainty behind it.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png|App map stage 4, Understand the evidence. From the Node Details Panel a director opens an insight in the Insight Modal and adds it to a Query, opens the source in the Document Viewer to see the highlighted passage, or asks AI about the node]]
 
 ## What it does for Morgan
 

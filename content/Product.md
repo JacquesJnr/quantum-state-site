@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T09:37:30.369Z
-published: 2026-09-30T09:37:30.369Z
+modified: 2026-10-06T09:49:53.811Z
+published: 2026-10-06T09:49:53.811Z
 up:
   - "[[mission-vision]]"
 related:
@@ -15,7 +15,7 @@ Quantum State is a governance-intelligence product for boards. It brings a compa
 
 The product is designed around one person and one piece of work: an independent director working through a matter ahead of a board discussion. That journey is drawn in full as an app map, and each section below points back to a stage in it.
 
-![[x/Images/App Maps/QS-app-map-exemplar.png]]
+![[x/Images/App Maps/QS-app-map-exemplar.png|App map section, Understand the evidence. From the Node Details Panel (source information, governance insight card, related section), a director selects an insight card to open the Insight Modal (insight details, content and confidence score, actions toolbar), then creates an Investigation or adds the insight to an existing one through the Investigation Chooser. Opening the source document leads to the Document Viewer, where selecting a passage highlights the source the insight came from. Asking about the node starts an AI response from the node's sources]]
 
 ```button
 name View the App Map
@@ -40,9 +40,9 @@ Quantum State works in three phases, with a contextual [[AI Chat]] available thr
 2. **Navigating the Brain:** finding what matters and checking the evidence behind it.
 3. **Preparing Queries and board material:** narrowing to one question, testing it, and exporting the result.
 
-![[x/Images/Wiki/QS Diagram - How it works.png]]
+![[x/Images/Wiki/QS Diagram - How it works.png|How it works: three phases in sequence. 1 Building the Governance State (Governance Vault, Governance Brain). 2 Navigating the Brain (Node Details Panel, Insight Cards, Document Viewer). 3 Preparing Queries and board material (Query, Board Simulation Room, Export Query). AI Chat runs alongside every stage]]
 
-![[x/Images/Wiki/morgans-journey-infographic.png]]
+![[x/Images/Wiki/morgans-journey-infographic.png|Morgan's journey through Quantum State, from many documents to one board paper, in seven steps: 1 bring in governance material; 2 make the material usable; 3 find the important territory; 4 understand the evidence; 5 gather what matters around one question; 6 test what could change; 7 prepare the board discussion. AI Chat is available at any stage. AI surfaces, analyzes and proposes; Morgan validates and decides]]
 
 ### Building the Governance State
 
@@ -86,7 +86,7 @@ This line matches where governance guidance is heading. OECD principles keep inf
 
 A board's decisions come down to time and money, so the board view needs some record of a company's finances. How much depends on what a company is willing to connect: historical statements, regular exports, or live accounting and banking data. Each level shows something and leaves something out. An accounting connection brings in actuals but usually not the budget; bank data alone shows cash movement, not budget variance or profit. The levels, what each lets Quantum State show, and what each costs to build are covered in [[Tech]].
 
-![[x/Images/Wiki/QS Spectrum - Financial data.png]]
+![[x/Images/Wiki/QS Spectrum - Financial data.png|How much financial data connects, five levels of access: 1 no financial data; 2 historical approved records; 3 regular finance-approved exports; 4 live read-only accounting or ERP; 5 live bank-information APIs. Moving right, both what Quantum State can show and the data moved increase. Further right is not always better]]
 
 ## What it is not
 

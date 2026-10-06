@@ -2,8 +2,8 @@
 publish: "true"
 title: Prototype Capabilities
 created: 2026-10-06
-modified: 2026-10-06T08:17:49.490Z
-published: 2026-10-06T08:17:49.490Z
+modified: 2026-10-06T09:44:47.727Z
+published: 2026-10-06T09:44:47.727Z
 up:
   - "[[MVP]]"
 ---
@@ -14,7 +14,7 @@ A prototype is judged by what it can do in front of a user. This article lists t
 
 The capabilities follow the product's journey from scattered material to board-ready output, described in [[Product#How it works|How it works]].
 
-![[x/Images/Wiki/QS Diagram - How it works.png]]
+![[x/Images/Wiki/QS Diagram - How it works.png|How it works: three phases in sequence. 1 Building the Governance State (Governance Vault, Governance Brain). 2 Navigating the Brain (Node Details Panel, Insight Cards, Document Viewer). 3 Preparing Queries and board material (Query, Board Simulation Room, Export Query). AI Chat runs alongside every stage]]
 
 ## The five main capabilities
 

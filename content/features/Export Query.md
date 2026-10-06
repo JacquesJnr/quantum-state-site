@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.644Z
-published: 2026-09-29T16:14:54.644Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 Export Query turns a reviewed [[Board Simulation Room]] artifact into board-ready material Morgan can take outside Quantum State. It comes last in the journey because the board should see only what has survived every earlier stage: sourced, checked, and tested against other views.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S7 Prepare.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S7 Prepare.png|App map stage 7, Prepare the board discussion. Export Query sets the detail level (summary, standard or full evidence) and destination. AI drafts the board material, keeping evidence, uncertainty and risk context; the Draft preview shows sources and confidence beside each claim. The director exports it or changes the scope]]
 
 ## What it does for Morgan
 

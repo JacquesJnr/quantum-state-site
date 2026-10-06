@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.645Z
-published: 2026-09-29T16:14:54.645Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 A Query gathers what matters around one board question. Insights that Morgan judges worth keeping, from anywhere in the [[Governance Brain]], come together here instead of staying scattered across nodes. Narrowing to one question at this stage is what keeps the next stage, the [[Board Simulation Room]], from testing everything at once.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S5 Gather.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S5 Gather.png|App map stage 5, Gather around a question. Create new Query (name, focus, AI-suggested focuses) leads to the Query workspace: header, overview, Analysis (strategies, consequences, assumptions, risks and open questions), Query graph, readiness and AI chat. From there the director adds or removes insights through the Insight Chooser, edits the focus, generates the Analysis, or opens the Board Simulation Room]]
 
 ## What it does for Morgan
 

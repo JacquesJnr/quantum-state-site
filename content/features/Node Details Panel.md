@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-09-29T16:14:54.645Z
-published: 2026-09-29T16:14:54.645Z
+modified: 2026-10-06T09:44:47.728Z
+published: 2026-10-06T09:44:47.728Z
 up:
   - "[[Design]]"
 related:
@@ -15,7 +15,7 @@ collections:
 
 The Node Details Panel is where Morgan opens a single point in the [[Governance Brain]] graph and finds out what it actually holds. It comes before any analysis, because Morgan has to trust the pieces of evidence before he builds anything on top of them.
 
-![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png]]
+![[x/Images/App Maps/Mo-28-Sep QS App Map 2.0 S4 Understand evidence.png|App map stage 4, Understand the evidence. From the Node Details Panel a director opens an insight in the Insight Modal and adds it to a Query, opens the source in the Document Viewer to see the highlighted passage, or asks AI about the node]]
 
 ## What it does for Morgan
 
