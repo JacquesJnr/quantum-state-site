@@ -48,7 +48,7 @@ body[data-slug="index"] {
   .qs-links-heading { border-bottom: 1px solid var(--lightgray); padding-bottom: 24px; }
   .qs-links-heading h2 { margin: 0 0 12px !important; color: var(--dark); font-size: 32px !important; font-weight: 600; line-height: 1.15 !important; letter-spacing: -.025em; }
   .qs-links-heading p { margin: 0; color: var(--tertiary); font-size: 16px; line-height: 1.3; }
-  .qs-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 46px 0 0; padding: 0 0 128px; }
+  .qs-cards { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 46px 0 0; padding: 0 0 128px; }
   .qs-cards li { min-width: 0; }
   .qs-card {
     display: flex; flex-direction: column; min-width: 0; height: 293px; padding: 20px 13px 22px;
