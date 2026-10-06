@@ -24,8 +24,8 @@ const branches = [
   { name: "Design", topics: "Principles • Journey • Screens" },
   { name: "Tech", topics: "Models • Sovereignty • Cost" },
   { name: "Business", topics: "Customers • Competitors • Pricing" },
-  { name: "Roadmap", topics: "Now • Next • Later" },
   { name: "MVP", topics: "App Map • Hosting • Data" },
+  { name: "Roadmap", topics: "Now • Next • Later" },
 ]
 
 const icons: Record<string, string> = {
