@@ -2,8 +2,8 @@
 publish: "true"
 title: Home
 created: 2026-09-29
-modified: 2026-09-30T09:38:30.669Z
-published: 2026-09-30T09:38:30.669Z
+modified: 2026-10-06T07:22:27.463Z
+published: 2026-10-06T07:22:27.463Z
 ---
 
 > [!success] Vision Statement

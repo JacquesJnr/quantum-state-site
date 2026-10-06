@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-09-30T09:36:58.482Z
-published: 2026-09-30T09:36:58.482Z
+modified: 2026-09-30T10:07:52.110Z
+published: 2026-09-30T10:07:52.110Z
 up:
   - "[[mission-vision]]"
 related:
@@ -51,7 +51,7 @@ Morgan Vale is the proto-persona the app map is built around: a former CFO who n
 Four things shape what he needs from a tool:
 
 - **He investigates selectively.** He can't know every fact, so he goes deep where a matter is material, uncertain, or beyond what the board currently understands.
-- **His biases are his strength.** Allowing the **[[Governance Brain]]** to be filtered by domain - risk, legal, finance etc. - allows the board members to focus on whichever cluster of _quanta_ makes sense to them - likewise the inclusion of the AI chat allows user's to explore new areas of the control domain at their oen pace.
+- **His biases are his strength.** Allowing the **[[Governance Brain]]** to be filtered by domain - risk, legal, finance etc. - allows the board members to focus on whichever cluster of _quanta_ makes sense to them - likewise the inclusion of the AI chat allows user's to explore new areas of the control domain at their own pace.
 - **His work comes in cycles, with interruptions.** It follows board and committee meetings, but a change in conditions can reopen a matter at any time.
 - **He doesn't decide alone.** He questions, advises and votes. The board or a committee decides together, and management carries out the decision.
 
