@@ -1,4 +1,4 @@
-// Writes public/llms.txt from Quartz's content index, after `npx quartz build`.
+// Writes public/llms.txt and public/llms-full.txt from Quartz's content index, after `npx quartz build`.
 import { readFileSync, writeFileSync } from "node:fs"
 
 const base = "https://jacquesjnr.github.io/quantum-state-site"
@@ -16,7 +16,8 @@ const body = (p) => {
   const t = p.content.trim()
   return t.startsWith(p.title) ? t.slice(p.title.length) : t
 }
-const line = (p) => `- [${p.title}](${base}/${p.slug === "index" ? "" : p.slug}): ${blurb(body(p))}`
+const url = (p) => `${base}/${p.slug === "index" ? "" : p.slug}`
+const line = (p) => `- [${p.title}](${url(p)}): ${blurb(body(p))}`
 
 const groups = [
   ["Main articles", (s) => !s.includes("/")],
@@ -28,7 +29,7 @@ let out = `# Quantum State
 
 > Quantum State is a governance-intelligence platform for boards. It brings a company's governance material into one place, uses AI to map how it connects, and helps directors carry a question from the evidence to board-ready material. People validate and decide; AI reads, connects and proposes.
 
-Every page is plain HTML and readable without JavaScript. The full text of every page, with titles, links and tags, is in one JSON file: ${base}/static/contentIndex.json
+Every page is plain HTML and readable without JavaScript. The full text of every page is in one plain-text file: ${base}/llms-full.txt. The same text, with titles, links and tags, is in one JSON file: ${base}/static/contentIndex.json
 
 Diagrams carry descriptive alt text. Mermaid charts appear as their source code. The app map is a Figma board linked from the Product page.
 `
@@ -37,4 +38,7 @@ for (const [name, test] of groups) {
   if (list.length) out += `\n## ${name}\n\n${list.map(line).join("\n")}\n`
 }
 writeFileSync("public/llms.txt", out)
-console.log(`llms.txt: ${pages.length} pages`)
+
+const full = pages.map((p) => `# ${p.title}\n\nSource: ${url(p)}\n\n${body(p).replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim()}\n`).join("\n---\n\n")
+writeFileSync("public/llms-full.txt", full)
+console.log(`llms.txt and llms-full.txt: ${pages.length} pages`)
