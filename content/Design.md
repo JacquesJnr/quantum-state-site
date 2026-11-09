@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-28
-modified: 2026-10-06T09:44:47.725Z
-published: 2026-10-06T09:44:47.725Z
+modified: 2026-11-09T11:18:46.289Z
+published: 2026-11-09T11:18:46.289Z
 up:
   - "[[mission-vision]]"
 related:
@@ -38,7 +38,7 @@ The first principles, [[See the Evidence]] and [[Human Authority]], break down i
 
 An app map is a product model drawn as a connected flow: screens, and the actions that move a user between them. It shows what the user sees, what they can do, what they put in, what the system gives back, and how the state of the experience changes.
 
-![[QS-app-map-exemplar.png|App map section, Understand the evidence. From the Node Details Panel (source information, governance insight card, related section), a director selects an insight card to open the Insight Modal (insight details, content and confidence score, actions toolbar), then creates an Investigation or adds the insight to an existing one through the Investigation Chooser. Opening the source document leads to the Document Viewer, where selecting a passage highlights the source the insight came from. Asking about the node starts an AI response from the node's sources]]
+![[x/Images/App Maps/QS-app-map-exemplar.png|App map section, Understand the evidence. From the Node Details Panel (source information, governance insight card, related section), a director selects an insight card to open the Insight Modal (insight details, content and confidence score, actions toolbar), then creates an Investigation or adds the insight to an existing one through the Investigation Chooser. Opening the source document leads to the Document Viewer, where selecting a passage highlights the source the insight came from. Asking about the node starts an AI response from the node's sources]]
 
 **NOTE:** App maps are drawn using a JSON schema within an agent skill - so making ammendments to it cost only one prompt to an LLM, not entire redraw.
 
@@ -65,7 +65,7 @@ The app map runs left to right in seven stages, with AI Chat as a separate flow 
 | ------------------------------------------ | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | 1. Bring in governance material            | Uploads files, connects live tools or points to a local folder, and sets who owns and can use each source | Starts building the Governance Vault                                          | [[Governance Vault]]                                           |
 | 2. Make the material usable                | Watches the build, or carries on while it finishes                                                        | Reads the sources and maps how they connect                                   | [[Governance Vault]]                                           |
-| 3. Find the important territory            | Filters and searches the Governance Brain graph                                                           | Shows the whole graph or filtered clusters and an overview                    | [[Governance Brain]]                                           |
+| 3. Find the important territory            | Filters and searches the Governance Brain graph                                                           | Shows the whole graph or filtered clusters and an overview                    | [[Governance Brain]], [[Wheel View]], [[Smart Search]]         |
 | 4. Understand the evidence                 | Opens a node, reads its insights, checks the source passage                                               | Summarizes the node and answers questions about it                            | [[Node Details Panel]], [[Insight Cards]], [[Document Viewer]] |
 | 5. Gather what matters around one question | Creates a Query, names its focus, adds or removes insights                                                | Suggests focuses and writes the Analysis                                      | [[Query]]                                                      |
 | 6. Test what could change                  | Sets up a scenario in the Board Simulation Room and reviews what emerged                                  | Runs several agents on the scenario and records where they agree and disagree | [[Board Simulation Room]]                                      |
@@ -96,6 +96,11 @@ Rough designs, one screen per stage, in the wiki's visual language: only the ite
 
 **3. Find the important territory.** The whole graph, unfiltered, with suggested issues. [[Governance Brain]]
 ![[x/Images/Wiki/QS Mid-fi 3 Governance Brain.png|Mid-fidelity screen, Governance Brain: 347 quanta from 6 sources, with lens filters (finance, risk, legal and policy, strategy, operations) and a timeframe. A graph clusters quanta by domain around the FY26 Transformation Programme, the most connected node. An overview card shows what's new and suggested issues, such as rollout readiness reported green while four open risks sit against the same milestone. AI Chat answers where the programme touches the risk register, citing two sources]]
+
+The Governance Brain has two more views, which are not on the app map yet. Both are in the [Governance Brain Toy](https://jacquesjnr.github.io/product-toybox/app/).
+
+- **[[Wheel View]]** shows each domain on a spider chart, measured against the risk appetite that the board sets. Its job is to show what is at risk fast.
+- **[[Smart Search]]** searches the vault by meaning, not only by words or recorded links. It shows each document that it reads, and it marks new connections as AI findings.
 
 **4. Understand the evidence.** Insights carry confidence and source passages; a contradicting source sits alongside. [[Node Details Panel]], [[Insight Cards]], [[Document Viewer]]
 ![[x/Images/Wiki/QS Mid-fi 4 Understand the evidence.png|Mid-fidelity screen, Understand the evidence. The node panel for the FY26 Transformation Programme report shows its owner, an AI summary and insight cards with confidence levels and page sources; one insight, go-live milestone M3 on track, is contradicted by risk register R-22. The document viewer highlights the passage on page 14 and notes that another source disagrees, showing both without either overriding the other]]

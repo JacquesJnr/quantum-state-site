@@ -2,8 +2,8 @@
 publish: "true"
 title: MVP
 created: 2026-10-06
-modified: 2026-10-06T09:44:47.727Z
-published: 2026-10-06T09:44:47.727Z
+modified: 2026-10-07T06:12:08.430Z
+published: 2026-10-07T06:12:08.430Z
 ---
 
 **Built on:** [[Product]], with [[Tech]] and [[Business]].
@@ -65,7 +65,7 @@ The prototype follows the [[Product#How it works|three phases]] of the product, 
 
 ![[x/Images/Wiki/QS Diagram - How it works.png|How it works: three phases in sequence. 1 Building the Governance State (Governance Vault, Governance Brain). 2 Navigating the Brain (Node Details Panel, Insight Cards, Document Viewer). 3 Preparing Queries and board material (Query, Board Simulation Room, Export Query). AI Chat runs alongside every stage]]
 
-The [[Board Simulation Room]] sits outside this first cut. It depends on everything above working first.
+The [[Board Simulation Room]] sits between steps 4 and 5. AI agents test the Query from conflicting views, and the reviewed artifact is what [[Export Query]] turns into board material.
 
 ### What the prototype has to show
 
