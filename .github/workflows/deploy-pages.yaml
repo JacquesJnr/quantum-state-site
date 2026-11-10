@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
         with:
@@ -40,6 +42,28 @@ jobs:
         run: npx quartz build
       - name: Write llms.txt
         run: node scripts/llms.mjs
+      - name: Sync generated files to llms branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          output_dir=$(mktemp -d)
+          remote_ref=$(git ls-remote --heads origin refs/heads/llms)
+          if [ -n "$remote_ref" ]; then
+            git fetch origin refs/heads/llms
+            git worktree add --detach "$output_dir" FETCH_HEAD
+          else
+            git worktree add --detach "$output_dir" HEAD
+            git -C "$output_dir" switch --orphan llms
+          fi
+
+          cp public/llms.txt public/llms-full.txt "$output_dir/"
+          git -C "$output_dir" config user.name "github-actions[bot]"
+          git -C "$output_dir" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "$output_dir" add -- llms.txt llms-full.txt
+          if ! git -C "$output_dir" diff --cached --quiet; then
+            git -C "$output_dir" commit -m "Update llms files from ${GITHUB_SHA}"
+            git -C "$output_dir" push origin HEAD:refs/heads/llms
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
