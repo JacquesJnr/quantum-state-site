@@ -1,0 +1,1234 @@
+# Home
+
+Source: https://jacquesjnr.github.io/quantum-state-site/
+
+Vision Statement
+
+A continuous, evidence-grounded governance intelligence system built on AI-native technology for faster board-level attention, challenge, and judgment.
+
+                  Mission Statement
+
+To transform executive decision making for corporate governance by turning fragmented corporate evidence into trusted, reviewable insights so boards and executives can see what matters, understand why it matters, and make better-informed decisions.
+
+Product in One Paragraph
+Quantum State is a secure governance intelligence platform that helps boards, executives, and governance teams see what matters, why it matters, what evidence supports it, what uncertainty remains, and what human judgment is required.
+It brings in fragmented finance, audit, risk, compliance, strategy, performance, policy, and governance material and builds it into an interactive central Governance Brain: one connected picture of how a company’s policies, decisions, risks and reports relate.
+A director can explore the Brain freely: follow a thread from a risk to the decision it touches, see which matters carry the most connections, open any point to read the passage behind it, or simply ask it a question in plain language. When something deserves a closer look, it becomes a Query, where AI analyzes it, the Board Simulation Room tests what could change, and the result becomes board-ready material. It does not replace governance authority.
+
+---
+
+# Business
+
+Source: https://jacquesjnr.github.io/quantum-state-site/business
+
+Built on: Choose Who We Serve, Compare Against the Problem
+This article covers who Quantum State serves, what a customer buys, how it reaches a first customer, and how it compares with everyone solving the same problems, not only board software. None of these choices is made; they are options with their tradeoffs, for a sponsor and outside experts to weigh.
+Who it serves
+Quantum State sits on a spectrum from regulated to unregulated entities, and a place on that spectrum has to be chosen. At one end is an international, regulated entity held to the highest standard: a bank or a DIFC firm, where governance data cannot be shown to leave the building and every deployment choice gets checked against that rule. At the other end is an unregulated, private SME, where the risk is lower and a shared, hosted service is an acceptable answer.
+The product as designed points toward the regulated end: it is built around the independent board auditor, a reader who needs traceable evidence and a defensible export. Serving both ends would mean two cost bases, since a high-assurance deployment and a shared low-cost one are different products.
+
+What the spectrum changes
+Where a customer sits changes more than the deployment: it shapes what data they can and will provide, who buys, and what the board expects. Likely patterns, not tested ones:
+
+Regulated endUnregulated endData boundaryIn the building, or at most in the countryIn the region, or per provider termsFinancial data it can provideAudited statements, a mature ERP, formal budgetsManagement accounts, often a cloud accounting tool; budgets may be informalFinancial data it will connectCautious: approved records or controlled exportsMore open to live connections, with less to connectWho buysCompany secretary or governance sponsor, with IT and risk reviewThe founder or owner directlyWhat the board expectsA defensible trail from every claim to its sourceSpeed and clarity over formal evidence
+How much financial data a customer connects
+A board’s questions come down to time and money, so the question to ask each buyer is: how willing are you to connect your company’s financial data to an AI-powered tool? The answer is a spectrum of its own, and it sets what Quantum State can show.
+
+LevelWhat Quantum State could honestly showMain risk1. NoneGovernance evidence only, with money marked as unknown, never made upA false sense of completeness2. Historical recordsThe last approved position and trends; budget variance only if the budget is supplied tooStale periods and unaudited management accounts3. Regular exportsBudget against actual and anomalies as of the latest exportA late export, or wrong account mapping4. Live ERP, read-onlyCurrent actuals, receivables and payables, with open and closed periods labeledSilent sync gaps, and preliminary numbers shown as approved5. Live bankingBalances, cash movement and cash alerts; runway still needs forecasts from elsewhereIncomplete accounts, and bank figures that don’t match the books
+Level 5 is not the destination: the lowest level that answers a given board question may differ from one decision to the next. No survey measures willingness at these five levels, so conversations with buyers and board members are the first evidence. What each level costs to build is covered in Tech.
+What it sells
+Three value outcomes sit behind the offer. None has been tested with a customer:
+
+Lower preparation waste — less recurring effort spent assembling and reconciling governance material.
+Better leadership judgment — faster, better-grounded attention to material issues, contradictions, and implications.
+Audit-ready governance confidence — visible evidence lineage, confidence rationale, review state, and human ownership.
+
+The product principles behind the offer, in the order they’re meant to matter:
+
+governed findings before workflow objects
+cross-source interpretation before document summarization
+evidence confidence before unexplained AI certainty
+visible uncertainty before artificial completeness
+contextual challenge before passive consumption
+human authority before autonomous governance
+decision and outcome memory before one-cycle reporting
+interoperability before suite replacement
+
+What a customer buys first is not settled. Three options sit side by side, each with a different buyer, a different bounded proof, and a different charging model:
+
+OptionFirst buyerBounded pilotCharging modelA. Query of one board questionCompany secretary, governance lead, or executive sponsorA fixed, permissioned evidence set; findings, citations, uncertainty, human review, and a board-ready exportPaid fixed-scope pilot, then a subscriptionB. Governed-intelligence layerGovernance or risk sponsor at a regulated entityOne evidence domain or meeting cycle; read-only ingest, traceability, review gatesDiscovery fee, then an annual platform feeC. Human-reviewed board briefChair, executive, or governance teamOne cycle, clearly marked human judgment, source links, a correction logFee per cycle or a retainer
+All three serve the regulated end. Whichever comes first is a bounded proof, not the full platform: the product as designed promises more than a first customer needs to validate.
+Reaching a first customer
+Board software is sold to the organization even when directors are the users. A company secretary or governance team usually buys and carries the change, so Morgan can use Quantum State without signing the contract.
+At the SME end, governance is often sold as an add-on to another job: Carta includes board meetings in its higher equity-management tiers, and Pulley includes board approvals in its Growth tier. Neither proves demand for governance intelligence on its own.
+Competitive landscape
+Board software shows what directors already buy, but the hardest problems here sit mostly in other markets: AI infrastructure, banking analytics, defense software. Measuring against them is a first principle: Compare Against the Problem.
+
+The axes are structural choices, not features: board portals are built around the meeting pack and sold to company secretaries; graph platforms have no model of how a board works. Each dot shows where that player’s AI runs.
+Direct competitors already claim the obvious ground. Diligent, Board Intelligence, and Nasdaq Boardvantage already advertise cited prep questions, pack summaries and critique, outside perspectives, minutes, and human review. Citations, challenge, and human-in-the-loop do not set Quantum State apart on their own. None of them says where its AI actually runs: Diligent’s GovernAI page promises the customer’s documents stay separate but names no model, host, or residency option, and Convene, strong in Saudi Arabia, offers on-premises or SAMA-compliant hosting for its portal without saying where its AI runs.
+Data sovereignty at scale is already sold, by companies outside board software. Cohere North runs on-premises, in a private cloud, or air-gapped, reportedly on as few as two GPUs, with customers including RBC. Mistral sells open-weight models for on-premises use through partners. Palantir deploys to air-gapped sites through an automated update system and puts its own engineers on-site at every customer. Core42 and OpenAI’s UAE residency already supply the “in the country” middle ground. The pattern across all of them: running one local model is easy, keeping many installs updated, approved, and healthy is the hard part, and it becomes part of the product itself. Data sovereignty is a requirement Quantum State has to meet, not what sets it apart.
+Connected data shown as a graph, with AI on top, is also already sold. Palantir’s Ontology models a customer’s organization as connected objects with AI reasoning over them, and Quantexa resolves people, companies, and transactions into knowledge graphs for banks, on-premises capable. Both sell to regulated buyers. Nobody found sells a graph shaped for a board specifically: its policies, decisions, risks, and board papers. If a difference exists there, it would be the governance model and the board workflow, not the graph technology.
+Who has failed, and why:
+
+CaseWhat happenedThe lessonAleph Alpha (Germany, 2019–2026)Pitched itself as the sovereign alternative, moved away from frontier models, lost technical staff, and agreed to be acquired by Cohere in April 2026Sovereignty alone doesn’t carry a companyDeloitte Australia (2025)Partly refunded a roughly AUD 440,000 government report that contained AI-invented citations and a made-up court quoteOutput that can’t be traced back to its source costs money and trustVITAL (2014)An algorithm was “appointed” to a board; a director normally has to be a natural person, so the appointment was cosmeticAI can’t hold board authorityIBM Watson Health (2015–2022)Over $4 billion spent, never profitable, sold for partsPromising judgment before the evidence supports itMicrosoft 365 Copilot oversharingCopilot surfaces any file a user can technically open, board minutes included; many organizations delayed rolloutKeeping data in the building isn’t the same as keeping it safe
+In every case the AI’s output was given more authority than its evidence earned. That is the exact risk Human Authority and See the Evidence are meant to close off.
+Closer to home, the UAE Cabinet’s Regulatory Intelligence Office already uses AI to track how laws affect society and to propose changes. AI-assisted governance is already familiar at government level in the UAE, a point in favor of the regulated end.
+Pricing, still unpriced
+Neither Diligent nor Board Intelligence publishes AI pricing; both route buyers to a custom quote. What a customer would pay for Quantum State, at either end of the spectrum, is a modeled guess, not a tested number. It also depends on how much financial data a customer will connect (see How much financial data a customer connects).
+Known and unknown
+Known
+
+Board software is sold to the organization, usually through the company secretary, even when directors are the users.
+Incumbents already advertise cited preparation, pack critique and human review, and none publishes where its AI runs.
+Data sovereignty at scale and graph-plus-AI products already exist outside board software.
+
+Unknown
+
+Which end of the spectrum goes first, and whether both can be served without two separate products.
+What a customer would pay, for which first offer.
+Whether board buyers ask where the AI runs, or only IT and risk teams do.
+
+Still open
+
+Which regulated buyer goes first: a bank, a DIFC firm, or a large private group with a formal board?
+How willing are regulated buyers to connect financial data, and which level do they reach before the answer turns to no?
+What is the first thing actually bought: a Query, a governed-intelligence layer, or a human-reviewed brief?
+Does any vendor already combine on-site AI, a board-shaped graph, and claims traced to their source? Public pages can’t prove absence; only a demo against the same case can settle it.
+
+Sources
+
+Diligent — AI for Boards / GovernAI
+Board Intelligence — AI and IQ
+Nasdaq Boardvantage AI Assistant
+Azeus Convene — Saudi Arabia
+Carta board-management guide
+Pulley pricing
+Cohere North
+Cloudera and Mistral partnership
+Palantir AIP architecture
+Core42 Sovereign Public Cloud
+Quantexa Decision Intelligence Platform
+Cohere to acquire Aleph Alpha — CNBC
+Deloitte partial refund — Fortune
+VITAL (machine learning software) — Wikipedia
+IBM Watson Health — Slate
+Microsoft 365 Copilot oversharing — Computerworld
+UAE Cabinet Regulatory Intelligence Office
+
+---
+
+# Design
+
+Source: https://jacquesjnr.github.io/quantum-state-site/design
+
+Built on: See the Evidence, Human Authority
+Governance data is complex: policies, decisions, risks and agreements scattered across documents and systems. Quantum State treats that material as its own relational graph - see Governance Brain - where each node is a piece of governance data that can be traced, analyzed and remembered, and each connection strengthens what the graph can tell a reader about how one thing relates to another.
+AI’s part in this isn’t limited to answering questions; it reasons about how the data links together, how it’s presented, and how it becomes a forward-looking decision the board can act on.
+Design starts from one person’s path through this graph, not from a feature list: an independent director moving from scattered company material to something the board can discuss. That path is drawn as an app map, and every other design decision traces back to a stage in it.
+Design principles
+The first principles, See the Evidence and Human Authority, break down into design principles that each screen is held to:
+
+Present Without Bias: governance data is shown as the evidence has it, never arranged to lean the director toward a conclusion. Reflected in the Governance Brain.
+Traceable to Quanta: everything AI generates traces back to the quanta and source passages it came from. Reflected in Insight Cards, the Document Viewer and AI summaries.
+A Candid Assistant: AI says what the evidence shows even when it’s unwelcome, and shows disagreement openly. Reflected in AI Chat, the Board Simulation Room and suggested insights.
+Show What Isn’t Known: gaps, staleness and uncertainty are shown beside the findings they qualify.
+The Director Decides: nothing AI suggests takes effect until the director accepts it.
+Access Before Analysis: who owns and may see a source is settled before AI reads it.
+Say Which AI Said It: every claim names the model behind it, and any handoff outside the customer’s boundary is visible first. Not yet on the app map.
+One Question at a Time: depth comes from narrowing each Query to one board question.
+Keep the Director Moving: long AI work runs in the background, and progress is always visible.
+Findings Outlive the Meeting: a finding stays joined to its evidence and to the decision that followed. Not yet on the app map.
+
+What an app map is
+An app map is a product model drawn as a connected flow: screens, and the actions that move a user between them. It shows what the user sees, what they can do, what they put in, what the system gives back, and how the state of the experience changes.
+
+NOTE: App maps are drawn using a JSON schema within an agent skill - so making ammendments to it cost only one prompt to an LLM, not entire redraw.
+Morgan, the first user
+
+Morgan Vale is the proto-persona the app map is built around: a former CFO who now serves as an independent board director and committee chair in a complex, regulated organization. His job is to help the board judge direction, performance, risk and stewardship without taking over management’s work.
+Four things shape what he needs from a tool:
+
+He investigates selectively. He can’t know every fact, so he goes deep where a matter is material, uncertain, or beyond what the board currently understands.
+His biases are his strength. Allowing the Governance Brain to be filtered by domain - risk, legal, finance etc. - allows the board members to focus on whichever cluster of quanta makes sense to them - likewise the inclusion of the AI chat allows user’s to explore new areas of the control domain at their own pace.
+His work comes in cycles, with interruptions. It follows board and committee meetings, but a change in conditions can reopen a matter at any time.
+He doesn’t decide alone. He questions, advises and votes. The board or a committee decides together, and management carries out the decision.
+
+Morgan is a hypothesis, built from role research rather than director interviews. Quantum State plans to accommodate more personas as the product grows, but only Morgan’s journey is designed and mapped today.
+The journey
+The app map runs left to right in seven stages, with AI Chat as a separate flow reachable from any screen that offers it.
+
+StageWhat Morgan doesWhat AI doesFeature1. Bring in governance materialUploads files, connects live tools or points to a local folder, and sets who owns and can use each sourceStarts building the Governance VaultGovernance Vault2. Make the material usableWatches the build, or carries on while it finishesReads the sources and maps how they connectGovernance Vault3. Find the important territoryFilters and searches the Governance Brain graphShows the whole graph or filtered clusters and an overviewGovernance Brain, Wheel View, Smart Search4. Understand the evidenceOpens a node, reads its insights, checks the source passageSummarizes the node and answers questions about itNode Details Panel, Insight Cards, Document Viewer5. Gather what matters around one questionCreates a Query, names its focus, adds or removes insightsSuggests focuses and writes the AnalysisQuery6. Test what could changeSets up a scenario in the Board Simulation Room and reviews what emergedRuns several agents on the scenario and records where they agree and disagreeBoard Simulation Room7. Prepare the board discussionChooses scope and detail, reviews the draft, exportsDrafts the board material with its evidence and uncertaintyExport Query
+
+name View the App Map
+type link
+action www.figma.com/board/WITVErwq2RH0fhCbBqVAJs
+width 45
+align middle center
+color blue
+Each stage has to be trusted before the next: a source needs an owner before AI reads it, evidence needs a source before it goes into a Query, and the board sees only what survives every stage. AI Chat sits outside the sequence on purpose, carrying the context of whatever screen opens it; nothing it suggests changes an Analysis until Morgan accepts it.
+The screens
+Rough designs, one screen per stage, in the wiki’s visual language: only the item in focus is full black. They follow one fictional case, Meridian Group asking whether its finance-system go-live is ready, and are drafts for discussion.
+1. Bring in governance material. Each source gets an owner before AI reads it. Governance Vault
+
+2. Make the material usable. Connect the dots flags what it can’t read; the Brain opens before it finishes. Governance Vault
+
+3. Find the important territory. The whole graph, unfiltered, with suggested issues. Governance Brain
+
+The Governance Brain has two more views, which are not on the app map yet. Both are in the Governance Brain Toy.
+
+Wheel View shows each domain on a spider chart, measured against the risk appetite that the board sets. Its job is to show what is at risk fast.
+Smart Search searches the vault by meaning, not only by words or recorded links. It shows each document that it reads, and it marks new connections as AI findings.
+
+4. Understand the evidence. Insights carry confidence and source passages; a contradicting source sits alongside. Node Details Panel, Insight Cards, Document Viewer
+
+5. Gather what matters around one question. Agreement, conflict, assumptions and unknowns kept apart; AI suggests, the director decides. Query
+
+6. Test what could change. Agents take positions; the result shows agreement, disagreement and gaps. Board Simulation Room
+
+7. Prepare the board discussion. Source, confidence and freshness stay beside every claim. Export Query
+
+AI Chat. Answers name their sources and model; nothing leaves for an outside model without consent. AI Chat
+
+What the map doesn’t show
+The map covers one run through the journey, from material to export. It leaves out on purpose:
+
+Other board members. The journey is Morgan’s alone; sharing the export happens outside Quantum State. See Where the design is heading.
+Looking after sources after setup: adding more, revoking access, re-syncing a live tool.
+Failure states: a tool that won’t connect, a source AI can’t read, a search with no results, a simulation that stops partway, an export that fails.
+An Analysis going stale when its evidence changes, and a way to see an earlier version of it.
+
+These gaps matter most against the promise to be continuous: the map shows a single pass, while a board’s work repeats and interrupts itself.
+Where the design is heading: a space for the whole board
+Today’s journey has one director and one partner, the AI. The design is heading toward a shared space where board members and the people around the board use the same Governance Brain, share Queries and findings, and question each other’s work, so understanding doesn’t rest on one person’s exchanges with AI.
+Boards decide together. A platform used by one independent director stays a personal tool; it becomes something an organization can rely on only when the board and the roles around it take part. Only Morgan’s journey is designed so far.
+Nothing here is settled. It raises four questions:
+
+How is this different from a board portal? Portals already share board material, and Quantum State exports to them. One possible line: portals share the papers; Quantum State shares the thinking behind them, meaning Queries, findings and their evidence.
+How does independent judgment survive a shared analysis? If a whole board works from the same AI analysis, views may converge. Shared work may need to show who concluded what and keep differing views visible, the way the Board Simulation Room shows agents disagreeing.
+Who is in the space? Board members only, or management too? Management writes much of what the board reads, and one shared space changes that relationship.
+What about directors on several boards? Each board would need its own space, with its evidence kept apart.
+
+Tradeoffs
+Several parts of the design are still options:
+
+AI Chat’s shape. A dedicated chat, a compact bar and a side panel in the Query all exist; whether all three are needed is open.
+One graph or two. A central graph for all material and a separate graph per Query both exist; the split is untested.
+Source intake. Adding files and connecting systems could stay one flow, as drawn, or split into separate setup steps.
+
+Each carries a cost: more chat entry points mean more to keep consistent, two graphs mean two things to keep in sync, and one intake flow folds together two kinds of trust decision, a file Morgan owns and a tool the company already uses.
+Known and unknown
+
+Whether directors recognize this journey, and whether they’d use the tool directly or only read its output in board papers, is untested.
+Whether a Query is temporary or kept, and who owns it once created, isn’t settled.
+
+Still open
+
+What is the smallest version of Morgan’s experience that still counts as the product: scan, query, cited claim, contradiction, human challenge, export?
+What can AI Chat see at each entry point, and how does a suggested change to the Analysis keep an earlier version around?
+When can the Board Simulation Room actually open, and should the map show that condition instead of leaving it always available?
+How do board decisions come back into Quantum State? When board material, or any board meeting, materially changes strategy, the app map offers no way to bring that back into the Vault except an upload. Is one upload path enough, leaving it to people to save the minutes into the Vault, or does the design need a dedicated way to record decisions? See Findings Outlive the Meeting.
+
+Sources
+
+App map board (Figma)
+
+---
+
+# A Candid Assistant
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/a-candid-assistant
+
+AI acts as a candid governance assistant. It says what the evidence shows even when it is unwelcome, raises what the director hasn’t asked about, and shows disagreement openly instead of blending it into one answer. Candor never becomes authority: the AI advises, and Human Authority keeps every decision with people.
+In the Board Simulation Room, several agents work through a scenario, and Artifact Review shows where they agree and where they disagree, with each agent’s reasoning underneath. AI Chat answers questions in the context of the screen it opens from. Suggested insights and suggested focuses in a Query point to material the director may have missed.
+This rules out an assistant that only confirms what the director already thinks, averages disagreement into false consensus, or softens a finding to keep it comfortable.
+Used by: Design, Product. Features: AI Chat, Board Simulation Room, Query, Insight Cards.
+
+---
+
+# Access Before Analysis
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/access-before-analysis
+
+Who owns a source and who may see it is settled before AI reads anything. Access is part of setup, not something added once the analysis exists. A design principle under Data Sovereignty and Human Authority.
+In the Governance Vault, every source gets an owner and a list of permitted users on Source access, and Confirm setup shows each source as ready, or names what it still needs, before the build begins. Connect the dots starts only after that.
+This rules out AI reading everything a user can technically open and sorting out permissions afterward, the pattern that leads general-purpose assistants to surface board minutes to people who shouldn’t see them.
+Used by: Design, Tech. Features: Governance Vault.
+
+---
+
+# Choose Who We Serve
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/choose-who-we-serve
+
+Quantum State picks a place on the spectrum from regulated to unregulated, and accepts what that costs. It cannot serve everyone at once.
+On the Tech side, the spectrum runs from an appliance on a bank’s own premises to a shared cluster serving unregulated small businesses; each end asks for a different cost base and a different promise about where data lives. On the Business side, the same choice shows up in go-to-market: a paid pilot sold to a regulated board’s governance sponsor looks nothing like a low-cost hosted service for small businesses. Building for both ends at once means running two cost bases and answering to two very different buyers.
+This rules out a roadmap that promises the highest end’s data controls at the lowest end’s price, or a sales motion that tries to win a DIFC-regulated firm and an unregulated SME with the same pitch. Picking a place on the spectrum means naming, for now, who Quantum State does not serve.
+Used by: Business.
+
+---
+
+# Compare Against the Problem
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/compare-against-the-problem
+
+Quantum State is measured against anyone solving the same problems, sovereign AI, connected governance data, trustworthy AI output, not only against board software.
+Board software vendors show what directors already buy: cited prep questions, pack summaries, human review. Those features are already taken. The harder comparison sits in other markets: sovereign AI vendors running models on-premises or air-gapped at scale, and knowledge-graph platforms that connect an organization’s data and reason over it for regulated buyers. Their successes show what already works and what it costs to run; their failures, output given more authority than its evidence earned, show where the risk sits.
+This rules out declaring success by matching a board-software feature list. Citations, human review and an “AI-native” label don’t set anything apart on their own if the category leader already ships them. It also rules out ignoring a failure just because it happened outside board governance: a citation scandal or an unprofitable enterprise AI program teaches the same lesson wherever it happens.
+The question this principle keeps asking is not “does this beat Diligent,” but “does this hold up against whoever has already tried to solve sovereign AI, connected data, or trustworthy output, anywhere.”
+Used by: Business.
+
+---
+
+# Data Sovereignty
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/data-sovereignty
+
+The customer’s governance data stays under the customer’s control. Every technical option is judged against this first, before cost, speed or convenience.
+In the Governance Vault, source access and setup decide where a document lives and who can reach it before anything else about the product matters. On the Tech side, every deployment option, from a shared cloud tenant to an on-site appliance to an air-gapped install, gets read against the same question: what leaves the building, and under what terms.
+This rules out treating “hosted in the region” as the same as “processed in the region,” since a model can sit in the right country and still send data through a provider outside it. It also rules out a handoff to an outside model that isn’t recorded: what was sent, why, and who approved it. A customer with no appetite for that exposure gets a route that keeps everything local, even if it costs more to run.
+Where a specific customer sits on the spectrum between full on-site control and a shared regional service is a choice made against this principle, not around it.
+Design principles under it: Access Before Analysis, Say Which AI Said It.
+Used by: Tech. Features: Governance Vault.
+
+---
+
+# Findings Outlive the Meeting
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/findings-outlive-the-meeting
+
+An interpretation doesn’t reset with each board pack. A finding stays joined to its changing evidence, its contradictions, its review state and the decision that followed it, so the board’s understanding carries from one meeting to the next.
+The app map does not yet show this; the journey ends at Export Query. The map already saves versions of what the Board Simulation Room produces. Still to be designed: whether a Query is kept or temporary, how the board’s decision comes back in, and how a finding changes when its evidence does.
+This is also the candidate difference from existing board tools set out in Product, which mostly work one board cycle at a time.
+This rules out treating each meeting as a fresh start, and board material that loses its link to evidence once exported.
+How a decision could come back in
+Today the only route is an upload. These are the options on the table; none is chosen.
+
+OptionHow it worksWhat it relies onUpload onlySomeone saves the minutes into the Governance Vault like any other sourcePeople remembering, and the minutes being findableClose the QueryAfter the meeting, the director records the outcome on the Query that fed it: approved, rejected, deferred, and whyOne extra step, taken while memory is freshestRound-trip the exportThe exported board material comes back as a node, linked to its Query, and the decision attaches to itThe export and the decision staying connectedConnect the minutesA live source pulls minutes from the board portal or the company secretary’s systemAn integration, and minutes arriving in a readable formAI flags the changeAI notices a new source that contradicts a standing finding, such as a changed strategy, and asks someone to confirmContradiction detection, with people still deciding (The Director Decides)
+Used by: Design, Product. Features: Query, Export Query.
+
+---
+
+# Human Authority
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/human-authority
+
+AI surfaces, analyzes and proposes. People validate, approve, accept risk and decide. Quantum State never takes the board’s authority.
+Every AI output in the product stops short of a decision. An Insight Card carries a claim and a confidence level, not a verdict; Morgan reads it, checks the evidence behind it, and chooses whether it belongs in his Query. The Board Simulation Room runs scenarios and drafts artifacts, but a human reviews and edits before anything moves toward the board. Exporting a Query produces a draft for the board pack, not a finished recommendation; Morgan previews it and decides what goes out under his name.
+This rules out AI that acts on its own: no auto-approval, no silent publishing, no insight that skips the review step because it scored high confidence. A finding can be well-supported and still wait for a person to accept the risk it implies. The line holds even when it slows things down, because the risk a board carries is the board’s to accept, not the model’s.
+The rule also shapes what the interface has to show: not just a conclusion, but who is meant to act on it and what accepting it commits them to.
+
+Design principles under it: The Director Decides, A Candid Assistant, Access Before Analysis.
+Used by: Product, Design. Features: Insight Cards, Board Simulation Room, Export Query.
+
+---
+
+# Keep the Director Moving
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/keep-the-director-moving
+
+The director is never left waiting on the machine. Long jobs run in the background, progress is visible, and there is always something useful to do next.
+During Connect the dots, the director can continue into the Governance Brain while the remaining sources finish reading, and the Brain shows the build still in progress. Each source shows as queued, reading, done or needing attention.
+This rules out blocking screens during long AI work, and progress hidden behind a spinner. It matters more if models run locally, where a reply can take seconds or sit in a queue: progress, scope and a way to cancel keep the director oriented.
+Used by: Design, Tech. Features: Governance Vault, Governance Brain, Board Simulation Room.
+
+---
+
+# One Question at a Time
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/one-question-at-a-time
+
+Depth comes from narrowing. A Query gathers the material around one board question, so the analysis stays focused, reviewable and small enough to argue with.
+A Query starts with a name and a focus, with AI offering focuses to start from. The Query Focus Modal lets the director rewrite the focus as the evidence changes what they want to know. The Board Simulation Room tests one Query’s scenario, not everything at once. The broad view stays in the Governance Brain.
+This rules out one sprawling analysis of the whole Vault, and scenarios run against evidence that was never gathered for them.
+Used by: Design, Product. Features: Query, Board Simulation Room.
+
+---
+
+# Present Without Bias
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/present-without-bias
+
+Governance data is presented without bias. The interface shows what the evidence says, including what supports a reading, what contradicts it and what is missing, and never arranges it to lean the director toward a conclusion. A design principle under See the Evidence.
+The Governance Brain opens on the full, unfiltered graph. Filters and search narrow the view only when the director asks, and the Governance Overview Card suggests issues without hiding the rest. A node’s weight shows through its connections, not through styling that marks it as important.
+This rules out a default view that pre-selects “what matters”, highlighting that ranks one reading above another without saying why, and summaries that drop contradicting evidence to read more cleanly.
+Used by: Design, Product. Features: Governance Brain, Node Details Panel.
+
+---
+
+# Prototype Capabilities
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/prototype-capabilities
+
+Built on: MVP, with Product and Tech.
+A prototype is judged by what it can do in front of a user. This article lists the capabilities a working Quantum State prototype has to show: first the five that define it, then the full list behind them. The full list doubles as a checklist when the prototype is reviewed.
+The capabilities follow the product’s journey from scattered material to board-ready output, described in How it works.
+
+The five main capabilities
+
+                  1. Ingest fragmented governance material and build a unified state
+
+Scattered governance evidence comes into one place and becomes a structured graph, the Governance Brain.
+
+                  2. Map relationships across the evidence
+
+The prototype connects documents, entities, claims, risks, decisions and other nodes, rather than only summarising them.
+
+                  3. Let a user navigate the Governance Brain and find what matters
+
+A board user explores the graph, follows threads, identifies the important items and drills into the relevant issues.
+
+                  4. Provide evidence-backed answering, challenge and review
+
+Outputs rest on traceable evidence, including supporting, contradicting and missing evidence and decision history visible.
+
+                  5. Take a user from a question to board-ready output
+
+The prototype shows the whole workflow: asking a question, testing it against the evidence, and exporting something usable for board discussion.
+
+The full list
+1. Core workflow
+
+Ingest fragmented governance documents and evidence
+Normalize material into a vectorized governance graph, the Governance Brain
+Represent items as nodes with relationships to other nodes
+Support interactive exploration and navigation of the graph
+Let users follow threads across risks, decisions, reports and claims
+Surface what matters most for board attention
+Narrow a broad topic into one concrete question, a Query
+Analyse the Query against the evidence
+Export or package the result as board-ready material through Export Query
+
+2. Evidence handling and trust
+
+Show the source behind every node, insight and claim
+Preserve traceability from an insight back to the original evidence
+Show supporting evidence explicitly
+Show contradicting evidence explicitly
+Show missing or absent evidence explicitly
+Show how sources change over time
+Record reviewer actions
+Preserve decision history
+Make outputs reviewable and defensible
+
+3. Interaction model
+
+Support natural-language questions and a contextual AI Chat throughout the workflow
+Let users ask follow-up questions on nodes, claims or Queries
+Let users inspect why something matters
+Show the move from the broad governance state to focused analysis, and then to board material
+
+4. Review and governance support
+
+Support independent director and board auditor workflows
+Support human validation and approval rather than replacing judgement
+Distinguish system-generated analysis from human judgement
+Help boards and executives see what matters, why it matters and what evidence supports it
+
+5. Deployment and operating context
+
+Make the user-facing form factor of the prototype clear
+Support secure handling of governance data
+Respect customer data-boundary and sovereignty expectations
+Operate in cloud, on-site or air-gapped modes where needed
+Support high-assurance and regulated environments
+
+Prototype or product
+The list describes the product a prototype points toward, and not every item can be proven by a prototype.
+The first four groups are about behaviour on screen: what comes in, how it connects, what a user can see and ask, and what leaves as board material. A prototype built on real board material can show all of them, and each one either works in front of a director or it doesn’t.
+The fifth group is about where and how the product runs. The MVP prototype runs on anonymised material through cloud AI tools, with the data owner’s consent, so it cannot demonstrate on-site or air-gapped operation, or meet a regulated customer’s data boundary. What it can do is make the target clear: which form factor it stands in for, and which deployment level the product is built for. The levels themselves are covered in Tech.
+Sources
+
+Home: the product in one paragraph, vision and mission
+Product: the phases, features and principles the capabilities come from
+Business: who the product serves and what a regulated buyer expects
+Tech: deployment, data boundaries and sovereignty
+Choose Who We Serve: the regulated-to-unregulated spectrum
+
+---
+
+# Prototype Data Checklist
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/prototype-data-checklist
+
+The material the MVP prototype needs, and the steps it goes through before any AI tool reads it.
+Period
+
+ At least one year of material
+ Ideally three years, so drift and dropped topics show across packs
+
+Board material
+Grouped the way the board receives it.
+
+ Board: packs, minutes and resolutions
+ Audit committee: packs, minutes, external audit reports
+ Remuneration and nominations committee: packs and minutes
+ Financials: management accounts, audited statements, budgets
+ Internal audit: plans, reports, findings and their follow-up
+ Compliance: reports, breaches, regulatory correspondence
+
+Policies
+The base for checking claims. Without them, an anomaly has nothing to be measured against.
+
+ Compliance manual
+ Remuneration policy
+ Risk appetite statement and risk register
+ Delegation of authority
+ Any other policy the packs refer to
+
+Anonymisation
+
+ Replace names of people, the company and counterparties with consistent placeholders: the same person is always “Director A” and the same unit is always “Business Unit 1”
+ Keep every number, date and currency unchanged
+ Keep a private key of placeholders, held by the data owner and never shared with AI tools
+ Spot-check a sample of documents for names left in headers, footers, signatures and file metadata
+
+Consent
+
+ The data owner agrees in writing to the use of the material for the prototype
+ The consent states that anonymised material goes to cloud AI tools
+ The board secretary knows the material is being shared
+ Agree what happens to the material and the prototype once the review ends
+
+Handover
+
+ Material delivered in its original formats (PDF, Word, Excel), unsorted if that is how it exists
+ A note of anything known to be missing, such as quarters or committees with no record
+
+---
+
+# Say Which AI Said It
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/say-which-ai-said-it
+
+Every AI-generated claim shows which model produced it, and any handoff to a model outside the customer’s boundary is visible to the director before it happens. A design principle under Data Sovereignty and Traceable to Quanta.
+The app map does not yet show this. Scenario Setup in the Board Simulation Room lets the director choose the model for a run, and Tech sets out options where a local model does most of the work and a frontier model handles the hardest cases. When that happens, the destination, the material being sent and the purpose need to be visible, with a way to decline, and a mark stays on the answer and on the export.
+This rules out answers with no record of the model behind them, and material leaving the building without the director knowing.
+Used by: Design, Tech. Features: Board Simulation Room, AI Chat, Export Query.
+
+---
+
+# See the Evidence
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/see-the-evidence
+
+Quantum State is visual first: governance data is shown as its own relational graph. Evidence is presented without bias, so supporting, contradicting and missing evidence each get equal weight, and the interface never leans Morgan toward a conclusion. Every node, insight and claim traces back to its source.
+The Governance Brain shows the whole graph, not a filtered version that favors one reading. A node’s details and an Insight Card carry a confidence level next to the claim, so a well-supported finding and a thin one don’t look the same. Opening the Document Viewer takes Morgan to the exact source passage behind an insight, not a summary of it.
+This rules out an AI answer with no path back to its source, a confidence score with nothing behind it, and a result that quietly drops the evidence that contradicts it. Missing evidence gets named as missing, not hidden by a confident-sounding sentence.
+The practical test is whether Morgan can always ask “why does it say that” and land on a document, not a description of one.
+Design principles under it: Present Without Bias, Traceable to Quanta, Show What Isn’t Known.
+Used by: Product, Design. Features: Governance Brain, Node Details Panel, Insight Cards, Document Viewer.
+
+---
+
+# Show What Isn't Known
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/show-what-isn't-known
+
+Show What Isn’t Known
+What Quantum State doesn’t know is shown, not smoothed over. Gaps, stale data and uncertainty are part of the picture the director sees, in the same place as the findings they qualify. A design principle under See the Evidence.
+Insights carry confidence scores. A Query shows its readiness, including whether financial data is historical or live. Export Query keeps evidence and uncertainty beside each claim in the board material. While sources are still being read, the Governance Brain shows that the build is unfinished rather than presenting a partial graph as complete.
+This rules out a confident answer where the evidence is thin, a figure with no date or source, and a clean board summary that leaves out what couldn’t be checked. When financial data is limited, the product says so instead of implying a full picture.
+Used by: Design, Tech. Features: Insight Cards, Query, Export Query, Governance Brain.
+
+---
+
+# The Director Decides
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/the-director-decides
+
+AI proposes; the director accepts or rejects, in the interface itself. Nothing AI suggests changes a Query, its Analysis or the board material until the director says yes. This is Human Authority applied screen by screen.
+A suggested change in AI Chat waits for the director to accept or reject it. AI-suggested insights in a Query only join the graph when chosen. Export Query shows a draft preview before anything is exported, and the director sets its scope and level of detail.
+This rules out AI that edits work silently, auto-applies its own suggestions, or sends material onward without a person reviewing it.
+Used by: Design, Product. Features: AI Chat, Query, Export Query.
+
+---
+
+# Traceable to Quanta
+
+Source: https://jacquesjnr.github.io/quantum-state-site/extras/traceable-to-quanta
+
+Everything AI generates traces back to the quanta it came from: the nodes in the Brain, and the passages inside their sources. No AI sentence stands without a path back to evidence. A design principle under See the Evidence.
+Each insight on an Insight Card carries a confidence score and a link to the passage it rests on. The Document Viewer opens that passage, highlighted, with the AI Summary beside it. A Query’s Analysis is built from the insights gathered into it, and Export Query keeps sources beside every claim in the board material.
+This rules out AI output that can only be taken on trust: a summary with no sources, a confidence score with nothing behind it, or a claim in an export that can’t be walked back to a document.
+The test is whether the director can always ask “where does that come from” and land on a source, not a description of one.
+Used by: Design, Product. Features: Insight Cards, Document Viewer, Node Details Panel, Query, Export Query.
+
+---
+
+# MVP
+
+Source: https://jacquesjnr.github.io/quantum-state-site/mvp
+
+Built on: Product, with Tech and Business.
+What Prototyping Needs
+A validated app map / product flow
+The app map is described as the core model for the experience, and it should be checked against how a board member or independent director would actually use the product. (Product)
+A clear target user and use case
+The current direction seems to focus on an independent board auditor/director working through a governance question before a board discussion. The product also appears aimed more at the regulated end of the market, where traceable evidence and defensible exports matter. (Product, Business)
+A decision on deployment / sovereignty
+We need to choose whether the prototype is for on-prem/private cloud, UAE sovereign hosting, or a shared hosted model. That decision affects architecture, compliance, and cost. (Tech)
+Enough technical architecture to build the first workflow
+At minimum, the prototype needs a way to ingest governance material into a graph, navigate evidence, support AI/querying, and export board-ready output. (Product)
+Representative governance data
+We’ll need sample board packs, policies, controls, audit/compliance artifacts, and linked documents so the evidence-first workflow can be tested properly.
+A defined compliance/security posture
+Especially if we’re targeting regulated users, the prototype needs clear boundaries around data residency, access control, auditability, and operational security. (Business)
+Enough tooling decisions to support the AI-native workflow
+The tech notes say the stack is still under evaluation, so we need to choose tools/model approach based on the job, sovereignty, integration needs, and compliance constraints. (Tech)
+What a prototype can prove, and what it can’t
+An MVP tests the riskiest assumption first. For Quantum State that assumption is not technical. Graphs, retrieval and summaries are known techniques.
+The open question is whether governance material, read and connected by AI, gives a director something worth their time.
+That question only has an honest answer on real data. Synthetic board packs carry the patterns their author already expects, so they cannot surprise anyone. Real packs are long, non-chronological, inconsistent and incomplete, and those are exactly the conditions the product has to handle.
+The prototype can show:
+
+whether the workflow in the app map makes sense to a director using it on familiar material
+whether AI summaries of a 200–400 page quarterly pack are meaningful, not merely shorter
+whether looking back across several packs surfaces anything a director would act on
+
+It cannot show:
+
+whether the product is secure, scalable or compliant
+what it costs to run
+whether a buyer would pay for it
+
+Those belong to the engineered product that follows.
+The first workflow
+The prototype follows the three phases of the product, cut down to their core:
+
+Bring material in. Board packs and policies are uploaded into a Governance Vault.
+Build the Brain. AI reads each document, extracts claims and maps how they relate, producing the Governance Brain.
+Look closer. A director opens a quantum in the Node Details Panel, reads its Insight Cards with their confidence scores, and checks the highlighted passage in the Document Viewer.
+Gather a question. Insights collect into a Query around one focus, showing where the evidence agrees, where it conflicts, and what remains unknown.
+Export. The Query becomes board-ready material through Export Query.
+
+The Board Simulation Room sits between steps 4 and 5. AI agents test the Query from conflicting views, and the reviewed artifact is what Export Query turns into board material.
+What the prototype has to show
+A working prototype has to show five main capabilities:
+
+                  Ingest fragmented governance material and build a unified state
+
+It should pull together scattered finance, audit, risk, compliance, strategy, policy, and governance documents into one place.
+
+                  Map relationships across the data
+
+The prototype should turn those materials into a connected structure where policies, decisions, risks, reports, and other items are linked.
+
+                  Let users navigate and inspect evidence
+
+A director should be able to explore the Brain graph, follow connections, see what matters, and open the source passages behind claims.
+
+                  Support plain-language questioning and AI analysis
+
+The system should let users ask questions in natural language, with AI reading, connecting, and analyzing the relevant material.
+
+                  Turn a question into board-ready output
+
+The prototype should show the end-to-end workflow from asking a question, testing it against the evidence, and exporting something usable for board discussion.
+
+In short: ingest evidence, connect it, make it explorable, analyze it with AI, and package it for board use. The full list is in Prototype Capabilities.
+The data
+The prototype runs on one to three years of board material from a single partner company, anonymised before any AI tool reads it. The material is grouped the way a board receives it: board, audit committee, remuneration and nominations committee, financials, internal audit, and compliance. Policy documents such as compliance manuals and remuneration policies come with it. Without them there is nothing to check a claim against.
+The full list, and the steps from download to consent, are in Prototype Data Checklist.
+flowchart LR
+  A[Download board material] --&gt; B[Anonymise]
+  B --&gt; C[Owner consent]
+  C --&gt; D[Build prototype]
+  D --&gt; E[Review with directors]
+  E --&gt; F[Broaden to other companies]
+
+Anonymisation removes names and keeps numbers. That keeps the analysis meaningful but has a limit: a budget figure means less once nobody can tell whose budget it is. Consistent placeholders, where the same person or unit always gets the same label, keep threads traceable across packs.
+Where things stand
+The prototype needs the same seven things any Quantum State build needs. For the prototype, most have a working answer. For the product, most stay open.
+
+PrerequisiteFor the prototypeFor the productA validated app mapApp Map 2.0 is frozen as the build reference. Changes raised during the build go to the next version, not the prototypeThe next version carries AI retention rules per source, ingestion-time expectations and a full-width, collapsible overview card. Not yet tested with practicing directorsA target user and use caseA sitting board director reviewing their own company’s packsGovernance teams and board directors, with the concept design built around one independent directorA deployment and sovereignty decisionCloud AI tools, on anonymised data, with the owner’s consentOpen: air-gapped, on-site, hybrid or cloud. See TechAn architecture for the first workflowEnough to ingest, navigate, query and export, built feature by feature with separate AI agents from a product requirements documentOpen, including relational versus graph storage. See TechRepresentative governance dataOne partner company’s anonymised board materialMany companies’ material, in any format and orderA compliance and security postureConsent and anonymisation onlyOpen: which standards to target, such as ISO/IEC 42001Tooling for an AI-native workflowGeneral AI coding assistantsChosen per job against the seven-point test in Tech
+Estimates put basic navigation at about a week, and a prototype with styling and a working graph at two and a half weeks to a month.
+Trade-offs
+Real data against synthetic data. Real material is the only honest test, and it brings consent, anonymisation and privacy risk with it. Synthetic material is safe and proves little.
+Speed against engineering. AI-coding a prototype is fast and cheap, and the result has no security model, architecture or protocols worth keeping. That is acceptable only because the prototype is handed to engineers rather than grown into the product. Speed also depends on the app map holding still: a map that changes mid-build means rework, which is why the prototype builds from a frozen version.
+Cloud AI against sovereignty. The prototype sends anonymised board material to cloud language models. The product exists to keep governance data under the customer’s control. The prototype sets that rule aside, for one company with its consent, so the product can later be built to keep it. That exception does not carry over to live data.
+Depth against breadth. One company’s material allows a deep test against a director who knows it well. What holds for one company may not hold for another.
+The graph against the touchscreen. The Governance Brain is a graph, and graphs are hard to use with a finger. Directors often read on tablets and phones, which makes a list or table view a serious alternative.
+After the prototype
+Once the prototype has been reviewed, it can widen to other companies, such as startups, on the same basis of consent and anonymisation. Before any real or live data is used, the work changes character:
+
+engineers join, and the build-or-buy question gets a real answer
+compliance standards and a deployment model are chosen
+Quantum State becomes a software project with a roadmap, change requests and a proper development life cycle
+
+Open questions
+
+Data retention. How can a data owner be shown that nothing they share is retained or identifiable? The answer decides whether the product can be sold at all, not just whether the prototype can run.
+Ingestion time. What can be promised? A benchmark such as “100 files in 45 seconds” is the form an answer needs to take. Is the product useful before ingestion finishes?
+Base categories. Should finance, risk, compliance, and legal and policy be fixed categories from the start, or should the AI group material by itself?
+The starting screen. Does every user need to begin at the Governance Brain?
+Success. What would a director need to see to call the prototype worth continuing: one anomaly they had missed, a faster read of the pack, or something else?
+
+Sources
+
+QS App Map 2.0: the workflow the prototype builds
+Product: the product’s phases, principles and open questions
+Tech: deployment, models, sovereignty and tool selection
+Business: the regulated-to-unregulated spectrum and the first customer
+Prototype Capabilities: the full list of what the prototype has to show
+Prototype Data Checklist: the material and the steps the prototype needs
+ISO/IEC 42001: the management-system standard for AI
+
+---
+
+# Product
+
+Source: https://jacquesjnr.github.io/quantum-state-site/product
+
+Built on: Human Authority, with See the Evidence.
+Quantum State is a governance-intelligence product for boards. It brings a company’s scattered governance material into one place, uses AI to read it and map how it connects, and helps a director carry one question from that material to something the board can discuss. AI reads, connects, analyzes and proposes; people validate, approve, accept risk and decide.
+The product is designed around one person and one piece of work: an independent director working through a matter ahead of a board discussion. That journey is drawn in full as an app map, and each section below points back to a stage in it.
+
+name View the App Map
+type link
+action www.figma.com/board/WITVErwq2RH0fhCbBqVAJs
+width 40
+align middle center
+color blue
+The problem it addresses
+Board material arrives in pieces: finance packs, audit reports, risk registers, policies, minutes, strategy papers. Each lives in its own tool or folder, and each is usually written by the people the board is meant to oversee. The same people often decide what reaches the board and what doesn’t. A director has limited time, cannot read everything, and has to decide where to look closely.
+Most board tools start from the pack. They help prepare, read, summarize and minute the papers for the next meeting. Quantum State starts from the evidence underneath the pack, and keeps a finding joined to that evidence after the meeting ends.
+How it works
+Quantum State works in three phases, with a contextual AI Chat available throughout:
+
+Building the Governance State: bringing material in and turning it into a graph.
+Navigating the Brain: finding what matters and checking the evidence behind it.
+Preparing Queries and board material: narrowing to one question, testing it, and exporting the result.
+
+Building the Governance State
+
+Governance Vault: the central repository of a company’s governance data. It gathers material as uploaded files, connected tools or a local folder. Each source gets an owner and a list of who may use it before AI reads anything; AI then records the documents, the claims inside them, and how they relate.
+Governance Brain: the Vault shown as a graph, which is where the name comes from. Policies, decisions, reports and risks are nodes, called quanta, and their relationships are lines. A matter’s weight often shows in its connections before it shows in any single document.
+
+Navigating the Brain
+
+Node Details Panel: opens any quantum to show its source information, a summary of what it holds, and how it relates to other nodes in the Brain.
+Insight Cards: explain what a quantum means within the wider Brain. Each insight carries a confidence score and a link back to the passage it rests on.
+Document Viewer: shows the document or data behind a quantum and its insights, with the relevant passage highlighted.
+
+Preparing Queries and board material
+
+Query: gathers insights around one board question. AI suggests a focus and drafts the Analysis; the director decides what belongs. A Query is a reusable working set: it groups quanta in the director’s own way, so focused context doesn’t mean navigating the whole Brain each time.
+Board Simulation Room: runs several AI agents through a scenario, and shows where they agree and disagree.
+Export Query: drafts board material from the Query, with sources, confidence and uncertainty kept beside each claim. The director sets the level of detail and exports it for the rest of the board.
+
+AI Chat takes the context of the screen it opens from. Nothing it suggests changes an Analysis until the director accepts it.
+What makes it AI-native
+AI-native describes how the product is built, not a set of AI features stitched onto a board portal. Ingestion, classification, relationship mapping, contradiction detection, confidence scoring and synthesis share one foundation and one body of evidence, together with its sources, permissions and review history. More technical autonomy in that foundation does not mean more governance authority.
+Where AI stops
+Human authority is the product’s first principle: AI assists at every stage, and holds the board’s authority at none of them.
+
+AI mayPeople mustRead and classify sourcesDecide which sources come in, and who sees themMap how evidence connectsJudge which matters deserve attentionSummarize, compare and flag contradictionsValidate or reject a findingSuggest a focus and draft an AnalysisDecide what a Query containsRun agents through a scenarioWeigh the outcomes and accept the riskDraft board materialApprove what the board sees, and decide
+This line matches where governance guidance is heading. OECD principles keep informed judgment and risk oversight with the board, and NACD guidance treats AI as a matter of director competence and management accountability, not delegation. A 2025 DFSA survey of DIFC-regulated firms found AI adoption running ahead of governance structure. Oversight of AI is becoming an ordinary part of the board’s job, not a transfer of the board’s authority to AI or to one director.
+Financial data as board context
+A board’s decisions come down to time and money, so the board view needs some record of a company’s finances. How much depends on what a company is willing to connect: historical statements, regular exports, or live accounting and banking data. Each level shows something and leaves something out. An accounting connection brings in actuals but usually not the budget; bank data alone shows cash movement, not budget variance or profit. The levels, what each lets Quantum State show, and what each costs to build are covered in Tech.
+
+What it is not
+
+A board portal. Portals distribute the papers; Quantum State works on the thinking behind them, meaning Queries, findings and the evidence under them. It exports to the tools a board already uses for packs and meetings instead of replacing them. As the design moves toward a space the whole board shares, keeping that line clear is an open question. See Design.
+A GRC system or task tracker. It reads governance records; it does not replace the systems of record that manage them.
+A dashboard wall. It narrows attention to a few matters and the evidence behind them.
+An autonomous decision-maker. See Where AI stops.
+
+Form factor: an open decision
+What a director actually opens, whether a browser tab, an installed app or a tablet, is not yet decided. It depends on architecture that is still unknown, and it is a decision to make with engineers rather than ahead of them.
+Two choices sit underneath it, and they are independent:
+
+The client: what the director uses day to day.
+The deployment: where the data and the AI run, from a shared cloud to the customer’s own building. The deployment levels are covered in Tech.
+
+Any client can pair with most deployments. A web app served from a machine in the customer’s building keeps the data just as local as an installed app does, and an installed app can still send everything to a cloud. “Web app” does not mean “data in someone else’s cloud”.
+
+ClientWhat it looks likeWhat favors itWhat counts against itWeb appOpened at an address, in a browserNothing to install; familiar from existing board tools; the Governance Brain graph renders well in a browserPointing to a local folder, one of the ways material enters the Governance Vault, is awkward from a browserDesktop appInstalled on the director’s computerLocal-first; local folders are natural sources; company documents stay on the machineCompany IT has to approve and support the install; sharing with the rest of the board is harderWeb app with a local connectorA browser interface, plus a small helper app that watches chosen folders and feeds them inKeeps the ease of the browser and still reaches local foldersTwo pieces to install, update and supportAppliance with a web interfaceA machine on site that serves the app to the company networkPairs with on-site deployment: the data, the AI and the interface all stay in the buildingHardware at every site, and the jump in cost and support that comes with itTablet companionA second client for reading exports and browsing the Brain away from a deskSuits reading and reviewing between meetingsA second client to build; the work inside a Query may not suit a small screenInside existing toolsA plugin for a board portal, Teams or OutlookMeets directors in tools they already use; the product already exports into board toolsGives up the Governance Brain as a place of its own
+The choice also depends on who buys and who uses the product. A company that buys it for its board, with its own IT team installing it, points toward a web app on the company’s infrastructure. An independent director who brings it to several boards points toward something the director holds, with a separate Vault for each company.
+Tradeoffs
+A Query distills. The Governance Vault can hold a very large body of material, and a Query narrows it into refined context around one board question: small enough to read, check and argue with, and traceable to the passages it rests on. The tradeoff is that the director chooses what to look into. A full-pack summary makes that choice on the director’s behalf and touches every topic lightly; a Query goes deep on the matters the director picks, and the broad view comes from the Governance Brain. Sources work the same way: setting an owner and permitted users before AI reads anything settles access up front, a deliberate step that a “connect everything” tool leaves out.
+The bigger tradeoff sits in positioning. Diligent and Board Intelligence already advertise cited preparation questions, pack critique, outside perspectives, minutes and human review, so citations, challenge, human review and “AI-native” don’t set Quantum State apart on their own. The candidate difference is how a finding lives between meetings: one interpretation stays joined to changing evidence, contradictions, review state and the decision that follows, instead of resetting with each new pack. Nothing public shows either incumbent doing this, but a product page cannot prove absence, so the difference is a claim to test against their tools directly. How Quantum State compares with board-software vendors and with companies solving the same problems is covered in Business.
+Two further costs run underneath the design. The product is built around one persona; other board members, management and reviewers are not yet designed for. And the more financial data a company connects, the more Quantum State can show, and the more it must be trusted with.
+What is known and unknown
+Known
+
+The journey from material to export is mapped screen by screen in the app map.
+Leading board-tool vendors already publish AI features for preparing, reading, questioning and recording meeting material.
+OECD, NACD and DFSA guidance treats AI oversight as part of the board’s ordinary job, not a delegation of its authority.
+
+Unknown
+
+Whether directors recognize this journey. It is built from role research, not from interviews with practicing directors.
+Whether incumbents can already keep a finding joined to changing evidence between meetings, once tested directly.
+What “simulation” means in Quantum State: comparing criteria and options, several AI agents researching in parallel, or a scenario with agent, model and scope controls. None has been chosen.
+
+Still open
+
+What visible behavior makes “continuous” and “evidence-grounded” honest claims? A first demonstration needs to show source changes, contradictions, reviewer actions and decision history.
+Can incumbents already do the candidate difference? Running the same case through Diligent, Board Intelligence and Nasdaq Boardvantage would show whether that gap holds.
+What form does Quantum State take for the director: web app, desktop app, a combination, or something else? See Form factor: an open decision.
+An independent director often serves on more than one board. Is that one Quantum State holding a separate Vault per company, or one install per company?
+Does a board decision come back into Quantum State? The journey ends at export; nothing yet records what the board decided, or feeds it into the next Query.
+
+Sources
+
+QS App Map 2.0: the journey this article follows
+Diligent Boards and AI for Diligent Boards: advertised AI board-prep, minutes and review features
+Board Intelligence products and Board Intelligence AI/IQ: advertised pack critique, outside perspectives and drafting
+OECD Principles of Corporate Governance, 2023: board duties and informed judgment
+NACD, Implementing AI Governance, 2025: AI oversight as director competence and management accountability
+DFSA AI survey 2025: AI adoption and governance gaps among DIFC-authorized firms
+Fathom, budget import: why an accounting connection alone doesn’t give budget variance
+
+---
+
+# Tech
+
+Source: https://jacquesjnr.github.io/quantum-state-site/tech
+
+Built on: Data Sovereignty
+Let’s start this by asking two simple questions:
+1. Can enterprise AI be deployed on-premise or in a sovereign environment?
+Yes. Modern enterprise AI platforms support public cloud, private cloud, hybrid, sovereign, and air-gapped deployment. Sovereign and on-premise options are increasingly required for regulated industries and governments under the EU AI Act, UAE PDPL, and Saudi PDPL. Vendor platforms that run only on third-party APIs cannot satisfy these rules in full.
+2. How much do enterprise AI platforms cost?
+Total cost of ownership includes platform licences, implementation, integration, change management, and operations over a typical five-year horizon. Gartner forecasts global AI software spend of 452 billion in 2026, up from 283 billion in 2025 (Gartner, January 2026). Enterprise engagements are typically priced as platform plus implementation rather than per-seat.
+Quantum State uses AI to turn a board’s governance material into an interactive graph and evidence-backed briefs. Every technical option is judged first by one test: the customer’s data stays under the customer’s control.
+Any enterprise AI stack has to answer four questions, as framed by Net0:
+
+Which workflows and systems do the models touch? See What the app map asks of the technology.
+Which models are used, and who owns the weights? See Model options.
+Where does the data live, and under whose jurisdiction? See the sovereignty spectrum.
+How are the system’s outputs explained, audited and overridden? See the models layer below, and Human Authority.
+
+Built while the field moves
+Quantum State is being built while AI changes month to month. Frontier models are released constantly, open-weight models keep closing the gap, and serving software such as vLLM improves with every release. New kinds of tool keep appearing: Jev, released by TypeSafe in September 2026, returns bounded choices and scores instead of prose.
+No single expert covers ground moving this fast. A specialist in one model family, serving layer or deployment method knows one part of a stack whose parts all keep changing. The question is not only which architecture, but which tools fill each part of it.
+So Quantum State looks for the best tool for each job, not a fixed industry-standard stack. That takes ongoing research, testing candidates against the work the app map describes and switching when something better appears, and it is part of what being AI-native means here. The options below are the current state of that research.
+Each candidate is judged on seven points, adapted from Net0’s framework:
+
+Data sovereignty: where the data sits, where the model runs, and who owns the weights
+Deployment flexibility: cloud, on site, air-gapped
+Domain depth: how well it handles governance material, in English and Arabic
+Integration breadth: connections to the systems customers already use
+Governance and compliance: fit with NIST AI RMF and ISO/IEC 42001
+Vendor independence: whether it can be swapped out later with the data intact; in a field this fast, as important as how good it is today
+Total cost: five years of licences, integration and running, not the first invoice
+
+What the app map asks of the technology
+Each stage of the app map creates or reads data, asks something of AI, and needs an interface to show it:
+
+StageData it creates or readsWhat AI has to doInterface it needs1. Bring in material (Governance Vault)Sources, with an owner and permitted users eachNothing yet: AI reads no source before access is setFile upload, connectors to live tools and local folders, an access editor2. Connect the dotsThe Vault: documents, the claims inside them, and the links between themRead every source, classify it, extract claims and map how they relateProgress per source, while the build carries on in the background3. Find the territory (Governance Brain)A filtered view of the whole graphSummarize what’s new and suggest issues worth attentionAn interactive graph with filters and search4. Understand the evidenceSource passages, highlights, insightsSummarize a node, score each insight’s confidence, answer questions about itA node panel, and a document viewer that highlights the passage5. Gather around a question (Query)A Query: its focus, its insights and its own graphSuggest focuses and related insights, then write the AnalysisA Query workspace, with suggestions to accept or reject6. Test what could change (Board Simulation Room)Scenario settings and versioned resultsRun several agents on one Query in parallel, and record where they agree and disagreeA live multi-agent view with run status and saved versions7. Prepare the board discussion (Export Query)An export built from the QueryDraft board material with sources and uncertainty kept beside each claimA draft preview, a detail level, export to a portal, PDF or WordAI Chat, throughoutChats, their context, suggested changesAnswer in the context of the current screen, propose sourced editsA streaming chat, model choice, accept or reject
+Read across the stages, the demands fall into Net0’s four layers of an enterprise AI stack:
+
+Infrastructure. Where compute and storage sit: a sovereignty choice more than a performance one (see the sovereignty spectrum).
+Data platform. Ingestion, with permissions recorded before anything is read (Access Before Analysis); then storage of documents, claims, their relationships and the lineage of every insight (source passage, confidence, model, review state), with versioned Analyses. No database supplies lineage; it has to be designed. The options are a relational database with pgvector (one store for records, permissions and semantic search), a graph database (deep multi-hop relationships), a vector store beside a system of record, or a hybrid; benchmarks decide whether the graph needs a graph database.
+Models. Background work (reading, classifying, mapping, scoring) runs in bulk and can queue; interactive work (chat, the Analysis, the Room’s parallel agents) streams to someone waiting. A routing layer picks the model for each task, checks the data boundary before anything leaves, and records which model wrote what, so every output can be explained, audited and overridden. The director sees the choice in Scenario Setup and AI Chat.
+Applications. A graph usable at the size of a real Vault, a document viewer that lands on the exact passage, streamed answers, and visible background progress.
+
+Financial data is one source among many, but how much of it a customer connects changes what Quantum State can show. That is covered in Business.
+Model options: where the AI runs
+
+RouteTrade-offRunning cost shapeClosed model APIFast, broad choice. Provider controls the weights and model changesA few dollars to low hundreds a month at a small reference workload, rising with useOpen-weight, self-hosted (UAE or customer)More control; the team runs, scales, secures and tests itRoughly 360–505/month per non-UAE reference GPU, before redundancyOpen weights plus fine-tuningMay help narrow tasks if a measured failure justifies itSelf-hosting cost plus a separately quoted model training runsTrain from scratchMaximum control, but becomes a separate programNot priceable as an MVP line itemHybrid routingDifferent models for different tasksSum of the above plus routing and evaluation; no automatic saving
+These are modeled planning numbers, not quotes. Open weights run on common hardware and serving software; lock-in comes from hardware, capacity commitments and licenses. Retrieval lets a model read a customer’s documents at answer time, so fine-tuning is only justified by a measured failure retrieval doesn’t fix.
+Local model does the work, a frontier model makes the hard calls
+Anything sent off-site has left the building, even a summary.
+
+SplitWhat crosses the boundaryKeeps data in the building?A. Local first, hands off hard cases to frontier modelsThe prompt, local draft and attached passagesNo, for any job handed offD. Frontier model hosted in the UAEThe full prompt and selected evidenceIn the country, not the buildingE. A stronger model on-siteNothingYes, but the capacity cost moves back on-site
+Each handoff is a data release to be recorded. Whether a split saves money is unproven.
+Where Quantum State could sit on the sovereignty spectrum
+“This data can never leave the building” is not the law by default. DIFC law lets personal data leave under an adequacy finding or a proper safeguard, so strict localization is a customer or sector choice; banks add outsourcing and supervisory duties. Outside the DIFC and other financial free zones, the UAE’s federal PDPL applies. “Hosted in” and “processed in” the UAE are separate claims. For AI itself, the NIST AI RMF and ISO/IEC 42001 set expectations, and the EU AI Act reaches anyone serving EU customers. The task is tracing each file, prompt, log and backup through the layers above.
+
+Four deployment settings, from cloud to air-gapped. Source: EnPraxis AI, © 2026 EnPraxis AI
+
+High end: regulated entityMiddle: UAE-regulated or mid-size groupLow end: unregulated SMEData boundaryIn the buildingIn the countryIn the region, or per provider termsWhere it runsOn-site appliance, or the customer’s own private cloudA UAE sovereign hostA shared cluster run by Quantum State, or hosted APIsHard callsA stronger model on site (split E)A frontier model hosted in the UAE (split D)A frontier API with local work first (split A)What they give upModel capability, plus on-site cost per customerThe literal “in the building” promiseControl over where data is processedWhat Quantum State gives upInstalling and supporting every siteVendor dependency and commitmentsA weaker story for regulated buyers
+In practice: regional SaaS, a dedicated tenant, the customer’s own cloud, on-site, disconnected, air-gapped. “Never leaves the building” starts at on-site.
+
+Enterprise AI deployment models, from public cloud through dedicated, hybrid and sovereign to air-gapped. Source: Net0, “Enterprise AI Solutions”, 23 April 2026.
+The design points to the regulated end; serving the SME end too means a second cost base (see Business).
+The client: an open decision
+What the director opens is still undecided (see Product). The client is part of the data boundary: whatever it keeps on a device, such as a cached Vault or an offline Query, leaves the building with the device.
+
+ClientPairs withAdds to build and supportEffect on the data boundaryWeb appEvery level; on site it is a page on the company networkOne codebase, updated once per installNothing has to stay on the device; browser access to local folders is limitedDesktop appEvery level, including disconnected and air-gappedBuilds per operating system, signed installers, updates per machine, IT approvalMaterial can live on a machine that travelsWeb app with a local connectorEvery levelA background service that reads files, with its own security reviewThe connector’s path to the Vault must meet the same boundaryAppliance with a web interfaceOn-site, disconnected, air-gappedAppliance hardware and support, on top of the web appEverything stays in the building, if clients store no copiesTablet companionAny level; offline reading needs a local copyA second client and device managementOffline copies leave with the tabletInside existing toolsWhatever the host’s plugin platform allowsPlugin rules set by the host vendorContent falls under the host vendor’s cloud and terms
+Known and unknown
+Known:
+
+Moving data out of the UAE is conditional, not banned; “hosted in” and “processed in” are separate claims
+Every stage of the app map, and what it asks of data, AI and the interface
+
+Unknown:
+
+Where on the sovereignty spectrum Quantum State sits, and what that gives up
+Which models pass citation, contradiction and abstention tests on board material, in English and Arabic
+Which financial-data levels to offer, and whether live banking triggers UAE open-finance obligations
+
+Still open
+
+Is UAE-only processing a promise, a first customer’s requirement or a priced option, and does it cover support access and derived data?
+What minimum ontology and provenance model is needed before relational-versus-graph can be benchmarked?
+What counts as a “hard call” worth a frontier handoff: long synthesis, contradicting evidence, a failed citation check, or a person asking?
+Which client pairs with which deployment level, and can anything stay on a director’s device without breaking the data boundary?
+Who owns the research that keeps tool choice current, how often is each part re-tested, and what makes a switch worth its cost?
+
+Sources
+
+Net0: Enterprise AI Solutions, 2026 guide (Sofia Fominova, 23 April 2026)
+NIST AI Risk Management Framework
+ISO/IEC 42001, AI management systems
+EnPraxis AI: four AI deployment settings (cloud, hybrid, on-premises, air-gapped)
+BCG: three basic GenAI platforms for the public sector
+Microsoft: data residency versus inference location in global deployments
+AWS: Bedrock cross-Region inference in Canada
+AWS: private network paths for data movement in generative AI
+Infralovers: routing between local and cloud models
+TypeSafe Jev introduction
+DIFC Data Protection Law No. 5 of 2020
+DIFC data export and sharing guidance
+CBUAE Outsourcing Regulation for Banks
+CBUAE AI/ML outsourcing and third-party risk
+CBUAE Open Finance Regulation
+Lean UAE bank connection permissions
+Tarabut Connect data guide
+Stripe Financial Connections availability
+OpenAI API data controls
+OpenAI API pricing
+Amazon Bedrock regional availability
+AWS G6 UAE region GPUs
+Core42 AI Cloud
+Oracle Abu Dhabi sovereign AI cluster
+pgvector
+Neo4j graph concepts
+W3C PROV-O
+vLLM supported platforms
+llama.cpp repository
+
+---
+
+# AI Chat
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/ai-chat
+
+Built on: Human Authority, A Candid Assistant, The Director Decides, Say Which AI Said It
+AI Chat sits outside the seven-stage journey as its own app, reachable from any screen that offers it, and takes that screen’s context with it. It answers questions at any stage, but nothing it suggests changes an Analysis until Morgan accepts it.
+
+What it does for Morgan
+Chat opens from three points in the main journey: the AI Chat Bar on Governance Brain for an open conversation at the vault level, “Ask about this node” on the Node Details Panel for a targeted question about one node, and the AI Chat Side Panel on Query for working directly on the Analysis. Each context shapes what the chat can see and what it’s suited to — a quick question at the vault level reads differently from a request to change a Query’s Analysis.
+Inside AI Chat itself, Morgan sends a message, adds context with an @ mention — an upload, an annotation, a node or an insight — changes the model, or interrupts a response in progress. A conversation can carry a suggested change to the Query’s Analysis, which Morgan approves or rejects explicitly; approving is the only way it takes effect. AI Chat List holds every past chat, newest first, and lets Morgan reopen, rename or delete one.
+Conditions to use it
+
+Chat is available from any screen that offers it; it has no entry condition of its own beyond being opened from somewhere in the main journey.
+A suggested change only reaches the Query’s Analysis after Morgan accepts it — AI Chat can propose, never apply on its own.
+The main app and AI Chat are drawn as separate apps, with no connector between them; how a screen’s context actually hands off to chat isn’t specified.
+
+Still open
+
+How Morgan always knows which context the chat can currently see isn’t defined.
+Starting a new chat directly from the chat list, and any version history for a suggested change once accepted, aren’t drawn.
+
+---
+
+# Board Simulation Room
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/board-simulation-room
+
+Built on: Human Authority, See the Evidence, A Candid Assistant, Say Which AI Said It, One Question at a Time, Keep the Director Moving
+The Board Simulation Room runs several AI agents in parallel against one Query, each working from conflicting and contrasting views, to test what could change. It follows the Query because a scenario is only as good as the evidence gathered for it — the Room doesn’t gather evidence, it tests the evidence already in hand.
+
+What it does for Morgan
+From the Query, opening the Room leads first to Scenario Setup, where Morgan sets the number of agents, the AI model, the scope of the run — the entire analysis, selected sections, or custom input — and any custom context or commands for the agents. Running the scenario opens the Board Simulation Room itself, where the agents research the Query at once and their statuses and elapsed time show in a toolbar alongside the chat stream. Morgan can edit the scenario details and return to setup at any point.
+Reviewing the run opens Artifact Review. Rather than handing Morgan ten separate agent conversations to read, the system compiles and deduplicates the parallel work into a small number of things that emerged. Opening one shows where the agents agreed, where they disagreed, their assumptions and their evidence, with each agent’s original reasoning one level down for anyone who wants to check it. Morgan can save a version of the artifact before preparing it for Export Query.
+Conditions to use it
+
+A Query with insights in its graph and a generated Analysis is the intended entry condition, though the current design draws Open Board Simulation Room as always available rather than gated on it.
+Running a scenario needs at least the number of agents and a model chosen; custom context and scope are optional.
+Saving a version depends on the run having produced an artifact worth keeping.
+
+Still open
+
+Whether the Room should stay open at all times or require a Query with insights and an Analysis first is unresolved.
+What the Room reveals that the Analysis alone cannot isn’t settled — financial strategy, policy change and general strategy are candidates, not decisions.
+What happens to a simulation that fails or is stopped partway isn’t specified.
+
+---
+
+# Document Viewer
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/document-viewer
+
+Built on: See the Evidence, Traceable to Quanta
+The Document Viewer answers one question: does the source actually say that? It is the passage an insight rests on, shown beside the insight itself, so Morgan never has to take a finding from the Node Details Panel on trust alone.
+
+What it does for Morgan
+Opening a source document from the Node Details Panel leads into the Document Viewer. A graph banner keeps the wider Governance Brain in view at the top, so the document never feels detached from where it sits in the vault. An AI Summary gives a plain-language explanation of the source and what it contains, and an Insights Panel lists the source’s insights alongside the document itself. Morgan can select a passage directly, which highlights the exact text an insight is drawn from. Returning takes him back to the Node Details Panel he came from.
+The viewer exists to close the distance between a finding and its evidence to nothing: no separate lookup, no reconstructed context, just the claim and the passage it came from, side by side.
+Conditions to use it
+
+An insight has to exist and be tied to a source document before there is a passage to view.
+Selecting a passage depends on the source having been read and indexed during Connect the dots; an unreadable source has no passage to highlight.
+The viewer is reached from, and returns to, the Node Details Panel — it doesn’t stand as an independent entry point into the vault.
+
+Still open
+
+What the viewer shows for a source that AI couldn’t read during Connect the dots isn’t specified.
+
+---
+
+# Export Query
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/export-query
+
+Built on: Human Authority, See the Evidence, Traceable to Quanta, Show What Isn’t Known, The Director Decides, Say Which AI Said It, Findings Outlive the Meeting
+Export Query turns a reviewed Board Simulation Room artifact into board-ready material Morgan can take outside Quantum State. It comes last in the journey because the board should see only what has survived every earlier stage: sourced, checked, and tested against other views.
+
+What it does for Morgan
+Preparing for the board opens Export Query, where Morgan chooses a detail level — summary, standard or full evidence — and picks how to send the material, by email, integration or file. Drafting opens Draft preview: the board-ready material as it will export, with sources, confidence and risk context kept beside each claim rather than smoothed away. Morgan can change the scope and return to redraft, or export the material, and an export notice confirms the file’s name and format once it’s done.
+The point of the two-step flow is that nothing gets simplified into false confidence on the way out. Evidence, uncertainty and the financial basis behind a claim travel with it into the export, not just the conclusion.
+Conditions to use it
+
+A reviewed Board Simulation Room artifact, or at minimum a generated Analysis, is expected before there’s material worth exporting.
+Detail level and scope can be changed and redrafted before the final export, without losing the underlying evidence.
+The journey stops at export. Sharing the file with the rest of the board happens through tools Quantum State doesn’t draw.
+
+Still open
+
+Which export formats and fidelity are necessary for a first version isn’t decided.
+What an export that fails looks like, and how the preview surfaces missing context before Morgan sends it, isn’t specified.
+
+---
+
+# Governance Brain
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/governance-brain
+
+Built on: See the Evidence, Present Without Bias, Show What Isn’t Known, Keep the Director Moving
+The Governance Brain shows the whole Governance Vault as a graph. It works the way the graph view on this wiki does: every node is a policy, decision, report or risk, every line is how those things relate, and a node with many lines is one that a lot of other material depends on. Morgan looks here before reading anything in detail, because a matter’s importance often shows in its connections before it shows in any single document.
+
+What it does for Morgan
+Governance Brain opens on the default graph view: the full, unfiltered vault, with a Governance Overview Card summarizing what’s new and what AI suggests deserves attention. A Search Bar finds material by name, tag or content, and a Node Lens Filter narrows the graph to a domain or timeframe. An AI Chat Bar sits on the same screen for a direct question, and a build-progress indicator keeps showing if the vault is still finishing in the background.
+From here Morgan views a node, which opens the Node Details Panel and moves him into stage 4 of the journey — understanding the evidence a node holds rather than just its position in the graph.
+Conditions to use it
+
+The Governance Vault has to exist first; the Brain reads what Connect the dots has produced so far, whether or not it has finished.
+Filtering and searching narrow the same graph rather than opening a separate view.
+The graph can be read before every source has finished processing — Morgan doesn’t wait for a complete vault to start looking.
+
+Still open
+
+What a filter or search that matches nothing shows isn’t specified.
+Whether the Brain distinguishes a genuinely important node from one that is merely well connected is untested.
+
+---
+
+# Governance Vault
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/governance-vault
+
+Built on: Data Sovereignty, Human Authority, Access Before Analysis, Keep the Director Moving
+The Governance Vault is where Morgan’s governance material stops being scattered across files, folders and tools and becomes one AI-readable body of evidence. It is the first thing he builds, because nothing later in the journey — the graph, the insights, a Query — can be trusted if it isn’t clear where the material came from or who is allowed to see it.
+
+What it does for Morgan
+Morgan brings material in on Add sources: files dropped or browsed for, and live tools the company already uses, connected in the same flow rather than as a separate step. On Source access he sets an owner and permitted users for each source, before AI reads any of it. Confirm setup shows each source as ready, or names what it still needs.
+
+Once he builds the vault, AI reads every source and sorts it into categories, mapping how the material connects. Connect the dots shows each source as queued, reading, done, or needing attention, and Morgan doesn’t have to wait for it to finish — he can carry on into Governance Brain while the rest completes in the background.
+Conditions to use it
+
+Nothing has to exist first. This is where the journey starts.
+A file that isn’t a supported format fails in place, on Add sources, rather than blocking the rest of the setup.
+Every source needs an owner and permitted users recorded before Connect the dots begins.
+The vault keeps building after Morgan moves on; the Governance Brain can show a build still in progress.
+
+Still open
+
+Managing sources after setup — adding more, revoking access, re-syncing a live tool — isn’t drawn yet.
+What happens when a live tool refuses the connection, or a source can’t be read during the build, isn’t specified.
+
+---
+
+# Insight Cards
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/insight-cards
+
+Built on: See the Evidence, Human Authority, Traceable to Quanta, A Candid Assistant, Show What Isn’t Known
+An Insight Card is a single governance finding, presented on its own: a concise statement, a confidence score and the tags that place it in a domain. It appears first as a Governance Insight Card inside the Node Details Panel, and opens into full detail on the Insight Modal when Morgan selects it. The card exists to make a finding legible on its own terms, without hiding the evidence or the uncertainty behind it.
+
+What it does for Morgan
+Selecting a card opens the Insight Modal: the insight’s full description and confidence score, its tags and a link to the source document, plus an actions toolbar. From here Morgan starts a new Query from the insight, or adds it to one already under way. Adding it to an existing Query opens the Query Chooser, a pick list of every Query in progress, so findings don’t pile up without a purpose. An added notice confirms which Query the insight joined.
+Confidence stays a separate signal from review state and strategic priority — a card can carry a high confidence score and still need human review, or a low one and still matter enough to investigate. The card never presents a finding as a settled conclusion; it presents the evidence a conclusion could be built on, and leaves the building to Morgan.
+Conditions to use it
+
+An insight has to exist on a node before its card can be opened.
+Adding a card to a Query requires at least one Query to already exist, or creating one from the card directly.
+Evidence that is missing, contradictory or stale should change what the card shows, though the exact treatment isn’t specified yet.
+
+Still open
+
+How missing, contradictory or stale evidence changes a card’s presentation isn’t defined.
+Whether a single insight ever needs a dedicated view beyond the modal, or whether the modal is enough, is unresolved.
+
+---
+
+# Node Details Panel
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/node-details-panel
+
+Built on: See the Evidence, Present Without Bias, Traceable to Quanta
+The Node Details Panel is where Morgan opens a single point in the Governance Brain graph and finds out what it actually holds. It comes before any analysis, because Morgan has to trust the pieces of evidence before he builds anything on top of them.
+
+What it does for Morgan
+The Node Details Panel shows the source’s document name and metadata alongside its insights, each carrying a summary, a confidence score and tags. A Related section lists other nodes connected by content, tags, author or domain, so Morgan can see what else a matter touches without leaving the panel. An AI Summary explains the node in plain language, and he can ask AI a question about it directly from here.
+From this panel Morgan can select an insight card, which opens Insight Cards and lets him judge one finding on its own; open the source document, which opens the Document Viewer; or ask AI a question scoped to the node.
+Conditions to use it
+
+A node has to exist in the Governance Brain first, with at least one insight drawn from it. A node with no insights yet isn’t specified.
+Confidence scores and related nodes depend on Connect the dots having read the source and mapped its connections.
+Opening the source document or an insight both return to this panel, so it stays the anchor for evidence gathered around one node.
+
+Still open
+
+What the panel shows for a node with no insights yet isn’t defined.
+How confidence, review state and strategic priority stay visually distinct on one panel, without collapsing into a single score, is still being worked out.
+
+---
+
+# Query
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/query
+
+Built on: Human Authority, See the Evidence, Traceable to Quanta, A Candid Assistant, Show What Isn’t Known, The Director Decides, One Question at a Time, Findings Outlive the Meeting
+A Query gathers what matters around one board question. Insights that Morgan judges worth keeping, from anywhere in the Governance Brain, come together here instead of staying scattered across nodes. Narrowing to one question at this stage is what keeps the next stage, the Board Simulation Room, from testing everything at once.
+
+What it does for Morgan
+Starting an insight from Insight Cards opens Create new Query, where Morgan names it and sets its focus, with AI offering three to five suggested focuses drawn from the insights carried in. Confirming opens the Query surface itself: the name and focus, a summary of what’s new, the Query’s own graph showing only its insights and how they relate, a readiness indicator for the risk framework and financial data, and the Analysis — AI-written strategies, consequences, assumptions, risks and open questions, generated from the insights Morgan has gathered.
+Morgan adds insights through the Insight Chooser, which searches the vault and can surface AI-suggested related insights while a toggle is on. He edits the focus through the Query Focus Modal as the evidence changes what he wants to know. Adding or removing an insight reworks the Analysis around the new evidence. From here he opens the Board Simulation Room to test what could change.
+Conditions to use it
+
+At least one insight, carried in from an Insight Card, is needed to create a Query.
+The Analysis has to be generated before the Board Simulation Room is meaningful to open, even though the room itself doesn’t yet enforce that.
+Readiness for financial data depends on how the source setup answered the willingness question in Governance Vault — historical records only, or a live connection.
+
+Still open
+
+Whether a Query is a temporary working set or something kept and returned to, and who owns it, isn’t settled.
+Ideas for the Query graph include AI-suggested insights shown as greyed, unaccepted nodes; the current Query surface doesn’t draw that state.
+An Analysis going stale when an insight is added or removed, and any way to see an earlier version of it, isn’t specified.
+
+---
+
+# Smart Search
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/smart-search
+
+Built on: See the Evidence, Traceable to Quanta, Show What Isn’t Known, Say Which AI Said It
+Smart Search is a search across the meaning of the Governance Vault, not only its words or the links already on the graph. Morgan asks a question in plain language. The search becomes a chat that shows each document it reads, and it ends with an answer, its sources, and any new connection it found between documents.
+
+What it does for Morgan
+The Governance Brain answers “where is this?”. Its header search matches titles, text and insights, and its lines show the relationships that the vault already records. Smart Search answers a different question: “what in the vault relates to this, even if nobody wrote the link down?”
+A search has three states:
+
+Ask. Morgan types a question into one large search bar. Smart Search always reads the whole vault, so it has no domain filters.
+Reading. The search bar becomes an agent chat. The chat lists each step as it happens: “Reading Charter”, “Tool · semantic match”, “Comparing meaning across Risk and resilience and Strategic direction”. Beside the chat, a sphere of document nodes turns to bring each document being read to the front, with a label on it.
+Answer. The chat collapses its log to one line, for example “Read 6 sources · used 2 tools”. Then it shows the answer, a chip for each source, and any new connection.
+
+From the answer, Morgan has two ways forward:
+
+Show on the graph. The new connection goes onto the Governance Brain as a link in a rainbow gradient. The gradient marks the link as an AI finding, not a relationship that the source documents state.
+Create a query. The question and its sources start a new Query, where Morgan can gather the evidence around one board question.
+
+How a search across meaning works
+A keyword search finds documents that contain the words of the question. A semantic search finds documents that are about the same thing, even when the words are different. Most semantic search uses embeddings: a model turns each passage into a list of numbers, and passages with similar meanings get similar numbers. A question about “risk ownership” can then find a draft charter that says “accountability for risk” without either phrase in common.
+In the example above, the Charter and the Draft charter say the same thing about risk ownership. No document cites the other, so the graph has no line between them, and the Draft charter sits alone. A search across meaning finds the match, and the found link makes it visible.
+That is to say, the graph shows what the documents say about each other. Smart Search shows what they have in common, whether or not they say so.
+Why the reading is visible
+An answer from AI is only as good as what the AI read. Smart Search shows its reading for three reasons:
+
+Morgan can check the sources. Every source in the answer is a chip that opens the Node Details Panel. Every sentence in the answer traces back to a document that Morgan can open. (Traceable to Quanta)
+Morgan can see what was not read. The sources counter and the log show how much of the vault went into the answer. A short list is a sign that the answer is narrow. (Show What Isn’t Known)
+The wait has a purpose. A search across a large vault takes time. The chat turns that time into something Morgan can follow, not a spinner.
+
+The sphere is only a picture of the reading. Its nodes have no position that means something. The chat log and the source chips carry the information.
+Tradeoffs
+
+ForAgainstFinds relationships that no document states, for example a duplicate policy or a missing cross-reference.A match by meaning is a judgment by a model. Two documents can be similar and still not relate in the way that matters to the board.Accepts plain-language questions, so Morgan does not need the exact title or term.Keyword search can show which words matched. A semantic match is harder to explain, so the answer must show its sources.Leads into a Query, so a question can grow into a board discussion.It needs a model and a vector index on top of the vault. Under Data Sovereignty, both must run inside the customer’s boundary.Marks found links as AI findings, so Morgan can tell them from recorded relationships.Found links can add noise to the graph if Morgan adds too many of them without review.
+In the Governance Brain Toy
+The Governance Brain Toy has Smart Search as its third view. The toy fakes the AI: three suggested questions are the only searches it can run, and each one plays a fixed script with no AI calls.
+
+“What connects our charter to this quarter’s decisions?”
+“Where are we exposed on suppliers?”
+“Which pay decisions lack evidence?”
+
+Before a search, the sphere idles with slow waves of green across its nodes, and Morgan can drag it to turn it. “Create a query” is visible but does not work yet, because the toy has no Query view.
+Still open
+
+How much Smart Search adds to an MVP, next to the header search and AI Chat, is not tested.
+Whether Smart Search is a separate view, or the vault-level form of AI Chat, is not decided.
+What a search with no good match shows is not specified.
+Who approves a found link before it becomes part of the graph, and whether it ever stops being an AI finding, is not decided. (The Director Decides)
+What happens when the vault is too large to read in full for one question is not specified.
+
+Sources
+
+Governance Brain Toy, live build, screenshots taken 9 Nov 2026
+product-toybox, DESIGN.md section 2.8 and app/src/data/smart-search.json
+Semantic vs. keyword search: key differences, Unstructured
+What is semantic search? Embeddings, keywords and hybrid explained, Aquila Network
+Semantic search over documents, LlamaIndex
+
+---
+
+# Wheel View
+
+Source: https://jacquesjnr.github.io/quantum-state-site/features/wheel-view
+
+Built on: Show What Isn’t Known, Present Without Bias, Say Which AI Said It, The Director Decides
+The Wheel View shows the Governance Vault as a spider chart. Each spoke is a governance domain or topic, and each point shows how far its reading is from the limit that the board sets. Morgan uses it to understand what is at risk fast, and how that changes over time.
+
+What it does for Morgan
+The Governance Brain graph shows how documents relate. Related material clusters together, so a graph is good for exploring, but it does not say which cluster needs attention. The Wheel sets out the same vault as a fixed structure: one spoke for each domain, always in the same place, with one clear measure on each spoke.
+The Wheel has two levels:
+
+The whole wheel. Each domain is one point, placed at the reading of its worst topic. Morgan sees at a glance which domains are over their limit.
+A domain wheel. Morgan picks one domain chip, and that domain opens as its own wheel. Each topic is one point, placed at the reading of its worst key risk indicator. A domain wheel has 4 to 8 topics.
+
+When Morgan picks a point, the side panel shows:
+
+The status, for example “Near threshold”, and the worst reading in plain numbers.
+An AI Summary, with two actions: “Chat about this” opens AI Chat, and “Create a Query” starts a Query.
+A risk overview: the current state, and what to consider before the next board meeting.
+“For you”: the same reading written for Morgan’s role, for example as an independent board chair.
+The appetite statement and the key risk indicators behind the reading.
+
+How to read the chart
+A spider chart (also called a radar chart) puts several measures on spokes from one center. Each measure becomes a point on its spoke, and lines join the points into a shape. The chart works best when it compares one shape against a target.
+On the Wheel, the target is the risk appetite:
+
+Risk appetite is the type and amount of risk an organization accepts in pursuit of its goals. A board sets it in two parts: statements in words, and limits in numbers.
+A key risk indicator (KRI) is one of those numbers, for example “critical suppliers without a tested recovery plan”. Each KRI has a threshold that the board sets.
+Every reading is a share of its own threshold. That puts different KRIs on one scale. The dashed line is the threshold at 100%. A point inside the line is within appetite. A point past it is over, and the zone past 100% is tinted.
+The worst reading wins. A topic shows its worst KRI, and a domain shows its worst topic, so one breach is never hidden by an average.
+
+That is to say, the shape does not show how big a risk is. It shows how far each area is from the limit that the board agreed to.
+Time and the AI projection
+Governance changes between meetings, so the Wheel has a time scale. The Governance History drawer under the chart steps through fixed stops: past quarters, “Last Board” and “Today”. Each stop has a short summary, for example “2 of 8 over threshold: Supplier risk, Emerging risks. Biggest move: Emerging risks, up 50 points”. Governance Playback plays the stops in order, as an animation.
+After Today, the Wheel can show an AI projection of the next quarter. The projection has its own tab and its own look: a rainbow line and a “Q4 2026 (AI)” badge. The panel says that the values are “estimates from the trend, not evidence”, and that Morgan can use the projection to plan an agenda but not to make a decision. (Say Which AI Said It, Show What Isn’t Known)
+
+Tradeoffs
+
+ForAgainstOne shape shows every domain against its limit, so a breach is easy to see.People read a spider chart by area and angle, which is less exact than position on a straight scale. A bar chart is more exact for one number.The worst reading wins, so no breach is hidden.The worst reading wins, so one KRI can make a whole domain look worse than it is.A share of threshold puts different KRIs on one scale.The scale depends on thresholds that the board sets. A loose threshold makes a risk look safe.Spokes stay in fixed places, so Morgan learns where each domain is.The order of the spokes changes the shape. Lines between neighbors suggest a relationship that does not exist.Time stops show change between board meetings.Guidance on spider charts warns against too many spokes. A domain with many topics is hard to read.
+In the Governance Brain Toy
+The Governance Brain Toy has the Wheel as its second view, with example data for a company called Acme.Inc. The whole wheel has six domains: Finance, Risk, Audit, Remuneration, Legal and Compliance. Only the Risk domain has a full set of KRIs. “Chat about this” and “Create a Query” are visible but do not work yet.
+The Wheel’s domain chips are separate from the Graph’s filters. The Graph can show several domains at once, but the Wheel shows the whole wheel or one domain.
+Still open
+
+Which measures the Wheel shows is not decided. Risk against appetite is one measure, and it is not certain that it is the most useful one for a board. Cost, readiness and execution time are possible others.
+The Wheel has six domains and the Governance Brain graph has seven. One list of domains for the whole product is not decided.
+How the AI reads a KRI out of a document, and how Morgan checks that reading against its source, is not specified.
+How the AI projection is calculated, and how far ahead it can go, is not specified.
+
+Sources
+
+Governance Brain Toy, live build, screenshots taken 9 Nov 2026
+product-toybox, app/src/wheel/ and app/src/components/wheel-timeline.tsx
+Radar chart, Wikipedia
+Radar charts explained: when they work, when they fail, Highcharts
+Avoid radar charts, Observable
+Risk appetites and KRIs, ICPAK, citing the COSO ERM framework (2017)
+Key risk indicators and metrics management, Riskonnect
