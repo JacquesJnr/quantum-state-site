@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-10-06T09:44:47.728Z
-published: 2026-10-06T09:44:47.728Z
+modified: 2026-11-09T12:06:46.790Z
+published: 2026-11-09T12:06:46.790Z
 up:
   - "[[Design]]"
 related:
@@ -21,7 +21,9 @@ The Node Details Panel is where Morgan opens a single point in the [[Governance 
 
 The [Node Details Panel](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4297) shows the source's document name and metadata alongside its insights, each carrying a summary, a confidence score and tags. A Related section lists other nodes connected by content, tags, author or domain, so Morgan can see what else a matter touches without leaving the panel. An AI Summary explains the node in plain language, and he can ask AI a question about it directly from here.
 
-From this panel Morgan can select an insight card, which opens [[Insight Cards]] and lets him judge one finding on its own; open the source document, which opens the [[Document Viewer]]; or ask AI a question scoped to the node.
+From this panel Morgan can select an insight card, which opens [[Insight Cards]] and lets him judge one finding on its own; open the source document, which opens the [[Document Viewer]]; ask AI a question scoped to the node; or add the node to a [[Query]].
+
+A relationship between two nodes is selectable too. It opens in the same panel with its own details, and Morgan can add it to a Query in the same way.
 
 ## Conditions to use it
 
@@ -32,4 +34,5 @@ From this panel Morgan can select an insight card, which opens [[Insight Cards]]
 ## Still open
 
 - What the panel shows for a node with no insights yet isn't defined.
+- Which details the panel shows for a relationship isn't defined.
 - How confidence, review state and strategic priority stay visually distinct on one panel, without collapsing into a single score, is still being worked out.

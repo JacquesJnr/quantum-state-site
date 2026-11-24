@@ -1,8 +1,8 @@
 ---
 publish: "true"
 created: 2026-09-29
-modified: 2026-10-06T09:44:47.728Z
-published: 2026-10-06T09:44:47.728Z
+modified: 2026-11-09T12:06:46.790Z
+published: 2026-11-09T12:06:46.790Z
 up:
   - "[[Design]]"
 related:
@@ -19,7 +19,7 @@ An Insight Card is a single governance finding, presented on its own: a concise 
 
 ## What it does for Morgan
 
-Selecting a card opens the [Insight Modal](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4298): the insight's full description and confidence score, its tags and a link to the source document, plus an actions toolbar. From here Morgan starts a new Query from the insight, or adds it to one already under way. Adding it to an existing Query opens the [Query Chooser](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4300), a pick list of every Query in progress, so findings don't pile up without a purpose. An added notice confirms which Query the insight joined.
+Selecting a card opens the [Insight Modal](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4298): the insight's full description and confidence score, its tags and a link to the source document, plus an actions toolbar. From here Morgan starts a new Query from the insight's node, or adds that node to one already under way. The insight travels with its node as a note. Adding it to an existing Query opens the [Query Chooser](https://www.figma.com/board/WITVErwq2RH0fhCbBqVAJs?node-id=13-4300), a pick list of every Query in progress, so findings don't pile up without a purpose. An added notice confirms which Query the node joined.
 
 Confidence stays a separate signal from review state and strategic priority — a card can carry a high confidence score and still need human review, or a low one and still matter enough to investigate. The card never presents a finding as a settled conclusion; it presents the evidence a conclusion could be built on, and leaves the building to Morgan.
 
