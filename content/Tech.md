@@ -86,6 +86,8 @@ Financial data is one source among many, but how much of it a customer connects 
 
 These are modeled planning numbers, not quotes. Open weights run on common hardware and serving software; lock-in comes from hardware, capacity commitments and licenses. Retrieval lets a model read a customer's documents at answer time, so fine-tuning is only justified by a measured failure retrieval doesn't fix.
 
+[[On-Premise Deployment]] covers the on-premise route in detail: how it works, which models might fit and what it costs.
+
 ### Local model does the work, a frontier model makes the hard calls
 
 Anything sent off-site has left the building, even a summary.
